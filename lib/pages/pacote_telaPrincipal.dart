@@ -77,7 +77,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
           const SizedBox(height: 16),
           CardPacotePlanejamento(
             pacotePlanejamento: pacote3,
-            tela: PacoteHabitos(
+            tela: PacoteDisciplinas(
                 pacotePlanejamento: PacotePlanejamento(
                   icon: const Icon(Icons.book),
                   titulo: 'DISCIPLINAS E CONTEÚDOS',
