@@ -3,6 +3,7 @@ import 'package:untitled/pages/pacote_adicionarLista.dart';
 import '../domain/pacote_planejamento.dart';
 import '../domain/pacote_tarefas.dart';
 import '../widget/pacote_lista_card.dart';
+import '../widget/pacote_planejamento_card.dart';
 
 class PacoteLista extends StatefulWidget {
   final PacotePlanejamento pacotePlanejamento;
@@ -99,9 +100,15 @@ class _PacoteListaState extends State<PacoteLista> {
                           onPressed: onPressedButtonAdd,
                           icon: Icon(
                             Icons.add_circle,
-                            color: Colors.green[400],
+                            color: Color(0xFFF25E7A),
                           ),
-                          label: Text('Adicionar Lista de Tarefas'),
+                          label: Text('Adicionar Lista'),
+                          style: ElevatedButton.styleFrom(
+                            primary: Color(0xFFFFCC99),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                          ),
                         ),
                         const SizedBox(width: 8),
                         ElevatedButton.icon(
@@ -110,7 +117,13 @@ class _PacoteListaState extends State<PacoteLista> {
                             Icons.remove_circle,
                             color: Colors.red[600],
                           ),
-                          label: Text('Remover Lista de Tarefas'),
+                          label: Text('Remover Lista'),
+                          style: ElevatedButton.styleFrom(
+                            primary: Color(0xFFFFCC99),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                          ),
                         ),
                       ],
                     ),
