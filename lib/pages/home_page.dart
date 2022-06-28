@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.network(
+                  Image.asset(
                     "imagens/logo.png",
                     width: 250,
                     height: 250,
