@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 //import '../domain/pacote_planejamento.dart';
 import '../domain/pacote_materias.dart';
+import '../domain/pacote_planejamento.dart';
 import '../widget/pacote_disciplinas_card.dart';
 
 class PacoteDisciplinas extends StatefulWidget {
   final PacoteMaterias pacoteMaterias;
+  final PacotePlanejamento pacotePlanejamento;
 
   const PacoteDisciplinas({
     Key? key,
     required this.pacoteMaterias,
+    required this.pacotePlanejamento,
   }) : super(key: key);
 
   @override
@@ -17,6 +20,7 @@ class PacoteDisciplinas extends StatefulWidget {
 
 class _PacoteDisciplinasState extends State<PacoteDisciplinas> {
   PacoteMaterias get pacote => widget.pacoteMaterias;
+  PacotePlanejamento get pacoteX => widget.pacotePlanejamento;
 
   PacoteMaterias pacote1 = PacoteMaterias(
     disciplina: 'Português',
@@ -69,15 +73,22 @@ class _PacoteDisciplinasState extends State<PacoteDisciplinas> {
           CardPacoteDisciplinas(pacoteMaterias: pacote5),
           const SizedBox(height: 16),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.baseline,
+            crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text(
+            children: [
+              const Text(
                 'Adicionar disciplina',
                 style: TextStyle(fontSize: 22),
               ),
-              SizedBox(width: 8),
-              //Colocar botão de adição aqui
+              const SizedBox(width: 8),
+              ElevatedButton.icon(
+                onPressed: (){},
+                icon: Icon(
+                  Icons.add_circle,
+                  color: Colors.black,
+                ),
+                label: Text(''),
+              ),
             ],
           ),
         ],
