@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/domain/pacote_materias.dart';
+import '../domain/pacote_materias.dart';
 import '../domain/pacote_planejamento.dart';
-//import 'package:flutter_application_1/domain/pacote_planejamento.dart';
-import 'package:flutter_application_1/pages/pacote_conteudo.dart';
+import '../pages/pacote_conteudo.dart';
 //import '../domain/pacote_tarefas.dart';
 
 class CardPacoteDisciplinas extends StatefulWidget {
-  //final PacoteMaterias pacoteMaterias;
   final PacoteMaterias pacoteMaterias;
+  //final PacotePlanejamento pacotePlanejamento;
 
   const CardPacoteDisciplinas({
     Key? key,
@@ -30,9 +29,7 @@ class _CardPacoteDisciplinasState extends State<CardPacoteDisciplinas> {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return PacoteConteudo(
-                pacotePlanejamento: widget.pacotePlanejamento,
-              );
+              return PacoteConteudo();
             },
           ),
         );
