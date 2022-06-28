@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../domain/pacote_tarefas.dart';
+import '../pages/pacote_adicionarLista.dart';
 //import '../pages/pacote_lista.dart';
 
 class CardPacoteLista extends StatefulWidget {
@@ -42,7 +43,20 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
                         ),
                       ),
                       const SizedBox(width: 8),
-                      const Icon(Icons.add),
+                      ElevatedButton.icon(
+                        onPressed: onPressedButtonAdd,
+                        icon: Icon(
+                          Icons.add_circle,
+                          color: Color(0xFFF25E7A),
+                        ),
+                        label: Text(''),
+                        style: ElevatedButton.styleFrom(
+                          primary: Color(0xFFFFCC99),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                        ),
+                      ),
                       //Colocar um elevatedButton aqui
                     ],
                   ),
@@ -96,6 +110,16 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
       ),
     );
   }
+  void onPressedButtonAdd() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) {
+            return const PacoteAdicionarLista();
+          }
+      ),
+    );
+  }
 }
 
 buildCard({
@@ -127,4 +151,6 @@ buildCard({
       ],
     ),
   );
+
+
 }
