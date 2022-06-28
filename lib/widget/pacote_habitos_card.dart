@@ -39,29 +39,41 @@ class _CardPacoteHabitosState extends State<CardPacoteHabitos> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
+                        'Tarefas',
+                        style: const TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
                         'S',
                         style: const TextStyle(
                           fontSize: 22,
                         ),
                       ),
+                      const SizedBox(width: 8),
                       Text(
                         'T',
                         style: const TextStyle(
                           fontSize: 22,
                         ),
                       ),
+                      const SizedBox(width: 8),
                       Text(
                         'Q',
                         style: const TextStyle(
                           fontSize: 22,
                         ),
                       ),
+                      const SizedBox(width: 8),
                       Text(
                         'Q',
                         style: const TextStyle(
                           fontSize: 22,
                         ),
                       ),
+                      const SizedBox(width: 8),
                       Text(
                         'S',
                         style: const TextStyle(
@@ -80,14 +92,13 @@ class _CardPacoteHabitosState extends State<CardPacoteHabitos> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-
                           Text(
                             'Responder simulado',
                             style: const TextStyle(
                               fontSize: 14,
                             ),
                           ),
-
+                          const SizedBox(width: 8),
                           const Icon(Icons.circle),
                           const Icon(Icons.circle),
                           const Icon(Icons.circle),
@@ -106,7 +117,7 @@ class _CardPacoteHabitosState extends State<CardPacoteHabitos> {
                               fontSize: 14,
                             ),
                           ),
-
+                          const SizedBox(width: 8),
                           const Icon(Icons.circle),
                           const Icon(Icons.circle),
                           const Icon(Icons.circle),
