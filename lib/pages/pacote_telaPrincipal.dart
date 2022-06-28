@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/domain/pacote_materias.dart';
+import 'package:untitled/pages/pacote_disciplinas.dart';
 import 'package:untitled/pages/pacote_habitos.dart';
 import 'package:untitled/pages/pacote_lista.dart';
 import 'package:untitled/pages/pacote_rotina.dart';
@@ -82,7 +84,10 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
                   icon: const Icon(Icons.book),
                   titulo: 'DISCIPLINAS E CONTEÚDOS',
                   cor: 0xFFFFCC99,
-                )
+                ),
+                pacoteMaterias: PacoteMaterias(
+                  disciplina: 'clique para saber mais...',
+                ),
             ),
           ),
           const SizedBox(height: 16),
@@ -110,7 +115,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Image.network(
+                      Image.asset(
                         "imagens/logo.png",
                         width: 60,
                         height: 60,
@@ -121,7 +126,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
                         'COM ORGANIZAÇÃO SEU DIA FICA MAIS FÁCIL!',
                         style: TextStyle(
                             color: Color(0xFFF25E7A),
-                            fontSize: 15,
+                            fontSize: 10,
                         ),
                       ),
                     ],
