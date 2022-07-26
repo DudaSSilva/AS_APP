@@ -104,34 +104,29 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
           const SizedBox(height: 16),
           Container(
             decoration: BoxDecoration(
-                color: Color(0xFFFFB09D),
-                borderRadius: BorderRadius.circular(16),
+              color: const Color(0xFFFFB09D),
+              borderRadius: BorderRadius.circular(16),
             ),
             padding: const EdgeInsets.all(16),
             child: Row(
               children: [
-                const SizedBox(width: 24),
-                Expanded(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Image.asset(
-                        "imagens/logo.png",
-                        width: 60,
-                        height: 60,
-                        fit: BoxFit.fitHeight,
-                      ),
-                      const SizedBox(width: 8),
-                      const Text(
-                        'COM ORGANIZAÇÃO SEU DIA FICA MAIS FÁCIL!',
-                        style: TextStyle(
-                            color: Color(0xFFF25E7A),
-                            fontSize: 10,
-                        ),
-                      ),
-                    ],
-                  ),
+                Image.asset(
+                    "imagens/logo.png",
+                  width: 50,
+                  height: 50,
+                  fit: BoxFit.fitHeight,
                 ),
+                const SizedBox(width: 8),
+                const Expanded(
+                  child: Text(
+                      'COM ORGANIZAÇÃO O SEU DIA FICA MAIS FÁCIL',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                      color: Color(0xFFF25E7A),
+                      fontSize: 15,
+                    ),
+                  ),
+                )
               ],
             ),
           ),
