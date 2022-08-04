@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/domain/pacote_materias.dart';
+import 'package:untitled/pages/achiviements_page.dart';
 import 'package:untitled/pages/pacote_disciplinas.dart';
 import 'package:untitled/pages/pacote_habitos.dart';
 import 'package:untitled/pages/pacote_lista.dart';
 import 'package:untitled/pages/pacote_rotina.dart';
+import 'package:untitled/pages/perfil_page.dart';
+import 'package:untitled/pages/settings_page.dart';
 import '../widget/pacote_planejamento_card.dart';
 import '../domain/pacote_planejamento.dart';
 
@@ -40,11 +43,24 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFFFE8E8),
+      drawer: Drawer(
+        backgroundColor: const Color(0xFFDD2E44),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            BuildPerfil(),
+            const SizedBox(height: 10),
+            BuildSettings(),
+            const SizedBox(height: 10),
+            BuildAchiviements(),
+          ],
+        ),
+      ),
       appBar: AppBar(
           centerTitle: true,
           title: const Text('ACADEMIC SYLLABUS'),
-          backgroundColor: const Color(0xFFF25E7A),
-          leading: const Icon(Icons.notification_important)
+          backgroundColor: const Color(0xFFDD2E44),
       ),
       body: buildBody(),
     );
@@ -111,9 +127,9 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
             child: Row(
               children: [
                 Image.asset(
-                    "imagens/logo.png",
-                  width: 50,
-                  height: 50,
+                    "images/logo.png",
+                  width: 100,
+                  height: 100,
                   fit: BoxFit.fitHeight,
                 ),
                 const SizedBox(width: 8),
@@ -123,14 +139,167 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
                     textAlign: TextAlign.justify,
                     style: TextStyle(
                       color: Color(0xFFF25E7A),
-                      fontSize: 15,
+                      fontSize: 20,
                     ),
                   ),
                 )
               ],
             ),
           ),
+          Row(
+            //crossAxisAlignment: CrossAxisAlignment.baseline,
+            children: [
+              Image.asset(
+                "images/book.png",
+                width: 150,
+                height: 100,
+                fit: BoxFit.cover,
+              ),
+              Expanded(
+                child: Image.asset(
+                  "images/pencilStar.png",
+                  fit: BoxFit.cover,
+                ),
+              ),
+              const SizedBox(width: 8),
+            ],
+          ),
         ],
+      ),
+    );
+  }
+
+  BuildPerfil(){
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        IconButton(
+          onPressed: onPressedPerfil,
+          icon: const Icon(
+            Icons.person,
+            color: Color(0xFFFFE8E8),
+            size: 50,
+          ),
+        ),
+        ElevatedButton(
+          onPressed: onPressedPerfil,
+          child: const Text(
+            'PERFIL',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Color(0xFFF25E7A),
+              fontSize: 20,
+            ),
+          ),
+          style: ElevatedButton.styleFrom(
+            primary: const Color(0xFFFFE8E8),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  BuildSettings(){
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        IconButton(
+          onPressed: onPressedSettings,
+          icon: const Icon(
+            Icons.settings,
+            color: Color(0xFFFFE8E8),
+            size: 50,
+          ),
+        ),
+        ElevatedButton(
+          onPressed: onPressedSettings,
+          child: const Text(
+            'CONFIGURAÇÕES',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Color(0xFFF25E7A),
+              fontSize: 20,
+            ),
+          ),
+          style: ElevatedButton.styleFrom(
+            primary: const Color(0xFFFFE8E8),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+
+  BuildAchiviements(){
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        IconButton(
+          onPressed: onPressedAchiviements,
+          icon: const Icon(
+            Icons.star,
+            color: Color(0xFFFFE8E8),
+            size: 50,
+          ),
+        ),
+        ElevatedButton(
+          onPressed: onPressedAchiviements,
+          child: const Text(
+            'CONQUISTAS',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Color(0xFFF25E7A),
+              fontSize: 20,
+            ),
+          ),
+          style: ElevatedButton.styleFrom(
+            primary: const Color(0xFFFFE8E8),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+
+  void onPressedPerfil() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) {
+            return const PerfilPage();
+          }
+      ),
+    );
+  }
+
+  void onPressedSettings() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) {
+            return const SettingsPage();
+          }
+      ),
+    );
+  }
+
+  void onPressedAchiviements() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) {
+            return const AchiviementsPage();
+          }
       ),
     );
   }
