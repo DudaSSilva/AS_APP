@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image.asset(
-                    "imagens/logo.png",
+                    "images/logo.png",
                     width: 300,
                     height: 300,
                     fit: BoxFit.fitHeight,
@@ -38,15 +38,6 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.white,
                       ),
                   ),
-                  // const SizedBox(height: 32),
-                  // const Text(
-                  //     'COM ORGANIZAÇÃO SEU DIA FICA MAIS FÁCIL!',
-                  //     textAlign: TextAlign.center,
-                  //     style: TextStyle(
-                  //       fontSize: 10,
-                  //       color: Color(0xFFFFFFCC),
-                  //     ),
-                  // ),
                   const SizedBox(height: 32),
                   ElevatedButton(
                     onPressed: onPressedButton,
