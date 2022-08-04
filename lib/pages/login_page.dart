@@ -25,68 +25,70 @@ class _LoginPageState extends State<LoginPage> {
             padding: const EdgeInsets.all(16),
             child: Form(
               key: _formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  const SizedBox(height: 32),
-                  Image.asset(
-                    "images/logo.png",
-                    width: 250,
-                    height: 250,
-                    fit: BoxFit.fitHeight,
-                  ),
-                  const SizedBox(height: 32),
-                  TextFormField(
-                    controller: userController,
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Campo e-mail obrigatório';
-                      }
-                    },
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'E-mail ou usuário',
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const SizedBox(height: 32),
+                    Image.asset(
+                      "images/logo.png",
+                      width: 250,
+                      height: 250,
+                      fit: BoxFit.fitHeight,
                     ),
-                    cursorColor: Color(0xFFDD2E44),
-                  ),
-                  const SizedBox(height: 16),
-                  TextFormField(
-                    controller: passwordController,
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Campo senha obrigatório';
-                      } else if (value.length < 9) {
-                        return 'A senha deve conter o mínimo de 8 dígitos';
-                      }
-                    },
-                    obscureText: true,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Senha',
+                    const SizedBox(height: 32),
+                    TextFormField(
+                      controller: userController,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Campo e-mail obrigatório';
+                        }
+                      },
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'E-mail ou usuário',
+                      ),
+                      cursorColor: Color(0xFFDD2E44),
                     ),
-                    cursorColor: Color(0xFFDD2E44),
-                  ),
-                  const SizedBox(height: 24),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        primary: Color(0xFFFFCC99)
+                    const SizedBox(height: 16),
+                    TextFormField(
+                      controller: passwordController,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Campo senha obrigatório';
+                        } else if (value.length < 9) {
+                          return 'A senha deve conter o mínimo de 8 dígitos';
+                        }
+                      },
+                      obscureText: true,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Senha',
+                      ),
+                      cursorColor: Color(0xFFDD2E44),
                     ),
-                    onPressed: onPressed,
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 12.0),
-                      child: Text(
-                        'Entrar com gitHub',
-                        style: TextStyle(
-                            fontSize: 21,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFFDD2E44)
+                    const SizedBox(height: 24),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Color(0xFFFFCC99)
+                      ),
+                      onPressed: onPressed,
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12.0),
+                        child: Text(
+                          'Entrar com gitHub',
+                          style: TextStyle(
+                              fontSize: 21,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFFDD2E44)
+                          ),
                         ),
                       ),
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
             ),
           ),
