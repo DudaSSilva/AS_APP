@@ -46,93 +46,95 @@ class _PacoteListaState extends State<PacoteLista> {
         backgroundColor: const Color(0xFFF25E7A),
         //leading: const Icon(Icons.notification_important)
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: const [
-                    Icon(Icons.person_outline),
-                    SizedBox(width: 8),
-                    Text(
-                      'HOJE:',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const [
+                      Icon(Icons.person_outline),
+                      SizedBox(width: 8),
+                      Text(
+                        'HOJE:',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    CardPacoteLista(pacoteTarefas: pacote1),
-                    const SizedBox(height: 8),
-                    const Text(
-                      'ESTA SEMANA:',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      CardPacoteLista(pacoteTarefas: pacote1),
+                      const SizedBox(height: 8),
+                      const Text(
+                        'ESTA SEMANA:',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    CardPacoteLista(pacoteTarefas: pacote2),
-                    const SizedBox(height: 8),
-                    const Text(
-                      'ESTE MÊS:',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+                      CardPacoteLista(pacoteTarefas: pacote2),
+                      const SizedBox(height: 8),
+                      const Text(
+                        'ESTE MÊS:',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    CardPacoteLista(pacoteTarefas: pacote3),
-                    const SizedBox(height: 8),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Icon(Icons.book_online_outlined),
-                        const SizedBox(width: 8),
-                        ElevatedButton.icon(
-                          onPressed: onPressedButtonAdd,
-                          icon: Icon(
-                            Icons.add_circle,
-                            color: Color(0xFFF25E7A),
-                          ),
-                          label: Text('Adicionar Lista'),
-                          style: ElevatedButton.styleFrom(
-                            primary: Color(0xFFFFCC99),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16),
+                      CardPacoteLista(pacoteTarefas: pacote3),
+                      const SizedBox(height: 8),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Icon(Icons.book_online_outlined),
+                          const SizedBox(width: 8),
+                          ElevatedButton.icon(
+                            onPressed: onPressedButtonAdd,
+                            icon: Icon(
+                              Icons.add_circle,
+                              color: Color(0xFFF25E7A),
+                            ),
+                            label: Text('Adicionar Lista'),
+                            style: ElevatedButton.styleFrom(
+                              primary: Color(0xFFFFCC99),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16),
+                              ),
                             ),
                           ),
-                        ),
-                        const SizedBox(width: 8),
-                        ElevatedButton.icon(
-                          onPressed: (){},
-                          icon: Icon(
-                            Icons.remove_circle,
-                            color: Colors.red[600],
-                          ),
-                          label: Text('Remover Lista'),
-                          style: ElevatedButton.styleFrom(
-                            primary: Color(0xFFFFCC99),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16),
+                          const SizedBox(width: 8),
+                          ElevatedButton.icon(
+                            onPressed: (){},
+                            icon: Icon(
+                              Icons.remove_circle,
+                              color: Colors.red[600],
+                            ),
+                            label: Text('Remover Lista'),
+                            style: ElevatedButton.styleFrom(
+                              primary: Color(0xFFFFCC99),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
