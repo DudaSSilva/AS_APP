@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/pages/pacote_adicionarLista.dart';
+import 'package:untitled/pages/pacote_listas.dart';
 import '../domain/pacote_planejamento.dart';
 import '../domain/pacote_tarefas.dart';
 import '../widget/pacote_lista_card.dart';
@@ -44,7 +45,23 @@ class _PacoteListaState extends State<PacoteLista> {
         centerTitle: true,
         title: const Text('LISTA DE TAREFAS'),
         backgroundColor: const Color(0xFFF25E7A),
-        //leading: const Icon(Icons.notification_important)
+        toolbarHeight: 64,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.list_alt),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const PacoteListas();
+                  },
+                ),
+              );
+            },
+          ),
+          // add more IconButton
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -99,7 +116,7 @@ class _PacoteListaState extends State<PacoteLista> {
                           const SizedBox(width: 8),
                           ElevatedButton.icon(
                             onPressed: onPressedButtonAdd,
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.add_circle,
                               color: Color(0xFFF25E7A),
                             ),

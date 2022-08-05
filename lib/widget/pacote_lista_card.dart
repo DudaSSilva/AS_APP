@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../domain/pacote_tarefas.dart';
 import '../pages/pacote_adicionarLista.dart';
-//import '../pages/pacote_lista.dart';
+//import '../pages/pacote_listaTarefas.dart';
 
 class CardPacoteLista extends StatefulWidget {
   final PacoteTarefas pacoteTarefas;
@@ -43,21 +43,13 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
                         ),
                       ),
                       const SizedBox(width: 8),
-                      ElevatedButton.icon(
+                      IconButton(
+                        icon: const Icon(
+                          Icons.library_add,
+                          color: Color(0xFFDD2E44),
+                        ),
                         onPressed: onPressedButtonAdd,
-                        icon: Icon(
-                          Icons.add_circle,
-                          color: Color(0xFFF25E7A),
-                        ),
-                        label: Text(''),
-                        style: ElevatedButton.styleFrom(
-                          primary: Color(0xFFFFCC99),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                        ),
                       ),
-                      //Colocar um elevatedButton aqui
                     ],
                   ),
                 ),

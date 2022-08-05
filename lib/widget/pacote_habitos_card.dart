@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../domain/pacote_tarefas.dart';
-//import '../pages/pacote_lista.dart';
+//import '../pages/pacote_listaTarefas.dart';
 
 class CardPacoteHabitos extends StatefulWidget {
   //final PacoteTarefas pacoteTarefas;

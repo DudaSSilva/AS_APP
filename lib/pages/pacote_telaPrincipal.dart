@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/domain/pacote_materias.dart';
 import 'package:untitled/pages/achiviements_page.dart';
+import 'package:untitled/pages/home_page.dart';
 import 'package:untitled/pages/pacote_disciplinas.dart';
 import 'package:untitled/pages/pacote_habitos.dart';
-import 'package:untitled/pages/pacote_lista.dart';
+import 'package:untitled/pages/pacote_listaTarefas.dart';
 import 'package:untitled/pages/pacote_rotina.dart';
 import 'package:untitled/pages/perfil_page.dart';
 import 'package:untitled/pages/settings_page.dart';
