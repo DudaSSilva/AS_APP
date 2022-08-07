@@ -147,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
                       'Não tem conta?',
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 24),
+                    const SizedBox(height: 8),
                     RaisedButton(
                       child: Text(
                         'CADASTRE-SE',
@@ -161,7 +161,7 @@ class _LoginPageState extends State<LoginPage> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => RedefinirSenhaPage()),
+                          MaterialPageRoute(builder: (context) => CadastroPage()),
                         );
                       },
                     ),
