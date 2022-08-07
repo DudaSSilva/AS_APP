@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:untitled/pages/pacote_telaPrincipal.dart';
 import 'package:untitled/pages/redefinirSenha_page.dart';
+import 'package:untitled/pages/cadastro_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
