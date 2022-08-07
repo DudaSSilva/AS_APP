@@ -171,9 +171,9 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
   }
 
   BuildPerfil(){
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Column(
+      //crossAxisAlignment: CrossAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         IconButton(
           onPressed: onPressedPerfil,
@@ -183,6 +183,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
             size: 50,
           ),
         ),
+        const SizedBox(heigth: 8),
         ElevatedButton(
           onPressed: onPressedPerfil,
           child: const Text(
@@ -205,9 +206,9 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
   }
 
   BuildSettings(){
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Column(
+      //crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         IconButton(
           onPressed: onPressedSettings,
@@ -217,6 +218,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
             size: 50,
           ),
         ),
+        const SizedBox(heigth: 8),
         ElevatedButton(
           onPressed: onPressedSettings,
           child: const Text(
@@ -240,8 +242,8 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
 
   BuildAchiviements(){
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         IconButton(
           onPressed: onPressedAchiviements,
@@ -251,6 +253,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
             size: 50,
           ),
         ),
+        const SizedBox(heigth: 8),
         ElevatedButton(
           onPressed: onPressedAchiviements,
           child: const Text(
