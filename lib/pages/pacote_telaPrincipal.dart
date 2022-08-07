@@ -10,6 +10,7 @@ import 'package:untitled/pages/perfil_page.dart';
 import 'package:untitled/pages/settings_page.dart';
 import '../widget/pacote_planejamento_card.dart';
 import '../domain/pacote_planejamento.dart';
+import '../domain/aboutus_page.dart';
 
 class TelaPrincipalPage extends StatefulWidget {
   const TelaPrincipalPage({Key? key}) : super(key: key);
@@ -63,6 +64,23 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
           title: const Text('ACADEMIC SYLLABUS'),
           backgroundColor: const Color(0xFFDD2E44),
       ),
+      toolbarHeight: 64,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.list_alt),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const AboutUsPage();
+                  },
+                ),
+              );
+            },
+          ),
+          // add more IconButton
+        ],
       body: buildBody(),
     );
   }
