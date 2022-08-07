@@ -29,15 +29,23 @@ class _AchiviementsPageState extends State<AchiviementsPage> {
       child: ListView(
         children: [
           Container(
+            height: 100%,
+            padding: EdgeInsets.all(0),
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("images/perfilWallpaper.png"),
+                fit: BoxFit.cover,
+              ),
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
                 Text(
-                  'CONQUISTAS',
+                  'Este usuário ainda não possui conquistas.',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 50,
-                    color: Color(0xFFDD2E44),
+                    fontSize: 24,
+                    color: Colors.white,
                   ),
                 ),
               ],
