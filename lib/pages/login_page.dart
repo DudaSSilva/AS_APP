@@ -50,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                       },
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: 'E-mail ',
+                        labelText: 'E-mail ou usuário',
                       ),
                       cursorColor: Color(0xFFDD2E44),
                     ),
