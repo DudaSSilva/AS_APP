@@ -33,11 +33,11 @@ class _SettingsPageState extends State<SettingsPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
                 Text(
-                  'Perfil de usuário',
+                  'Esta tela ainda não foi desenvolvida.',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 50,
-                    color: Color(0xFFDD2E44),
+                    color: Colors.black,
                   ),
                 ),
               ],
