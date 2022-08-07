@@ -139,31 +139,31 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                         ),
-                      ],
-                    ),
-                    const SizedBox(height: 24),
-                    //Colocar textFild "não tem conta?" e botão de cadastre-se
-                    Text(
-                      'Não tem conta?',
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: 8),
-                    RaisedButton(
-                      child: Text(
-                        'CADASTRE-SE',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFFDD2E44),
+                        const SizedBox(height: 24),
+                        //Colocar textFild "não tem conta?" e botão de cadastre-se
+                        Text(
+                          'Não tem conta?',
+                          textAlign: TextAlign.center,
                         ),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => CadastroPage()),
-                        );
-                      },
+                        const SizedBox(height: 8),
+                        RaisedButton(
+                          child: Text(
+                            'CADASTRE-SE',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFFDD2E44),
+                            ),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                             context,
+                             MaterialPageRoute(builder: (context) => CadastroPage()),
+                            );
+                          },
+                        ),    
+                      ],
                     ),
                   ),
                ),
