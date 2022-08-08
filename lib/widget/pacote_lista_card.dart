@@ -64,30 +64,11 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
                         children: [
                           const Icon(Icons.circle),
                           buildCard(
-                            tarefa: pacote.tarefa,
-                          ),
-                          const Icon(Icons.remove_outlined),
-                        ],
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Icon(Icons.circle),
-                          buildCard(
-                            tarefa: pacote.tarefa,
-                          ),
-                          const Icon(Icons.remove_outlined),
-                        ],
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Icon(Icons.circle),
-                          const SizedBox(width: 8),
-                          buildCard(
-                            tarefa: pacote.tarefa,
+                            tarefa1: pacote.tarefa1,
+                            tarefa2: pacote.tarefa2,
+                            tarefa3: pacote.tarefa3,
+                            tarefa4: pacote.tarefa4,
+                            tarefa5: pacote.tarefa5,
                           ),
                           const Icon(Icons.remove_outlined),
                         ],
@@ -115,7 +96,11 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
 }
 
 buildCard({
-  required String tarefa,
+  required String tarefa1,
+  required String tarefa2,
+  required String tarefa3,
+  required String tarefa4,
+  required String tarefa5,
 }) {
   return Card(
     shape: RoundedRectangleBorder(
@@ -123,23 +108,120 @@ buildCard({
     ),
     child: Column(
       children: [
-        const ClipRRect(
-          borderRadius: BorderRadius.vertical(
-            top: Radius.circular(16),
+        Row(
+          children: [
+            const ClipRRect(
+              borderRadius: BorderRadius.vertical(
+              top: Radius.circular(16),
+            ),
           ),
+          //colocar checkbox aqui
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  tarefa1,
+                 style: const TextStyle(fontWeight: FontWeight.bold),
+               ),
+              ],
+            ),
+           ),
+          ],
         ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                tarefa,
-                style: const TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ],
+        const SizedBox(height: 8),
+        Row(
+          children: [
+            const ClipRRect(
+              borderRadius: BorderRadius.vertical(
+              top: Radius.circular(16),
+            ),
           ),
-        )
+          //colocar checkbox aqui
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  tarefa2,
+                 style: const TextStyle(fontWeight: FontWeight.bold),
+               ),
+              ],
+            ),
+           ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        Row(
+          children: [
+            const ClipRRect(
+              borderRadius: BorderRadius.vertical(
+              top: Radius.circular(16),
+            ),
+          ),
+          //colocar checkbox aqui
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  tarefa3,
+                 style: const TextStyle(fontWeight: FontWeight.bold),
+               ),
+              ],
+            ),
+           ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        Row(
+          children: [
+            const ClipRRect(
+              borderRadius: BorderRadius.vertical(
+              top: Radius.circular(16),
+            ),
+          ),
+          //colocar checkbox aqui
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  tarefa4,
+                 style: const TextStyle(fontWeight: FontWeight.bold),
+               ),
+              ],
+            ),
+           ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        Row(
+          children: [
+            const ClipRRect(
+              borderRadius: BorderRadius.vertical(
+              top: Radius.circular(16),
+            ),
+          ),
+          //colocar checkbox aqui
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  tarefa5,
+                 style: const TextStyle(fontWeight: FontWeight.bold),
+               ),
+              ],
+            ),
+           ),
+          ],
+        ),
       ],
     ),
   );
