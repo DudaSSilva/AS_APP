@@ -1,4 +1,4 @@
-import 'package:aula_913/domain/pacote_tarefas.dart';
+import '../domain/pacote_tarefas.dart';
 
 class BD {
   static List<PacoteTarefas> lista = [
@@ -6,7 +6,7 @@ class BD {
       nomeLista: 'LISTA DE ESTUDOS',
       cor: 0xFFF4D9A9,
       tarefa1: 'Ler 20 páginas por dia',
-      tarefa2: 'Resumo de biologia,
+      tarefa2: 'Resumo de biologia',
       tarefa3: 'Terminar atividade de PRMO',
       tarefa4: 'Entregar site de PWEB',
       tarefa5: 'Recuperação de matemática - estudar',

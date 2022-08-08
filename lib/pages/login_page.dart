@@ -1,9 +1,7 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:untitled/pages/pacote_telaPrincipal.dart';
 import 'package:untitled/pages/redefinirSenha_page.dart';
-import 'package:untitled/pages/cadastro_page.dart';
+//import '../pages/cadastro_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -42,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
                     //Colocar textinho aqui
                     const SizedBox(height: 32),
                     TextFormField(
-                      controller: userEmailController,
+                      controller: userController,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -74,8 +72,11 @@ class _LoginPageState extends State<LoginPage> {
                       cursorColor: Color(0xFFDD2E44),
                     ),
                     const SizedBox(height: 24),
-                    RaisedButton(
-                      child: Text(
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Color(0xFFFFCC99)
+                      ),
+                      child: const Text(
                         'Esqueci minha senha',
                         style: TextStyle(
                           fontSize: 10,
@@ -88,6 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                         );
                       },
                     ),
+                    const SizedBox(height: 16),
                     //  ElevatedButton(
                     //  style: ElevatedButton.styleFrom(
                     //      primary: Color(0xFFFFCC99)
@@ -105,72 +107,73 @@ class _LoginPageState extends State<LoginPage> {
                        // ),
                       //),
                     //)
-                  ],
-                  Container(
-                    padding: const EdgeInsets.all(0),
-                    child: Row(
+                    Row(
+                      //crossAxisAlignment: CrossAxisAlignment.baseline,
                       children: [
-                        //botão de entrar
-                       ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              primary: Color(0xFFFFCC99)
-                          ),
-                          onPressed: onPressed,
-                          child: const Padding(
-                            padding: EdgeInsets.symmetric(vertical: 12.0),
-                            child: Text(
-                              'ENTRAR',
-                              style: TextStyle(
-                                  fontSize: 21,
-                                  fontWeight: FontWeight.w500,
-                                 color: Color(0xFFDD2E44)
+                        Expanded(
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                primary: Color(0xFFFFCC99)
+                            ),
+                            onPressed: onPressed,
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(vertical: 12.0),
+                              child: Text(
+                                'ENTRAR',
+                                style: TextStyle(
+                                    fontSize: 21,
+                                    fontWeight: FontWeight.w500,
+                                    color: Color(0xFFDD2E44)
+                                ),
                               ),
                             ),
                           ),
                         ),
-                        const SizedBox(width: 8),
-                        const Expanded(
-                          //botão de redirecionamento para o instagram
-                          IconButton(
-                            onPressed: openInstagram,
+                        IconButton(
+                            onPressed: (){},
                             icon: const Icon(
-                              Icons.settings,
-                              color: Color(0xFFFFE8E8),
+                              Icons.star,
+                              color: Color(0xFFDD2E44),
                               size: 50,
                             ),
                           ),
-                        ),
-                        const SizedBox(height: 24),
-                        //Colocar textFild "não tem conta?" e botão de cadastre-se
-                        Text(
-                          'Não tem conta?',
-                          textAlign: TextAlign.center,
-                        ),
-                        const SizedBox(height: 8),
-                        RaisedButton(
-                          child: Text(
-                            'CADASTRE-SE',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xFFDD2E44),
-                            ),
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                             context,
-                             MaterialPageRoute(builder: (context) => CadastroPage()),
-                            );
-                          },
-                        ),    
                       ],
                     ),
-                  ),
+                    const SizedBox(height: 16),
+                    Row(
+                      //crossAxisAlignment: CrossAxisAlignment.baseline,
+                      children: [
+                        const Text(
+                          'Não tem conta?',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                primary: Color(0xFFFFCC99)
+                            ),
+                            child: const Text(
+                              'CADASTRE-SE',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500,
+                                color: Color(0xFFDD2E44),
+                              ),
+                            ),
+                            onPressed: () { },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                ),
             ),
           ),
         )
+      ),
     );
   }
 
@@ -192,21 +195,20 @@ class _LoginPageState extends State<LoginPage> {
             )
         );
       } else {
-        //print("Usuário ou senha incorretos. Tente novamente.");
-        return 'Usuário ou senha incorretos. Tente novamente.';
+        print("Usuário ou senha incorretos. Tente novamente.");
       }
     } else {
       print("Formulário inválido.");
     }
   }
 
-  void openInstagram() {
-    const url = 'https://www.instagram.com/academicsyllabus';
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      print("Página não encontrada.");
-    }
-  }
+  // void openInstagram() {
+  //   const url = 'https://www.instagram.com/academicsyllabus';
+  //   if (await canLaunch(url)) {
+  //     await launch(url);
+  //   } else {
+  //     print("Página não encontrada.");
+  //   }
+  // }
     
 }

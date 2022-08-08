@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/pages/pacote_adicionarLista.dart';
 import 'package:untitled/pages/pacote_listas.dart';
+import 'package:untitled/pages/pacote_telaPrincipal.dart';
 import '../domain/pacote_planejamento.dart';
 import '../domain/pacote_tarefas.dart';
 import '../widget/pacote_lista_card.dart';
-import '../widget/pacote_planejamento_card.dart';
+//import '../widget/pacote_planejamento_card.dart';
+import '../data/bdListaTarefas.dart';
 
 class PacoteLista extends StatefulWidget {
   final PacotePlanejamento pacotePlanejamento;
@@ -47,37 +49,8 @@ class _PacoteListaState extends State<PacoteLista> {
           ),
         ],
       ),
-      buildListView(),
-      const SizedBox(height: 16),
-      buildOptions(),
-    );
-  }
-  
-  buildListView() {
-    return FutureBuilder<List<PacoteTarefas>>(
-      future: lista,
-      builder: (context, snapshot) {
 
-      if(snapshot.hasData) {
-          // ?? -> Verificar ser o conteudo de snapshot.data é nulo
-        List<PacoteTarefas> lista = snapshot.data ?? [];
-
-        return ListView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: lista.length,
-          itemBuilder: (BuildContext context, int index) {
-            return CardPacoteLista(pacoteTarefas: lista[index]);
-          },
-        );
-    }
-
-      return Center(child: const CircularProgressIndicator());
-
-  },
-  
-  buildOptions(){
-    return SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
@@ -85,16 +58,17 @@ class _PacoteListaState extends State<PacoteLista> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  BuildListView(),
                   ElevatedButton.icon(
-                      onPressed: goAnotations,
-                      icon: Icon(
-                        Icons.list_alt,
-                        color: Colors.black,
-                      ),
-                      label: Text('Anotações'),
-                      style: ElevatedButton.styleFrom(
-                        primary: Color(0xFFFFCC99),
-                        shape: RoundedRectangleBorder(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.list_alt,
+                      color: Colors.black,
+                    ),
+                    label: const Text('Anotações'),
+                    style: ElevatedButton.styleFrom(
+                      primary: const Color(0xFFFFCC99),
+                      shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
                     ),
@@ -125,7 +99,7 @@ class _PacoteListaState extends State<PacoteLista> {
                           ),
                           const SizedBox(width: 8),
                           ElevatedButton.icon(
-                            onPressed: (){},
+                            onPressed: () {},
                             icon: Icon(
                               Icons.remove_circle,
                               color: Colors.red[600],
@@ -148,6 +122,7 @@ class _PacoteListaState extends State<PacoteLista> {
           ],
         ),
       ),
+    );
   }
 
   void onPressedButtonAdd() {
@@ -160,16 +135,40 @@ class _PacoteListaState extends State<PacoteLista> {
       ),
     );
   }
-  
+
   void goAnotations() {
     Navigator.push(
       context,
       MaterialPageRoute(
           builder: (context) {
-            return const TelaAnotacoes();
+            return const TelaPrincipalPage();
           }
       ),
     );
   }
 
+
+  BuildListView() {
+    return FutureBuilder<List<PacoteTarefas>>(
+        future: lista,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            // ?? -> Verificar ser o conteudo de snapshot.data é nulo
+            List<PacoteTarefas> lista = snapshot.data ?? [];
+
+            return ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: lista.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return CardPacoteLista(pacoteTarefas: lista[index]);
+                }
+            );
+          }
+
+          return Center(child: const CircularProgressIndicator());
+        }
+
+    );
+  }
 }

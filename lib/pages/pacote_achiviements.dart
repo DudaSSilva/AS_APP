@@ -29,7 +29,6 @@ class _AchiviementsPageState extends State<AchiviementsPage> {
       child: ListView(
         children: [
           Container(
-            height: 100%,
             padding: EdgeInsets.all(0),
             decoration: const BoxDecoration(
               image: DecorationImage(

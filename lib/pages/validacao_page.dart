@@ -2,11 +2,11 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:untitled/pages/pacote_telaPrincipal.dart';
-import 'package:untitled/pages/cadastro_page.dart';
+//import 'package:untitled/pages/cadastro_page.dart';
 import 'package:untitled/pages/login_page.dart';
 
 class ValidacaoPage extends StatefulWidget {
-  const ValidacaoPagePage({Key? key}) : super(key: key);
+  const ValidacaoPage({Key? key}) : super(key: key);
 
   @override
   _ValidacaoPageState createState() => _ValidacaoPageState();
@@ -34,19 +34,19 @@ class _ValidacaoPageState extends State<ValidacaoPage> {
                     Row(
                       children: [
                         Image.asset(
-                          "images/book.png",
-                          width: 250,
-                          height: 250,
+                          "images/logo.png",
+                          width: 100,
+                          height: 100,
                           fit: BoxFit.cover,
                         ),
                         const SizedBox(width: 8),
-                        Expanded(
-                          const Text(
+                        const Expanded(
+                          child: Text(
                             'RECUPERAR SENHA',
-                            textAlign: TextAlign.center,
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
-                                fontSize: 50,
-                                color: Color(0xFFDD2E44),
+                              fontSize: 30,
+                              color: Color(0xFFDD2E44),
                             ),
                           ),
                         ),
@@ -101,26 +101,24 @@ class _ValidacaoPageState extends State<ValidacaoPage> {
                     const SizedBox(height: 24),
                     Row(
                       children: [
-                        Text(
+                        const Text(
                           'Já possui uma conta ASapp??',
                           textAlign: TextAlign.center,
                         ),
-                        const SizedBox(height: 8),
+                        const SizedBox(width: 8),
                         Expanded(
-                          ElevatedButton(
+                          child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                primary: Color(0xFFFFCC99)
-                            ),
+                                primary: Color(0xFFFFCC99)),
                             onPressed: onPressedLogin,
                             child: const Padding(
-                             padding: EdgeInsets.symmetric(vertical: 8.0),
+                              padding: EdgeInsets.symmetric(vertical: 8.0),
                               child: Text(
                                 'LOGIN',
-                               style: TextStyle(
-                                    //fontSize: 21,
+                                style: TextStyle(
+                                    fontSize: 21,
                                     fontWeight: FontWeight.w500,
-                                    color: Color(0xFFDD2E44)
-                                ),
+                                    color: Color(0xFFDD2E44)),
                               ),
                             ),
                           ),
@@ -129,28 +127,25 @@ class _ValidacaoPageState extends State<ValidacaoPage> {
                     ),
                     const SizedBox(height: 24),
                     Row(
-                    //Colocar textFild "não tem conta?" e botão de cadastre-se
                       children: [
-                        Text(
+                        const Text(
                           'Não tem conta?',
                           textAlign: TextAlign.center,
                         ),
-                        const SizedBox(height: 8),
+                        const SizedBox(width: 8),
                         Expanded(
-                          ElevatedButton(
+                          child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                primary: Color(0xFFFFCC99)
-                            ),
-                            onPressed: onPressedCadastro,
+                                primary: Color(0xFFFFCC99)),
+                            onPressed: (){},
                             child: const Padding(
-                             padding: EdgeInsets.symmetric(vertical: 8.0),
+                              padding: EdgeInsets.symmetric(vertical: 8.0),
                               child: Text(
                                 'CADASRE-SE',
-                                 style: TextStyle(
-                                    //fontSize: 21,
+                                style: TextStyle(
+                                  //fontSize: 21,
                                     fontWeight: FontWeight.w500,
-                                    color: Color(0xFFDD2E44)
-                                ),
+                                    color: Color(0xFFDD2E44)),
                               ),
                             ),
                           ),
@@ -161,7 +156,8 @@ class _ValidacaoPageState extends State<ValidacaoPage> {
                ),
             ),
           ),
-        )
+        ),
+      ),
     );
   }
 
@@ -199,15 +195,15 @@ class _ValidacaoPageState extends State<ValidacaoPage> {
     );
   }
       
-  void onPressedCadastro() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) {
-          return const CadastroPage();
-        },
-      ),
-    );
-  }
+  // void onPressedCadastro() {
+  //   Navigator.push(
+  //     context,
+  //     MaterialPageRoute(
+  //       builder: (context) {
+  //         return const CadastroPage();
+  //       },
+  //     ),
+  //   );
+  // }
     
 }

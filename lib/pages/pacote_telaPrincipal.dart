@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/domain/pacote_materias.dart';
-import 'package:untitled/pages/achiviements_page.dart';
-import 'package:untitled/pages/home_page.dart';
+import 'package:untitled/pages/aboutus_page.dart';
+import '../pages/pacote_achiviements.dart';
 import 'package:untitled/pages/pacote_disciplinas.dart';
 import 'package:untitled/pages/pacote_habitos.dart';
-import 'package:untitled/pages/pacote_listaTarefas.dart';
+import 'package:untitled/pages/pacote_listaTarefas_teste.dart';
 import 'package:untitled/pages/pacote_rotina.dart';
 import 'package:untitled/pages/perfil_page.dart';
 import 'package:untitled/pages/settings_page.dart';
 import '../widget/pacote_planejamento_card.dart';
 import '../domain/pacote_planejamento.dart';
-import '../domain/aboutus_page.dart';
 
 class TelaPrincipalPage extends StatefulWidget {
   const TelaPrincipalPage({Key? key}) : super(key: key);
@@ -56,6 +55,8 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
             BuildSettings(),
             const SizedBox(height: 10),
             BuildAchiviements(),
+            const SizedBox(height: 10),
+            BuildAboutUs(),
           ],
         ),
       ),
@@ -64,23 +65,6 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
           title: const Text('ACADEMIC SYLLABUS'),
           backgroundColor: const Color(0xFFDD2E44),
       ),
-      toolbarHeight: 64,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.list_alt),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const AboutUsPage();
-                  },
-                ),
-              );
-            },
-          ),
-          // add more IconButton
-        ],
       body: buildBody(),
     );
   }
@@ -180,7 +164,6 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
                   fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(width: 8),
             ],
           ),
         ],
@@ -201,7 +184,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
             size: 50,
           ),
         ),
-        const SizedBox(heigth: 8),
+        const SizedBox(height: 8),
         ElevatedButton(
           onPressed: onPressedPerfil,
           child: const Text(
@@ -236,7 +219,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
             size: 50,
           ),
         ),
-        const SizedBox(heigth: 8),
+        const SizedBox(height: 8),
         ElevatedButton(
           onPressed: onPressedSettings,
           child: const Text(
@@ -259,7 +242,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
   }
 
   BuildAchiviements(){
-    return Row(
+    return Column(
       //crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -271,11 +254,46 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
             size: 50,
           ),
         ),
-        const SizedBox(heigth: 8),
+        const SizedBox(height: 8),
         ElevatedButton(
           onPressed: onPressedAchiviements,
           child: const Text(
             'CONQUISTAS',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Color(0xFFF25E7A),
+              fontSize: 20,
+            ),
+          ),
+          style: ElevatedButton.styleFrom(
+            primary: const Color(0xFFFFE8E8),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+
+  BuildAboutUs(){
+    return Column(
+      //crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        IconButton(
+          onPressed: onPressedAboutUs,
+          icon: const Icon(
+            Icons.info,
+            color: Color(0xFFFFE8E8),
+            size: 50,
+          ),
+        ),
+        const SizedBox(height: 8),
+        ElevatedButton(
+          onPressed: onPressedAboutUs,
+          child: const Text(
+            'SOBRE NÓS',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Color(0xFFF25E7A),
@@ -321,6 +339,17 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
       MaterialPageRoute(
           builder: (context) {
             return const AchiviementsPage();
+          }
+      ),
+    );
+  }
+
+  void onPressedAboutUs() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) {
+            return const AboutUsPage();
           }
       ),
     );
