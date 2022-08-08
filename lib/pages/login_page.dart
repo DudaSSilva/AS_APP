@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/pages/pacote_telaPrincipal.dart';
 import 'package:untitled/pages/redefinirSenha_page.dart';
-//import '../pages/cadastro_page.dart';
+import 'package:flutter_web_browser/flutter_web_browser.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
+      child: Scaffold(
           backgroundColor: const Color(0xFFFFE8E8),
           body: Padding(
             padding: const EdgeInsets.all(16),
@@ -33,9 +33,9 @@ class _LoginPageState extends State<LoginPage> {
                     //colocar imagem ao lado do texto
                     Image.asset(
                       "images/logo.png",
-                      width: 250,
-                      height: 250,
-                      fit: BoxFit.fitHeight,
+                      width: 200,
+                      height: 200,
+                      fit: BoxFit.cover,
                     ),
                     //Colocar textinho aqui
                     const SizedBox(height: 32),
@@ -73,107 +73,108 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     const SizedBox(height: 24),
                     ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          primary: Color(0xFFFFCC99)
-                      ),
+                      style:
+                          ElevatedButton.styleFrom(
+                              primary: Color(0xFFDD2E44),
+                              padding: EdgeInsets.all(0),
+                          ),
                       child: const Text(
                         'Esqueci minha senha',
                         style: TextStyle(
                           fontSize: 10,
+                          color: Colors.white,
                         ),
                       ),
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => RedefinirSenhaPage()),
+                          MaterialPageRoute(
+                              builder: (context) => RedefinirSenhaPage()),
                         );
                       },
                     ),
                     const SizedBox(height: 16),
-                    //  ElevatedButton(
-                    //  style: ElevatedButton.styleFrom(
-                    //      primary: Color(0xFFFFCC99)
-                    //  ),
-                    //  onPressed: onPressed,
-                    //  child: const Padding(
-                     //   padding: EdgeInsets.symmetric(vertical: 12.0),
-                       // child: Text(
-                         // 'ENTRAR',
-                         // style: TextStyle(
-                           //   fontSize: 21,
-                             // fontWeight: FontWeight.w500,
-                             // color: Color(0xFFDD2E44)
-                       //   ),
-                       // ),
-                      //),
-                    //)
-                    Row(
-                      //crossAxisAlignment: CrossAxisAlignment.baseline,
-                      children: [
-                        Expanded(
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                primary: Color(0xFFFFCC99)
-                            ),
-                            onPressed: onPressed,
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(vertical: 12.0),
-                              child: Text(
-                                'ENTRAR',
-                                style: TextStyle(
-                                    fontSize: 21,
-                                    fontWeight: FontWeight.w500,
-                                    color: Color(0xFFDD2E44)
-                                ),
-                              ),
-                            ),
-                          ),
+                    ElevatedButton(
+                      style:
+                          ElevatedButton.styleFrom(primary: Color(0xFFFFCC99)),
+                      onPressed: onPressed,
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12.0),
+                        child: Text(
+                          'ENTRAR',
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFFDD2E44)),
                         ),
-                        IconButton(
-                            onPressed: (){},
-                            icon: const Icon(
-                              Icons.star,
-                              color: Color(0xFFDD2E44),
-                              size: 50,
-                            ),
-                          ),
-                      ],
+                      ),
                     ),
                     const SizedBox(height: 16),
-                    Row(
-                      //crossAxisAlignment: CrossAxisAlignment.baseline,
+                    Column(
                       children: [
                         const Text(
                           'Não tem conta?',
                           textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 8, fontWeight: FontWeight.bold),
+                        ),
+                        const SizedBox(height: 8),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              primary: Color(0xFFFFCC99)),
+                          child: const Text(
+                            'CADASTRE-SE',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFFDD2E44),
+                            ),
+                          ),
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 16),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'Siga-nos nas redes sociais',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 8,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xFFDD2E44),
+                          ),
                         ),
                         const SizedBox(width: 8),
                         Expanded(
                           child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                primary: Color(0xFFFFCC99)
+                            style:
+                            ElevatedButton.styleFrom(
+                              primary: Color(0xFFFFCC99),
+                              padding: EdgeInsets.all(0),
                             ),
-                            child: const Text(
-                              'CADASTRE-SE',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500,
-                                color: Color(0xFFDD2E44),
+                            onPressed: openInstagram,
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(vertical: 12.0),
+                              child: Text(
+                                'Instagram',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w500,
+                                    color: Color(0xFFDD2E44)),
                               ),
                             ),
-                            onPressed: () { },
                           ),
                         ),
                       ],
                     ),
                   ],
-               ),
+                ),
+              ),
             ),
-          ),
-        )
-      ),
+          )),
     );
   }
 
@@ -186,14 +187,10 @@ class _LoginPageState extends State<LoginPage> {
       String pwd = passwordController.text;
 
       if (userLogin == user && passwordLogin == pwd) {
-        Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-                builder: (context) {
-                  return const TelaPrincipalPage();
-                }
-            )
-        );
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) {
+          return const TelaPrincipalPage();
+        }));
       } else {
         print("Usuário ou senha incorretos. Tente novamente.");
       }
@@ -202,13 +199,19 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  // void openInstagram() {
-  //   const url = 'https://www.instagram.com/academicsyllabus';
-  //   if (await canLaunch(url)) {
-  //     await launch(url);
-  //   } else {
-  //     print("Página não encontrada.");
-  //   }
-  // }
-    
+  void openInstagram() async {
+    FlutterWebBrowser.openWebPage(
+        url: 'https://www.instagram.com/academicsyllabus/',
+        customTabsOptions: const CustomTabsOptions(
+          colorScheme: CustomTabsColorScheme.dark,
+          toolbarColor: Color(0xFFDD2E44),
+          secondaryToolbarColor: Color(0xFFFFE8E8),
+          navigationBarColor: Colors.transparent,
+          addDefaultShareMenuItem: true,
+          instantAppsEnabled: true,
+          //showTitle: false,
+          urlBarHidingEnabled: true,
+        )
+    );
+  }
 }

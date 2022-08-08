@@ -82,9 +82,7 @@ class _ValidacaoPageState extends State<ValidacaoPage> {
                     ),
                     const SizedBox(height: 24),
                     ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          primary: Color(0xFFFFCC99)
-                      ),
+                      style: ElevatedButton.styleFrom(primary: Color(0xFFDD2E44)),
                       onPressed: onPressed,
                       child: const Padding(
                         padding: EdgeInsets.symmetric(vertical: 12.0),
@@ -93,8 +91,7 @@ class _ValidacaoPageState extends State<ValidacaoPage> {
                           style: TextStyle(
                               fontSize: 21,
                               fontWeight: FontWeight.w500,
-                              color: Color(0xFFDD2E44)
-                          ),
+                              color: Colors.white),
                         ),
                       ),
                     ),
@@ -109,7 +106,7 @@ class _ValidacaoPageState extends State<ValidacaoPage> {
                         Expanded(
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                primary: Color(0xFFFFCC99)),
+                                primary: Color(0xFFDD2E44)),
                             onPressed: onPressedLogin,
                             child: const Padding(
                               padding: EdgeInsets.symmetric(vertical: 8.0),
@@ -118,7 +115,7 @@ class _ValidacaoPageState extends State<ValidacaoPage> {
                                 style: TextStyle(
                                     fontSize: 21,
                                     fontWeight: FontWeight.w500,
-                                    color: Color(0xFFDD2E44)),
+                                    color: Colors.white),
                               ),
                             ),
                           ),
@@ -136,7 +133,7 @@ class _ValidacaoPageState extends State<ValidacaoPage> {
                         Expanded(
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                primary: Color(0xFFFFCC99)),
+                                primary: Color(0xFFDD2E44)),
                             onPressed: (){},
                             child: const Padding(
                               padding: EdgeInsets.symmetric(vertical: 8.0),
@@ -145,7 +142,7 @@ class _ValidacaoPageState extends State<ValidacaoPage> {
                                 style: TextStyle(
                                   //fontSize: 21,
                                     fontWeight: FontWeight.w500,
-                                    color: Color(0xFFDD2E44)),
+                                    color: Colors.white),
                               ),
                             ),
                           ),

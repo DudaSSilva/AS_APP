@@ -83,7 +83,7 @@ class _PacoteDisciplinasState extends State<PacoteDisciplinas> {
               const SizedBox(width: 8),
               ElevatedButton.icon(
                 onPressed: (){},
-                icon: Icon(
+                icon: const Icon(
                   Icons.add_circle,
                   color: Colors.black,
                 ),

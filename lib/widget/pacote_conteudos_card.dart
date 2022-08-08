@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/domain/pacote_conteudos.dart';
 import '../domain/pacote_tarefas.dart';
 import '../pages/pacote_adicionarLista.dart';
 //import '../pages/pacote_listaTarefas.dart';
 
-class CardPacoteLista extends StatefulWidget {
-  final PacoteTarefas pacoteTarefas;
+class CardPacoteConteudos extends StatefulWidget {
+  final PacoteConteudos pacoteConteudos;
 
-  const CardPacoteLista({
+  const CardPacoteConteudos({
     Key? key,
-    required this.pacoteTarefas,
+    required this.pacoteConteudos,
   }) : super(key: key);
 
   @override
-  _CardPacoteListaState createState() => _CardPacoteListaState();
+  _CardPacoteConteudosState createState() => _CardPacoteConteudosState();
 }
 
-class _CardPacoteListaState extends State<CardPacoteLista> {
-  PacoteTarefas get pacote => widget.pacoteTarefas;
+class _CardPacoteConteudosState extends State<CardPacoteConteudos> {
+  PacoteConteudos get pacote => widget.pacoteConteudos;
 
   @override
   Widget build(BuildContext context) {

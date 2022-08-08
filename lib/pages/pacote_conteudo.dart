@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/domain/pacote_materias.dart';
-import 'package:untitled/widget/pacote_disciplinas_card.dart';
-import '../domain/pacote_planejamento.dart';
+import 'package:untitled/widget/pacote_conteudos_card.dart';
 import '../domain/pacote_conteudos.dart';
-import '../widget/pacote_lista_card.dart';
 
 class PacoteConteudo extends StatefulWidget {
 
@@ -20,12 +17,20 @@ class _PacoteConteudoState extends State<PacoteConteudo> {
   PacoteConteudos pacote1 = PacoteConteudos(
   nomeLista: 'CONTEÚDOS',
   cor: 0xFFF4D9A9,
-  tarefa: 'Modernismo',
+  tarefa1: 'Modernismo',
+  tarefa2: 'Modernismo',
+  tarefa3: 'Modernismo',
+  tarefa4: 'Modernismo',
+  tarefa5: 'Modernismo',
 );
   PacoteConteudos pacote2 = PacoteConteudos(
   nomeLista: 'CONTEÚDOS',
   cor: 0xFFFFC690,
-  tarefa: 'Vanguardas europeias',
+  tarefa1: 'Vanguardas europeias',
+  tarefa2: 'Vanguardas europeias',
+  tarefa3: 'Vanguardas europeias',
+  tarefa4: 'Vanguardas europeias',
+  tarefa5: 'Vanguardas europeias',
 );
 
 @override
@@ -59,7 +64,7 @@ Widget build(BuildContext context) {
                 ],
               ),
               const SizedBox(height: 8),
-              //CardPacoteDisciplinas(pacoteConteudos: pacote1),
+              CardPacoteConteudos(pacoteConteudos: pacote1),
               const SizedBox(height: 8),
               const Text(
                 'JULHO:',

@@ -4,7 +4,7 @@ import 'package:untitled/pages/aboutus_page.dart';
 import '../pages/pacote_achiviements.dart';
 import 'package:untitled/pages/pacote_disciplinas.dart';
 import 'package:untitled/pages/pacote_habitos.dart';
-import 'package:untitled/pages/pacote_listaTarefas_teste.dart';
+import 'package:untitled/pages/pacote_listaTarefas.dart';
 import 'package:untitled/pages/pacote_rotina.dart';
 import 'package:untitled/pages/perfil_page.dart';
 import 'package:untitled/pages/settings_page.dart';
