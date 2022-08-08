@@ -29,6 +29,7 @@ class BD {
       tarefa4: 'Recuperação de história',
       tarefa5: 'Comprar materiais de desenho',
     ),
+  ];
   
   static Future<List<PacoteTarefas>> getPacoteTarefas() async {
     print("ANTES");
