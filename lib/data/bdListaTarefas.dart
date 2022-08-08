@@ -23,7 +23,7 @@ class BD {
     PacoteTarefas(
       nomeLista: 'LISTA DO MÊS',
       cor: 0xFFFFB09D,
-      tarefa: 'Prova bimestral e recuperação',
+      tarefa1: 'Prova bimestral e recuperação',
       tarefa2: 'Ler livro de EMDI',
       tarefa3: 'Júri-simulado',
       tarefa4: 'Recuperação de história',
