@@ -67,7 +67,7 @@ class _PacoteListaState extends State<PacoteLista> {
           physics: const NeverScrollableScrollPhysics(),
           itemCount: lista.length,
           itemBuilder: (BuildContext context, int index) {
-            return CardPacoteTarefas(pacoteTarefas: lista[index]);
+            return CardPacoteLista(pacoteTarefas: lista[index]);
           },
         );
     }
