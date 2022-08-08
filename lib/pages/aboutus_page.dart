@@ -3,7 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 
 class AboutUsPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const AboutUsPage({Key? key}) : super(key: key);
 
   @override
   _AboutUsPageState createState() => _AboutUsPageState();

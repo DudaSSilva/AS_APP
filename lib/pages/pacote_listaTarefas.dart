@@ -1,170 +1,170 @@
-import 'package:flutter/material.dart';
-import 'package:untitled/pages/pacote_adicionarLista.dart';
-import 'package:untitled/pages/pacote_listas.dart';
-import '../domain/pacote_planejamento.dart';
-import '../domain/pacote_tarefas.dart';
-import '../widget/pacote_lista_card.dart';
-import '../widget/pacote_planejamento_card.dart';
-
-class PacoteLista extends StatefulWidget {
-  final PacotePlanejamento pacotePlanejamento;
-
-  const PacoteLista({
-    Key? key,
-    required this.pacotePlanejamento,
-  }) : super(key: key);
-
-  @override
-  _PacoteListaState createState() => _PacoteListaState();
-}
-
-class _PacoteListaState extends State<PacoteLista> {
-  PacotePlanejamento get pacote => widget.pacotePlanejamento;
-
-  PacoteTarefas pacote1 = PacoteTarefas(
-    nomeLista: 'LISTA DE ESTUDOS',
-    cor: 0xFFF4D9A9,
-    tarefa: 'Terminar atividade de PRMO',
-  );
-  PacoteTarefas pacote2 = PacoteTarefas(
-    nomeLista: 'LISTA DA SEMANA',
-    cor: 0xFFFFC690,
-    tarefa: 'Fazer atividade de PWEB',
-  );
-  PacoteTarefas pacote3 = PacoteTarefas(
-    nomeLista: 'LISTA DO MÊS',
-    cor: 0xFFFFB09D,
-    tarefa: 'Prova bimestral e recuperação',
-  );
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFFFE8E8),
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('LISTA DE TAREFAS'),
-        backgroundColor: const Color(0xFFF25E7A),
-        toolbarHeight: 64,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.list_alt),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const PacoteListas();
-                  },
-                ),
-              );
-            },
-          ),
-          // add more IconButton
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: const [
-                      Icon(Icons.person_outline),
-                      SizedBox(width: 8),
-                      Text(
-                        'HOJE:',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 8),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      CardPacoteLista(pacoteTarefas: pacote1),
-                      const SizedBox(height: 8),
-                      const Text(
-                        'ESTA SEMANA:',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      CardPacoteLista(pacoteTarefas: pacote2),
-                      const SizedBox(height: 8),
-                      const Text(
-                        'ESTE MÊS:',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      CardPacoteLista(pacoteTarefas: pacote3),
-                      const SizedBox(height: 8),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Icon(Icons.book_online_outlined),
-                          const SizedBox(width: 8),
-                          ElevatedButton.icon(
-                            onPressed: onPressedButtonAdd,
-                            icon: const Icon(
-                              Icons.add_circle,
-                              color: Color(0xFFF25E7A),
-                            ),
-                            label: Text('Adicionar Lista'),
-                            style: ElevatedButton.styleFrom(
-                              primary: Color(0xFFFFCC99),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 8),
-                          ElevatedButton.icon(
-                            onPressed: (){},
-                            icon: Icon(
-                              Icons.remove_circle,
-                              color: Colors.red[600],
-                            ),
-                            label: Text('Remover Lista'),
-                            style: ElevatedButton.styleFrom(
-                              primary: Color(0xFFFFCC99),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  void onPressedButtonAdd() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-          builder: (context) {
-            return const PacoteAdicionarLista();
-          }
-      ),
-    );
-  }
-
-}
+// import 'package:flutter/material.dart';
+// import 'package:untitled/pages/pacote_adicionarLista.dart';
+// import 'package:untitled/pages/pacote_listas.dart';
+// import '../domain/pacote_planejamento.dart';
+// import '../domain/pacote_tarefas.dart';
+// import '../widget/pacote_lista_card.dart';
+// import '../widget/pacote_planejamento_card.dart';
+//
+// class PacoteLista extends StatefulWidget {
+//   final PacotePlanejamento pacotePlanejamento;
+//
+//   const PacoteLista({
+//     Key? key,
+//     required this.pacotePlanejamento,
+//   }) : super(key: key);
+//
+//   @override
+//   _PacoteListaState createState() => _PacoteListaState();
+// }
+//
+// class _PacoteListaState extends State<PacoteLista> {
+//   PacotePlanejamento get pacote => widget.pacotePlanejamento;
+//
+//   PacoteTarefas pacote1 = PacoteTarefas(
+//     nomeLista: 'LISTA DE ESTUDOS',
+//     cor: 0xFFF4D9A9,
+//     tarefa: 'Terminar atividade de PRMO',
+//   );
+//   PacoteTarefas pacote2 = PacoteTarefas(
+//     nomeLista: 'LISTA DA SEMANA',
+//     cor: 0xFFFFC690,
+//     tarefa: 'Fazer atividade de PWEB',
+//   );
+//   PacoteTarefas pacote3 = PacoteTarefas(
+//     nomeLista: 'LISTA DO MÊS',
+//     cor: 0xFFFFB09D,
+//     tarefa: 'Prova bimestral e recuperação',
+//   );
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: const Color(0xFFFFE8E8),
+//       appBar: AppBar(
+//         centerTitle: true,
+//         title: const Text('LISTA DE TAREFAS'),
+//         backgroundColor: const Color(0xFFF25E7A),
+//         toolbarHeight: 64,
+//         actions: [
+//           IconButton(
+//             icon: const Icon(Icons.list_alt),
+//             onPressed: () {
+//               Navigator.push(
+//                 context,
+//                 MaterialPageRoute(
+//                   builder: (context) {
+//                     return const PacoteListas();
+//                   },
+//                 ),
+//               );
+//             },
+//           ),
+//           // add more IconButton
+//         ],
+//       ),
+//       body: SingleChildScrollView(
+//         child: Column(
+//           children: [
+//             Padding(
+//               padding: const EdgeInsets.all(16),
+//               child: Column(
+//                 crossAxisAlignment: CrossAxisAlignment.start,
+//                 children: [
+//                   Row(
+//                     mainAxisAlignment: MainAxisAlignment.spaceAround,
+//                     children: const [
+//                       Icon(Icons.person_outline),
+//                       SizedBox(width: 8),
+//                       Text(
+//                         'HOJE:',
+//                         style: TextStyle(
+//                           fontSize: 16,
+//                           fontWeight: FontWeight.bold,
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+//                   const SizedBox(height: 8),
+//                   Column(
+//                     crossAxisAlignment: CrossAxisAlignment.center,
+//                     children: [
+//                       CardPacoteLista(pacoteTarefas: pacote1),
+//                       const SizedBox(height: 8),
+//                       const Text(
+//                         'ESTA SEMANA:',
+//                         style: TextStyle(
+//                           fontSize: 16,
+//                           fontWeight: FontWeight.bold,
+//                         ),
+//                       ),
+//                       CardPacoteLista(pacoteTarefas: pacote2),
+//                       const SizedBox(height: 8),
+//                       const Text(
+//                         'ESTE MÊS:',
+//                         style: TextStyle(
+//                           fontSize: 16,
+//                           fontWeight: FontWeight.bold,
+//                         ),
+//                       ),
+//                       CardPacoteLista(pacoteTarefas: pacote3),
+//                       const SizedBox(height: 8),
+//                       Row(
+//                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                         children: [
+//                           const Icon(Icons.book_online_outlined),
+//                           const SizedBox(width: 8),
+//                           ElevatedButton.icon(
+//                             onPressed: onPressedButtonAdd,
+//                             icon: const Icon(
+//                               Icons.add_circle,
+//                               color: Color(0xFFF25E7A),
+//                             ),
+//                             label: Text('Adicionar Lista'),
+//                             style: ElevatedButton.styleFrom(
+//                               primary: Color(0xFFFFCC99),
+//                               shape: RoundedRectangleBorder(
+//                                 borderRadius: BorderRadius.circular(16),
+//                               ),
+//                             ),
+//                           ),
+//                           const SizedBox(width: 8),
+//                           ElevatedButton.icon(
+//                             onPressed: (){},
+//                             icon: Icon(
+//                               Icons.remove_circle,
+//                               color: Colors.red[600],
+//                             ),
+//                             label: Text('Remover Lista'),
+//                             style: ElevatedButton.styleFrom(
+//                               primary: Color(0xFFFFCC99),
+//                               shape: RoundedRectangleBorder(
+//                                 borderRadius: BorderRadius.circular(16),
+//                               ),
+//                             ),
+//                           ),
+//                         ],
+//                       ),
+//                     ],
+//                   ),
+//                 ],
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+//
+//   void onPressedButtonAdd() {
+//     Navigator.push(
+//       context,
+//       MaterialPageRoute(
+//           builder: (context) {
+//             return const PacoteAdicionarLista();
+//           }
+//       ),
+//     );
+//   }
+//
+// }
