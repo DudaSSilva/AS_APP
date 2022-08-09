@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled/pages/cadastro_page.dart';
 import 'package:untitled/pages/pacote_telaPrincipal.dart';
 import 'package:untitled/pages/redefinirSenha_page.dart';
+//import 'package:flutter_web_browser/flutter_web_browser.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -30,14 +31,12 @@ class _LoginPageState extends State<LoginPage> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     const SizedBox(height: 32),
-                    //colocar imagem ao lado do texto
                     Image.asset(
                       "images/logo.png",
                       width: 200,
                       height: 200,
                       fit: BoxFit.fitHeight,
                     ),
-                    //Colocar textinho aqui
                     const SizedBox(height: 32),
                     TextFormField(
                       controller: userController,
@@ -135,41 +134,7 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                     const SizedBox(height: 16),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'Siga-nos nas redes sociais',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 8,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFFDD2E44),
-                          ),
-                        ),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: ElevatedButton(
-                            style:
-                            ElevatedButton.styleFrom(
-                              primary: Color(0xFFFFCC99),
-                              padding: EdgeInsets.all(0),
-                            ),
-                            onPressed: (){},
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(vertical: 12.0),
-                              child: Text(
-                                'Instagram',
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w500,
-                                    color: Color(0xFFDD2E44)),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+
                   ],
                 ),
               ),
@@ -210,4 +175,19 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  // void openInstagram() async {
+  //   FlutterWebBrowser.openWebPage(
+  //       url: 'https://www.instagram.com/academicsyllabus/',
+  //       customTabsOptions: const CustomTabsOptions(
+  //         colorScheme: CustomTabsColorScheme.dark,
+  //         toolbarColor: Color(0xFFDD2E44),
+  //         secondaryToolbarColor: Color(0xFFFFE8E8),
+  //         navigationBarColor: Colors.transparent,
+  //         addDefaultShareMenuItem: true,
+  //         instantAppsEnabled: true,
+  //         //showTitle: false,
+  //         urlBarHidingEnabled: true,
+  //       )
+  //   );
+  // }
 }
