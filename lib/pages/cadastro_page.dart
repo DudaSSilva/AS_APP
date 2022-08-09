@@ -31,12 +31,11 @@ class _CadastroPageState extends State<CadastroPage> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     const SizedBox(height: 32),
-                    //colocar imagem ao lado do texto
                     Image.asset(
                       "images/logo.png",
                       width: 200,
                       height: 200,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fitHeight,
                     ),
                     const SizedBox(height: 32),
                     TextFormField(
