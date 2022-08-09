@@ -5,7 +5,7 @@ import '../domain/pacote_planejamento.dart';
 
 class CardPacotePlanejamento extends StatefulWidget {
   final PacotePlanejamento pacotePlanejamento;
-    final Widget tela;
+  final Widget tela;
 
   const CardPacotePlanejamento({
     Key? key,
