@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/pages/pacote_adicionarHabito.dart';
 import '../domain/pacote_planejamento.dart';
 //import '../domain/pacote_tarefas.dart';
 import '../widget/pacote_habitos_card.dart';
@@ -35,12 +36,44 @@ class _PacoteHabitosState extends State<PacoteHabitos> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: const [
-                    Icon(Icons.recycling_rounded),
-                    SizedBox(width: 8),
-                    Icon(Icons.add_circle),
+                  children: [
+                    ElevatedButton.icon(
+                      onPressed: onPressedButtonAdd,
+                      icon: const Icon(
+                        Icons.add_circle,
+                        color: Color(0xFFF25E7A),
+                      ),
+                      label: const Text('Adicionar'),
+                      style: ElevatedButton.styleFrom(
+                        primary: const Color(0xFFFFCC99),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    ElevatedButton.icon(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.remove_circle,
+                        color: Colors.red[600],
+                      ),
+                      label: const Text('Remover'),
+                      style: ElevatedButton.styleFrom(
+                        primary: const Color(0xFFFFCC99),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    const Text(
+                      'JUNHO:',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -50,6 +83,15 @@ class _PacoteHabitosState extends State<PacoteHabitos> {
           ),
         ],
       ),
+    );
+  }
+
+  void onPressedButtonAdd() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) {
+        return const PacoteAdicionarHabito();
+      }),
     );
   }
 }
