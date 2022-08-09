@@ -33,7 +33,7 @@ class BD {
   
   static Future<List<PacoteTarefas>> getPacoteTarefas() async {
     print("ANTES");
-    await Future.delayed(const Duration(seconds: 10));
+    await Future.delayed(const Duration(seconds: 4));
     print("DEPOIS");
     return lista;
   }
