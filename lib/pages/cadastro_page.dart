@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/cadastro_page.dart';
+import 'package:untitled/pages/login_page.dart';
 import 'package:untitled/pages/pacote_telaPrincipal.dart';
 import 'package:untitled/pages/redefinirSenha_page.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class CadastroPage extends StatefulWidget {
+  const CadastroPage({Key? key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _CadastroPageState createState() => _CadastroPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _CadastroPageState extends State<CadastroPage> {
   TextEditingController userController = TextEditingController();
+  TextEditingController userNameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
@@ -35,9 +36,23 @@ class _LoginPageState extends State<LoginPage> {
                       "images/logo.png",
                       width: 200,
                       height: 200,
-                      fit: BoxFit.fitHeight,
+                      fit: BoxFit.cover,
                     ),
-                    //Colocar textinho aqui
+                    const SizedBox(height: 32),
+                    TextFormField(
+                      controller: userNameController,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Campo nome obrigatório';
+                        }
+                      },
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Nome',
+                      ),
+                      cursorColor: Color(0xFFDD2E44),
+                    ),
                     const SizedBox(height: 32),
                     TextFormField(
                       controller: userController,
@@ -74,34 +89,12 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(height: 24),
                     ElevatedButton(
                       style:
-                          ElevatedButton.styleFrom(
-                              primary: Color(0xFFDD2E44),
-                              padding: EdgeInsets.all(0),
-                          ),
-                      child: const Text(
-                        'Esqueci minha senha',
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: Colors.white,
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => RedefinirSenhaPage()),
-                        );
-                      },
-                    ),
-                    const SizedBox(height: 16),
-                    ElevatedButton(
-                      style:
-                          ElevatedButton.styleFrom(primary: Color(0xFFFFCC99)),
-                      onPressed: onPressed,
+                      ElevatedButton.styleFrom(primary: Color(0xFFFFCC99)),
+                      onPressed: (){},
                       child: const Padding(
                         padding: EdgeInsets.symmetric(vertical: 12.0),
                         child: Text(
-                          'ENTRAR',
+                          'CRIAR CONTA GRÁTIS',
                           style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w500,
@@ -109,61 +102,27 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 16),
-                    Column(
-                      children: [
-                        const Text(
-                          'Não tem conta?',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 8, fontWeight: FontWeight.bold),
-                        ),
-                        const SizedBox(height: 8),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              primary: Color(0xFFFFCC99)),
-                          child: const Text(
-                            'CADASTRE-SE',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xFFDD2E44),
-                            ),
-                          ),
-                          onPressed: onPressedCadastro,
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 24),
                     Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         const Text(
-                          'Siga-nos nas redes sociais',
+                          'Já possui uma conta ASapp??',
                           textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 8,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFFDD2E44),
-                          ),
                         ),
                         const SizedBox(width: 8),
                         Expanded(
                           child: ElevatedButton(
-                            style:
-                            ElevatedButton.styleFrom(
-                              primary: Color(0xFFFFCC99),
-                              padding: EdgeInsets.all(0),
-                            ),
-                            onPressed: (){},
+                            style: ElevatedButton.styleFrom(
+                                primary: Color(0xFFDD2E44)),
+                            onPressed: onPressedLogin,
                             child: const Padding(
-                              padding: EdgeInsets.symmetric(vertical: 12.0),
+                              padding: EdgeInsets.symmetric(vertical: 8.0),
                               child: Text(
-                                'Instagram',
+                                'LOGIN',
                                 style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 21,
                                     fontWeight: FontWeight.w500,
-                                    color: Color(0xFFDD2E44)),
+                                    color: Colors.white),
                               ),
                             ),
                           ),
@@ -178,36 +137,16 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  void onPressed() {
-    if (_formKey.currentState!.validate()) {
-      String userLogin = "AcademicSyllabus2022";
-      String passwordLogin = "ASapp2022";
-
-      String user = userController.text;
-      String pwd = passwordController.text;
-
-      if (userLogin == user && passwordLogin == pwd) {
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) {
-          return const TelaPrincipalPage();
-        }));
-      } else {
-        print("Usuário ou senha incorretos. Tente novamente.");
-      }
-    } else {
-      print("Formulário inválido.");
-    }
-  }
-
-  void onPressedCadastro() {
+  void onPressedLogin() {
     Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) {
-          return const CadastroPage();
+          return const LoginPage();
         },
       ),
     );
   }
+
 
 }

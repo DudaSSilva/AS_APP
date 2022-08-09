@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/domain/pacote_conteudos.dart';
 import '../domain/pacote_tarefas.dart';
-import '../pages/pacote_adicionarLista.dart';
+import '../pages/pacote_adicionarConteudos.dart';
 //import '../pages/pacote_listaTarefas.dart';
 
 class CardPacoteConteudos extends StatefulWidget {
@@ -87,7 +87,7 @@ class _CardPacoteConteudosState extends State<CardPacoteConteudos> {
       context,
       MaterialPageRoute(
           builder: (context) {
-            return const PacoteAdicionarLista();
+            return const PacoteAdicionarConteudos();
           }
       ),
     );

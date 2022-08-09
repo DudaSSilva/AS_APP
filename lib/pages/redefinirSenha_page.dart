@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:untitled/pages/cadastro_page.dart';
 import 'package:untitled/pages/validacao_page.dart';
 //import 'package:untitled/pages/cadastro_page.dart';
 import 'package:untitled/pages/login_page.dart';
@@ -130,7 +131,7 @@ class _RedefinirSenhaPageState extends State<RedefinirSenhaPage> {
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               primary: Color(0xFFDD2E44)),
-                          onPressed: (){},
+                          onPressed: onPressedCadastro,
                           child: const Padding(
                             padding: EdgeInsets.symmetric(vertical: 8.0),
                             child: Text(
@@ -184,14 +185,14 @@ class _RedefinirSenhaPageState extends State<RedefinirSenhaPage> {
     );
   }
 
-  // void onPressedCadastro() {
-  //   Navigator.push(
-  //     context,
-  //     MaterialPageRoute(
-  //       builder: (context) {
-  //         return const CadastroPage();
-  //       },
-  //     ),
-  //   );
-  // }
+  void onPressedCadastro() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return const CadastroPage();
+        },
+      ),
+    );
+  }
 }
