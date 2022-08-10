@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/pages/pacote_adicionarConteudos.dart';
 import 'package:untitled/pages/pacote_adicionarLista.dart';
-import 'package:untitled/pages/pacote_listas.dart';
+import 'package:untitled/pages/pacote_anotacoes.dart';
 import 'package:untitled/pages/pacote_telaPrincipal.dart';
 import '../domain/pacote_planejamento.dart';
 import '../domain/pacote_tarefas.dart';
@@ -41,7 +42,7 @@ class _PacoteListaState extends State<PacoteLista> {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return const PacoteListas();
+                    return const PacoteAnotacoes();
                   },
                 ),
               );

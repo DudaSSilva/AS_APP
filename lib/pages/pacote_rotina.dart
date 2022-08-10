@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../widget/pacote_rotina_card.dart';
 
@@ -70,6 +69,7 @@ class _PacoteRotinaState extends State<PacoteRotina> {
                     children: [
                       const Text(
                         'Sexta - feira',
+                          textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 24,
@@ -85,12 +85,6 @@ class _PacoteRotinaState extends State<PacoteRotina> {
                   ),
                 ),
                 const SizedBox(width: 24),
-                const Placeholder(
-                  fallbackHeight: 150,
-                  fallbackWidth: 100,
-                  color: Colors.white,
-
-                )
               ],
             ),
           ),

@@ -61,9 +61,9 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
         ),
       ),
       appBar: AppBar(
-          centerTitle: true,
-          title: const Text('ACADEMIC SYLLABUS'),
-          backgroundColor: const Color(0xFFDD2E44),
+        centerTitle: true,
+        title: const Text('ACADEMIC SYLLABUS'),
+        backgroundColor: const Color(0xFFDD2E44),
       ),
       body: buildBody(),
     );
@@ -86,27 +86,27 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
           ),
           const SizedBox(height: 16),
           CardPacotePlanejamento(
-              pacotePlanejamento: pacote2,
+            pacotePlanejamento: pacote2,
             tela: PacoteLista(
-             pacotePlanejamento: PacotePlanejamento(
-               icon: const Icon(Icons.list),
-               titulo: 'LISTA DE TAREFAS',
-               cor: 0xFFF8E9CE,
-             )
+                pacotePlanejamento: PacotePlanejamento(
+                  icon: const Icon(Icons.list),
+                  titulo: 'LISTA DE TAREFAS',
+                  cor: 0xFFF8E9CE,
+                )
             ),
           ),
           const SizedBox(height: 16),
           CardPacotePlanejamento(
             pacotePlanejamento: pacote3,
             tela: PacoteDisciplinas(
-                pacotePlanejamento: PacotePlanejamento(
-                  icon: const Icon(Icons.book),
-                  titulo: 'DISCIPLINAS E CONTEÚDOS',
-                  cor: 0xFFFFCC99,
-                ),
-                pacoteMaterias: PacoteMaterias(
-                  disciplina: 'clique para saber mais...',
-                ),
+              pacotePlanejamento: PacotePlanejamento(
+                icon: const Icon(Icons.book),
+                titulo: 'DISCIPLINAS E CONTEÚDOS',
+                cor: 0xFFFFCC99,
+              ),
+              pacoteMaterias: PacoteMaterias(
+                disciplina: 'clique para saber mais...',
+              ),
             ),
           ),
           const SizedBox(height: 16),
@@ -130,7 +130,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
             child: Row(
               children: [
                 Image.asset(
-                    "images/logo.png",
+                  "images/logo.png",
                   width: 100,
                   height: 100,
                   fit: BoxFit.fitHeight,
@@ -138,7 +138,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
                 const SizedBox(width: 8),
                 const Expanded(
                   child: Text(
-                      'COM ORGANIZAÇÃO O SEU DIA FICA MAIS FÁCIL',
+                    'COM ORGANIZAÇÃO O SEU DIA FICA MAIS FÁCIL',
                     textAlign: TextAlign.justify,
                     style: TextStyle(
                       color: Color(0xFFF25E7A),
