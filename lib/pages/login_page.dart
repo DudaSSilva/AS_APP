@@ -3,6 +3,7 @@ import 'package:untitled/pages/cadastro_page.dart';
 import 'package:untitled/pages/pacote_telaPrincipal.dart';
 import 'package:untitled/pages/redefinirSenha_page.dart';
 //import 'package:flutter_web_browser/flutter_web_browser.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -72,11 +73,10 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     const SizedBox(height: 24),
                     ElevatedButton(
-                      style:
-                          ElevatedButton.styleFrom(
-                              primary: Color(0xFFDD2E44),
-                              padding: EdgeInsets.all(0),
-                          ),
+                      style: ElevatedButton.styleFrom(
+                        primary: Color(0xFFDD2E44),
+                        padding: EdgeInsets.all(0),
+                      ),
                       child: const Text(
                         'Esqueci minha senha',
                         style: TextStyle(
@@ -114,12 +114,15 @@ class _LoginPageState extends State<LoginPage> {
                         const Text(
                           'Não tem conta?',
                           textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 8, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              fontSize: 8, fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(height: 8),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              primary: Color(0xFFFFCC99)),
+                              primary: Colors.transparent,
+                              shadowColor: Colors.transparent,
+                          ),
                           child: const Text(
                             'CADASTRE-SE',
                             textAlign: TextAlign.center,
@@ -133,8 +136,57 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 16),
-
+                    const SizedBox(height: 50),
+                    Container(
+                      height: 60,
+                      width: 380,
+                      alignment: Alignment.centerLeft,
+                      decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            stops: [0.3, 1],
+                            colors: [
+                              Color(0xFFDD2E44),
+                              Color(0xFFF58524),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(80),
+                          )
+                      ),
+                      child: SizedBox.expand(
+                        child: TextButton(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Container(
+                                child: SizedBox(
+                                  child: Image.asset(
+                                    "images/insta1.png",
+                                    height: 28,
+                                    width: 28,
+                                  ),
+                                ),
+                              ),
+                              const Text(
+                                "SIGA-NOS NO INSTAGRAM",
+                                style: TextStyle(
+                                  //fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                ),
+                                textAlign: TextAlign.left,
+                              ),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.all(20),
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -189,5 +241,14 @@ class _LoginPageState extends State<LoginPage> {
   //         urlBarHidingEnabled: true,
   //       )
   //   );
+  // }
+
+  // void openInstagram() async {
+  //   const url = 'https://www.instagram.com/academicsyllabus/';
+  //   if (await canLaunch(url)) {
+  //     await launch(url, forceSafariVC: true, forceWebView: true);
+  //   } else {
+  //     throw 'Não foi possível acessar $url';
+  //   }
   // }
 }
