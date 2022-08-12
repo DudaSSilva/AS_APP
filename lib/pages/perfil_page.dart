@@ -85,35 +85,81 @@ class _PerfilPageState extends State<PerfilPage> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            TextFormField(
+              // controller: userNameController,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Campo habito obrigatório';
+                }
+              },
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Nome de usuário...',
+              ),
+              cursorColor: Color(0xFFDD2E44),
+            ),
+            const SizedBox(height: 16),
+            TextFormField(
+              // controller: userNameController,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Campo email obrigatório';
+                }
+              },
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Email...',
+              ),
+              cursorColor: Color(0xFFDD2E44),
+            ),
+            const SizedBox(height: 16),
+            TextFormField(
+              // controller: userNameController,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Campo senha obrigatório';
+                }
+              },
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Senha...',
+              ),
+              cursorColor: Color(0xFFDD2E44),
+            ),
+            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: (){},
               child: const Text(
                 'CONQUISTAS',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Color(0xFFF25E7A),
+                  color: Color(0xFFFFE8E8),
                   fontSize: 20,
                 ),
               ),
               style: ElevatedButton.styleFrom(
-                primary: const Color(0xFFFFE8E8),
+                primary: const Color(0xFFF25E7A),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
               ),
             ),
+
             ElevatedButton(
               onPressed: (){},
               child: const Text(
-                'CONQUISTAS',
+                'CONFIGURAÇÕES',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Color(0xFFF25E7A),
+                  color: Color(0xFFFFE8E8),
                   fontSize: 20,
                 ),
               ),
               style: ElevatedButton.styleFrom(
-                primary: const Color(0xFFFFE8E8),
+                primary: const Color(0xFFF25E7A),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),

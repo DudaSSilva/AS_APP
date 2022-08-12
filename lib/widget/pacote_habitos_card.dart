@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../domain/pacote_tarefas.dart';
-//import '../pages/pacote_listaTarefas.dart';
 
 class CardPacoteHabitos extends StatefulWidget {
   //final PacoteTarefas pacoteTarefas;
@@ -24,118 +22,124 @@ class _CardPacoteHabitosState extends State<CardPacoteHabitos> {
       //shape: RoundedRectangleBorder(
       //borderRadius: BorderRadius.circular(8),
       //),
-      child: Container(
-        height: 300,
-        child: GridView(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 6,
-            childAspectRatio: 1,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 0,
+
+      child: Column(
+        children: [
+          Container(
+            height: 250,
+            child: GridView(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 6,
+                childAspectRatio: 1,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 0,
+              ),
+              children: const [
+                Text(
+                  'Tarefas',
+                  style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  'S',
+                  style: const TextStyle(
+                    fontSize: 22,
+                  ),
+                ),
+                Text(
+                  'T',
+                  style: const TextStyle(
+                    fontSize: 22,
+                  ),
+                ),
+                Text(
+                  'Q',
+                  style: const TextStyle(
+                    fontSize: 22,
+                  ),
+                ),
+                Text(
+                  'Q',
+                  style: const TextStyle(
+                    fontSize: 22,
+                  ),
+                ),
+                Text(
+                  'S',
+                  style: TextStyle(
+                    fontSize: 22,
+                  ),
+                ),
+
+                Text(
+                  'Responder simulado',
+                  style: const TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+
+                Text(
+                  'Responder atividade',
+                  style: const TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+
+                Text(
+                  'Mapas mentais',
+                  style: const TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+
+                Text(
+                  'Resumos',
+                  style: const TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+
+                Text(
+                  'Vídeo aula',
+                  style: const TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+                const Icon(Icons.circle),
+
+              ],
+            ),
           ),
-          children: const [
-            Text(
-              'Tarefas',
-              style: const TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              'S',
-              style: const TextStyle(
-                fontSize: 22,
-              ),
-            ),
-            Text(
-              'T',
-              style: const TextStyle(
-                fontSize: 22,
-              ),
-            ),
-            Text(
-              'Q',
-              style: const TextStyle(
-                fontSize: 22,
-              ),
-            ),
-            Text(
-              'Q',
-              style: const TextStyle(
-                fontSize: 22,
-              ),
-            ),
-            Text(
-              'S',
-              style: TextStyle(
-                fontSize: 22,
-              ),
-            ),
-
-            Text(
-              'Responder simulado',
-              style: const TextStyle(
-                fontSize: 14,
-              ),
-            ),
-            const Icon(Icons.circle),
-            const Icon(Icons.circle),
-            const Icon(Icons.circle),
-            const Icon(Icons.circle),
-            const Icon(Icons.circle),
-
-            Text(
-              'Responder simulado',
-              style: const TextStyle(
-                fontSize: 14,
-              ),
-            ),
-            const Icon(Icons.circle),
-            const Icon(Icons.circle),
-            const Icon(Icons.circle),
-            const Icon(Icons.circle),
-            const Icon(Icons.circle),
-
-            Text(
-              'Tarefas',
-              style: const TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              'S',
-              style: const TextStyle(
-                fontSize: 22,
-              ),
-            ),
-            Text(
-              'T',
-              style: const TextStyle(
-                fontSize: 22,
-              ),
-            ),
-            Text(
-              'Q',
-              style: const TextStyle(
-                fontSize: 22,
-              ),
-            ),
-            Text(
-              'Q',
-              style: const TextStyle(
-                fontSize: 22,
-              ),
-            ),
-            Text(
-              'S',
-              style: TextStyle(
-                fontSize: 22,
-              ),
-            ),
-          ],
-        ),
+          const SizedBox(height: 24),
+        ],
       ),
+
     );
   }
 

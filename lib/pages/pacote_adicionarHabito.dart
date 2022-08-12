@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/domain/pacote_planejamento.dart';
 import 'package:untitled/pages/pacote_habitos.dart';
-import 'package:untitled/pages/pacote_telaPrincipal.dart';
 
 class PacoteAdicionarHabito extends StatefulWidget {
-  //final PacoteTarefas pacotePlanejamento;
 
   const PacoteAdicionarHabito({
     Key? key,
-    //required this.pacotePlanejamento,
   }) : super(key: key);
 
   @override
@@ -15,6 +13,11 @@ class PacoteAdicionarHabito extends StatefulWidget {
 }
 
 class _PacoteAdicionarListaState extends State<PacoteAdicionarHabito> {
+  PacotePlanejamento pacote4 = PacotePlanejamento(
+    icon: const Icon(Icons.lock_clock),
+    titulo: 'HABIT TRACKER',
+    cor: 0xFFF8E9CE,
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,7 +82,13 @@ class _PacoteAdicionarListaState extends State<PacoteAdicionarHabito> {
       context,
       MaterialPageRoute(
         builder: (context) {
-          return const TelaPrincipalPage();
+          return PacoteHabitos(
+            pacotePlanejamento: PacotePlanejamento(
+              icon: const Icon(Icons.lock_clock),
+              titulo: 'HABIT TRACKER',
+              cor: 0xFFF8E9CE,
+            ),
+          );
         },
       ),
     );
