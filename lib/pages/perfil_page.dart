@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/pacote_telaPrincipal.dart';
+import '../pages/pacote_telaPrincipal.dart';
+import '../pages/settings_page.dart';
+import '../pages/pacote_achiviements.dart';
 
 class PerfilPage extends StatefulWidget {
   const PerfilPage({Key? key}) : super(key: key);
@@ -82,6 +84,7 @@ class _PerfilPageState extends State<PerfilPage> {
             ],
           ),
         ),
+        const SizedBox(height: 32),
         Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -131,7 +134,7 @@ class _PerfilPageState extends State<PerfilPage> {
             ),
             const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: (){},
+              onPressed: onPressedAchiviements,
               child: const Text(
                 'CONQUISTAS',
                 textAlign: TextAlign.center,
@@ -149,7 +152,7 @@ class _PerfilPageState extends State<PerfilPage> {
             ),
 
             ElevatedButton(
-              onPressed: (){},
+              onPressed: onPressedSettings,
               child: const Text(
                 'CONFIGURAÇÕES',
                 textAlign: TextAlign.center,
@@ -168,6 +171,28 @@ class _PerfilPageState extends State<PerfilPage> {
           ],
         ),
       ],
+    );
+  }
+
+  void onPressedSettings() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) {
+            return const SettingsPage();
+          }
+      ),
+    );
+  }
+
+  void onPressedAchiviements() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) {
+            return const AchiviementsPage();
+          }
+      ),
     );
   }
 }
