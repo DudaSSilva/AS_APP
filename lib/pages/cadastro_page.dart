@@ -1,7 +1,6 @@
+import 'package:asapp/pages/pacote_telaPrincipal.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/login_page.dart';
-import 'package:untitled/pages/pacote_telaPrincipal.dart';
-import 'package:untitled/pages/redefinirSenha_page.dart';
+import '../pages/login_page.dart';
 
 class CadastroPage extends StatefulWidget {
   const CadastroPage({Key? key}) : super(key: key);
@@ -89,7 +88,7 @@ class _CadastroPageState extends State<CadastroPage> {
                     ElevatedButton(
                       style:
                       ElevatedButton.styleFrom(primary: Color(0xFFFFCC99)),
-                      onPressed: (){},
+                      onPressed: entrar,
                       child: const Padding(
                         padding: EdgeInsets.symmetric(vertical: 12.0),
                         child: Text(
@@ -147,5 +146,15 @@ class _CadastroPageState extends State<CadastroPage> {
     );
   }
 
+  void entrar() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return const TelaPrincipalPage();
+        },
+      ),
+    );
+  }
 
 }
