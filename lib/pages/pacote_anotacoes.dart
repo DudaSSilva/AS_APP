@@ -2,7 +2,7 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/pacote_telaPrincipal.dart';
+import '../pages/pacote_telaPrincipal.dart';
 
 class PacoteAnotacoes extends StatefulWidget {
   const PacoteAnotacoes({Key? key}) : super(key: key);
