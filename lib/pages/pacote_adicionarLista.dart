@@ -1,18 +1,21 @@
+import 'package:asapp/pages/pacote_telaPrincipal.dart';
 import 'package:flutter/material.dart';
+import '../widget/checkBox.dart';
+import '../domain/pacote_checkbox.dart';
+
+import '../models/checkboxModel.dart';
 
 class PacoteAdicionarLista extends StatefulWidget {
-  //final PacoteTarefas pacotePlanejamento;
 
-  const PacoteAdicionarLista({
-    Key? key,
-    //required this.pacotePlanejamento,
-  }) : super(key: key);
+  const PacoteAdicionarLista({Key? key}) : super(key: key);
 
   @override
   _PacoteAdicionarListaState createState() => _PacoteAdicionarListaState();
 }
 
 class _PacoteAdicionarListaState extends State<PacoteAdicionarLista> {
+  TextEditingController nameListController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,15 +31,30 @@ class _PacoteAdicionarListaState extends State<PacoteAdicionarLista> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'NOME DA LISTA DE TAREFAS:',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              const SizedBox(height: 32),
+              TextFormField(
+                controller: nameListController,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Campo e-mail obrigatório';
+                  }
+                },
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: '',
+                ),
+                cursorColor: Color(0xFFDD2E44),
+              ),
               const SizedBox(height: 16),
-              Text(
+              const Text(
                 'PRAZO DE REALIZAÇÃO:',
                 style: TextStyle(
                   fontSize: 16,
@@ -44,30 +62,25 @@ class _PacoteAdicionarListaState extends State<PacoteAdicionarLista> {
                 ),
               ),
               const SizedBox(height: 16),
-              Text(
+              const Text(
                 'Deseja repetir esta tarefa?',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
+              const Text(
                 '*Selecione abaixo os dias nos quais pretende fazer esta tarefa',
                 style: TextStyle(
                   fontSize: 12,
                   color: Colors.grey,
                 ),
               ),
-              Text(
-                'Deseja repetir esta tarefa?',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              //buildCheck(),
+              const SizedBox(height: 16),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   Text(
                     'COR DA LISTA:',
                     style: TextStyle(
@@ -76,10 +89,30 @@ class _PacoteAdicionarListaState extends State<PacoteAdicionarLista> {
                     ),
                   )
                 ],
-              )
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  buildCheck() {
+    return ListView.builder(
+      itemCount: itens.length,
+      itemBuilder: (_, int index){
+        return CheckboxWidget(item: itens[index]);
+      }
+    );
+  }
+
+  void goAnotations() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) {
+            return const TelaPrincipalPage();
+          }
       ),
     );
   }
