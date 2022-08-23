@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/cadastro_page.dart';
-import 'package:untitled/pages/pacote_telaPrincipal.dart';
-import 'package:untitled/pages/redefinirSenha_page.dart';
-//import 'package:flutter_web_browser/flutter_web_browser.dart';
-// import 'package:url_launcher/url_launcher.dart';
+import '../pages/cadastro_page.dart';
+import '../pages/pacote_telaPrincipal.dart';
+import '../pages/redefinirSenha_page.dart';
+//import 'package:url_launcher/url_launcher.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -227,28 +226,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  // void openInstagram() async {
-  //   FlutterWebBrowser.openWebPage(
-  //       url: 'https://www.instagram.com/academicsyllabus/',
-  //       customTabsOptions: const CustomTabsOptions(
-  //         colorScheme: CustomTabsColorScheme.dark,
-  //         toolbarColor: Color(0xFFDD2E44),
-  //         secondaryToolbarColor: Color(0xFFFFE8E8),
-  //         navigationBarColor: Colors.transparent,
-  //         addDefaultShareMenuItem: true,
-  //         instantAppsEnabled: true,
-  //         //showTitle: false,
-  //         urlBarHidingEnabled: true,
-  //       )
-  //   );
-  // }
-
-  // void openInstagram() async {
-  //   const url = 'https://www.instagram.com/academicsyllabus/';
-  //   if (await canLaunch(url)) {
-  //     await launch(url, forceSafariVC: true, forceWebView: true);
-  //   } else {
-  //     throw 'Não foi possível acessar $url';
-  //   }
+  // void openInstagram() {
+  //   launch('https://www.instagram.com/academicsyllabus/');
   // }
 }
