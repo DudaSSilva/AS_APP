@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/pacote_adicionarConteudos.dart';
-import 'package:untitled/pages/pacote_adicionarLista.dart';
-import 'package:untitled/pages/pacote_anotacoes.dart';
-import 'package:untitled/pages/pacote_telaPrincipal.dart';
+import '../pages/pacote_adicionarConteudos.dart';
+import '../pages/pacote_adicionarLista.dart';
+import '../pages/pacote_anotacoes.dart';
+import '../pages/pacote_telaPrincipal.dart';
 import '../domain/pacote_planejamento.dart';
 import '../domain/pacote_tarefas.dart';
 import '../widget/pacote_lista_card.dart';
