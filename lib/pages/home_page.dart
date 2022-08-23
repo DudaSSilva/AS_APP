@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/login_page.dart';
-import 'package:untitled/pages/pacote_telaPrincipal.dart';
+import '../pages/login_page.dart';
+import '../pages/pacote_telaPrincipal.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
