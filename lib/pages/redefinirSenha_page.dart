@@ -1,10 +1,7 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/cadastro_page.dart';
-import 'package:untitled/pages/validacao_page.dart';
-//import 'package:untitled/pages/cadastro_page.dart';
-import 'package:untitled/pages/login_page.dart';
+import '../pages/cadastro_page.dart';
+import '../pages/validacao_page.dart';
+import '../pages/login_page.dart';
 
 class RedefinirSenhaPage extends StatefulWidget {
   const RedefinirSenhaPage({Key? key}) : super(key: key);
