@@ -1,13 +1,14 @@
+import 'package:asapp/pages/pacote_dicas.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled/domain/pacote_materias.dart';
-import 'package:untitled/pages/aboutus_page.dart';
+import '../domain/pacote_materias.dart';
+import '../pages/aboutus_page.dart';
 import '../pages/pacote_achiviements.dart';
-import 'package:untitled/pages/pacote_disciplinas.dart';
-import 'package:untitled/pages/pacote_habitos.dart';
-import 'package:untitled/pages/pacote_listaTarefas.dart';
-import 'package:untitled/pages/pacote_rotina.dart';
-import 'package:untitled/pages/perfil_page.dart';
-import 'package:untitled/pages/settings_page.dart';
+import '../pages/pacote_disciplinas.dart';
+import '../pages/pacote_habitos.dart';
+import '../pages/pacote_listaTarefas.dart';
+import '../pages/pacote_rotina.dart';
+import '../pages/perfil_page.dart';
+import '../pages/settings_page.dart';
 import '../widget/pacote_planejamento_card.dart';
 import '../domain/pacote_planejamento.dart';
 
@@ -38,6 +39,11 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
     icon: const Icon(Icons.lock_clock),
     titulo: 'HABIT TRACKER',
     cor: 0xFFF8E9CE,
+  );
+  PacotePlanejamento pacote5 = PacotePlanejamento(
+    icon: const Icon(Icons.tips_and_updates),
+    titulo: 'DICAS',
+    cor: 0xFFFFCEEF,
   );
 
   @override
@@ -117,6 +123,17 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
                 icon: const Icon(Icons.lock_clock),
                 titulo: 'HABIT TRACKER',
                 cor: 0xFFF8E9CE,
+              ),
+            ),
+          ),
+          const SizedBox(height: 16),
+          CardPacotePlanejamento(
+            pacotePlanejamento: pacote5,
+            tela: PacoteDicas(
+              pacotePlanejamento: PacotePlanejamento(
+                icon: const Icon(Icons.tips_and_updates),
+                titulo: 'DICAS',
+                cor: 0xFFFFCEEF,
               ),
             ),
           ),
