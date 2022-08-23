@@ -53,6 +53,57 @@ class _AboutUsPageState extends State<AboutUsPage> {
                         color: Colors.white,
                       ),
                   ),
+                  const SizedBox(height: 16),
+                  Container(
+                    height: 60,
+                    width: 380,
+                    alignment: Alignment.centerLeft,
+                    decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          stops: [0.3, 1],
+                          colors: [
+                            Color(0xFFF25E7A),
+                            Color(0xFFF58524),
+                          ],
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(80),
+                        )
+                    ),
+                    child: SizedBox.expand(
+                      child: TextButton(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              child: SizedBox(
+                                child: Image.asset(
+                                  "images/insta2.png",
+                                  height: 30,
+                                  width: 30,
+                                ),
+                              ),
+                            ),
+                            const Text(
+                              "SIGA-NOS NO INSTAGRAM",
+                              style: TextStyle(
+                                //fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 18,
+                              ),
+                              textAlign: TextAlign.left,
+                            ),
+                          ],
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.all(20),
+                        ),
+                        onPressed: () {},
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
