@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:untitled/pages/home_page.dart';
+import '../pages/home_page.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
@@ -26,8 +26,8 @@ class _SplashState extends State<Splash> {
       color: Color(0xFFDD2E44),
       child: Center(
         child: Container(
-          width: 200,
-          height: 200,
+          width: 300,
+          height: 300,
           child: Image.asset("images/logo.png"),
         ),
       ),
