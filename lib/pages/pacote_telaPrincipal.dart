@@ -1,8 +1,8 @@
-import 'package:asapp/pages/pacote_dicas.dart';
 import 'package:flutter/material.dart';
+import '../pages/pacote_conquista.dart';
+import '../pages/pacote_dicas.dart';
 import '../domain/pacote_materias.dart';
 import '../pages/aboutus_page.dart';
-import '../pages/pacote_achiviements.dart';
 import '../pages/pacote_disciplinas.dart';
 import '../pages/pacote_habitos.dart';
 import '../pages/pacote_listaTarefas.dart';
@@ -355,7 +355,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
       context,
       MaterialPageRoute(
           builder: (context) {
-            return const AchiviementsPage();
+            return const PacoteConquista();
           }
       ),
     );
