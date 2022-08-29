@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/pages/pacote_conquista.dart';
 import '../pages/pacote_telaPrincipal.dart';
 import '../pages/settings_page.dart';
 import '../pages/pacote_achiviements.dart';
@@ -190,7 +191,7 @@ class _PerfilPageState extends State<PerfilPage> {
       context,
       MaterialPageRoute(
           builder: (context) {
-            return const AchiviementsPage();
+            return const PacoteConquista();
           }
       ),
     );
