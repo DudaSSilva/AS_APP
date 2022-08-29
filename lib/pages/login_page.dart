@@ -135,7 +135,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 50),
+                    const SizedBox(height: 24),
                     Container(
                       height: 60,
                       width: 380,
@@ -163,13 +163,55 @@ class _LoginPageState extends State<LoginPage> {
                                 child: SizedBox(
                                   child: Image.asset(
                                     "images/insta1.png",
-                                    height: 28,
-                                    width: 28,
+                                    height: 50,
+                                    width: 50,
                                   ),
                                 ),
                               ),
                               const Text(
                                 "SIGA-NOS NO INSTAGRAM",
+                                style: TextStyle(
+                                  //fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                ),
+                                textAlign: TextAlign.left,
+                              ),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.all(20),
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    Container(
+                      height: 60,
+                      width: 380,
+                      alignment: Alignment.centerLeft,
+                      decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            stops: [0.3, 1],
+                            colors: [
+                              Color(0xFFDD2E44),
+                              Color(0xFFF58524),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(80),
+                          )
+                      ),
+                      child: SizedBox.expand(
+                        child: TextButton(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Text(
+                                "CONFIRA NOSSO SITE",
                                 style: TextStyle(
                                   //fontWeight: FontWeight.bold,
                                   color: Colors.white,
@@ -227,6 +269,10 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   // void openInstagram() {
+  //   launch('https://www.instagram.com/academicsyllabus/');
+  // }
+
+  // void openSite() {
   //   launch('https://www.instagram.com/academicsyllabus/');
   // }
 }
