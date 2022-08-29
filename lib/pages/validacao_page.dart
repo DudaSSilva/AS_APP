@@ -178,7 +178,7 @@ class _ValidacaoPageState extends State<ValidacaoPage> {
       print("Formulário inválido.");
     }
   }
-  
+
   void onPressedLogin() {
     Navigator.push(
       context,
