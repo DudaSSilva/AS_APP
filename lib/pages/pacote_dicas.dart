@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/domain/pacote_dica.dart';
+import 'package:untitled/pages/dica1_page.dart';
+import 'package:untitled/widget/pacote_dica_card.dart';
 import '../pages/pacote_telaPrincipal.dart';
 import '../domain/pacote_planejamento.dart';
 
@@ -16,7 +19,11 @@ class PacoteDicas extends StatefulWidget {
 
 class _PacoteDicasState extends State<PacoteDicas> {
   PacotePlanejamento get pacote => widget.pacotePlanejamento;
-  // Future<List<PacoteTarefas>> lista = BD.getPacoteTarefas();
+
+  PacoteDica pacote1 = PacoteDica(
+    title: 'PLANEJAMENTO',
+    color: 0xFFFFCEEF,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -51,9 +58,13 @@ class _PacoteDicasState extends State<PacoteDicas> {
               padding: const EdgeInsets.all(16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  SizedBox(height: 8),
-                  Text('Esta página ainda será feita'),
+                children: [
+                  const SizedBox(height: 8),
+                  const SizedBox(height: 16),
+                  CardPacoteDica(
+                      pacoteDica: pacote1,
+                      tela: const Dica1Page(),
+                  ),
                 ],
               ),
             ),
@@ -62,28 +73,4 @@ class _PacoteDicasState extends State<PacoteDicas> {
       ),
     );
   }
-
-  // BuildListView() {
-  //   return FutureBuilder<List<PacoteDicas>>(
-  //       future: lista,
-  //       builder: (context, snapshot) {
-  //         if (snapshot.hasData) {
-  //           // ?? -> Verificar ser o conteudo de snapshot.data é nulo
-  //           List<PacoteTarefas> lista = snapshot.data ?? [];
-  //
-  //           return ListView.builder(
-  //               shrinkWrap: true,
-  //               physics: const NeverScrollableScrollPhysics(),
-  //               itemCount: lista.length,
-  //               itemBuilder: (BuildContext context, int index) {
-  //                 return CardPacoteLista(pacoteTarefas: lista[index]);
-  //               }
-  //           );
-  //         }
-  //
-  //         return Center(child: const CircularProgressIndicator());
-  //       }
-  //
-  //   );
-  // }
 }
