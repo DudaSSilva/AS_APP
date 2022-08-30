@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../pages/cadastro_page.dart';
 import '../pages/pacote_telaPrincipal.dart';
 import '../pages/redefinirSenha_page.dart';
-//import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -182,7 +182,7 @@ class _LoginPageState extends State<LoginPage> {
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.all(20),
                           ),
-                          onPressed: () {},
+                          onPressed: openInstagram,
                         ),
                       ),
                     ),
@@ -224,7 +224,7 @@ class _LoginPageState extends State<LoginPage> {
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.all(20),
                           ),
-                          onPressed: () {},
+                          onPressed: openSite,
                         ),
                       ),
                     ),
@@ -272,7 +272,29 @@ class _LoginPageState extends State<LoginPage> {
   //   launch('https://www.instagram.com/academicsyllabus/');
   // }
 
+  Future<void> openInstagram() async {
+    final Uri _url = Uri.parse('https://www.instagram.com/academicsyllabus/');
+
+    if (!await launchUrl(
+      _url,
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw 'Could not launch $_url';
+    }
+  }
+
   // void openSite() {
   //   launch('https://www.instagram.com/academicsyllabus/');
   // }
+
+  Future<void> openSite() async {
+    final Uri _url = Uri.parse('https://academicsillabussite--eduardasoares1.repl.co/');
+
+    if (!await launchUrl(
+      _url,
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw 'Could not launch $_url';
+    }
+  }
 }
