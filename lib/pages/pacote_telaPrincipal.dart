@@ -11,6 +11,7 @@ import '../pages/perfil_page.dart';
 import '../pages/settings_page.dart';
 import '../widget/pacote_planejamento_card.dart';
 import '../domain/pacote_planejamento.dart';
+import '../screens/calendar_screen.dart';
 
 class TelaPrincipalPage extends StatefulWidget {
   const TelaPrincipalPage({Key? key}) : super(key: key);
@@ -74,11 +75,13 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
       body: buildBody(),
     );
   }
+
   buildBody() {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: ListView(
         children: [
+          CalendarScreen(),
           const SizedBox(height: 16),
           CardPacotePlanejamento(
             pacotePlanejamento: pacote1,
@@ -95,11 +98,10 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
             pacotePlanejamento: pacote2,
             tela: PacoteLista(
                 pacotePlanejamento: PacotePlanejamento(
-                  icon: const Icon(Icons.list),
-                  titulo: 'LISTA DE TAREFAS',
-                  cor: 0xFFF8E9CE,
-                )
-            ),
+              icon: const Icon(Icons.list),
+              titulo: 'LISTA DE TAREFAS',
+              cor: 0xFFF8E9CE,
+            )),
           ),
           const SizedBox(height: 16),
           CardPacotePlanejamento(
@@ -188,7 +190,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
     );
   }
 
-  BuildPerfil(){
+  BuildPerfil() {
     return Column(
       //crossAxisAlignment: CrossAxisAlignment.spaceBetween,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -223,7 +225,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
     );
   }
 
-  BuildSettings(){
+  BuildSettings() {
     return Column(
       //crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -258,7 +260,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
     );
   }
 
-  BuildAchiviements(){
+  BuildAchiviements() {
     return Column(
       //crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -293,7 +295,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
     );
   }
 
-  BuildAboutUs(){
+  BuildAboutUs() {
     return Column(
       //crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -331,44 +333,36 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
   void onPressedPerfil() {
     Navigator.push(
       context,
-      MaterialPageRoute(
-          builder: (context) {
-            return const PerfilPage();
-          }
-      ),
+      MaterialPageRoute(builder: (context) {
+        return const PerfilPage();
+      }),
     );
   }
 
   void onPressedSettings() {
     Navigator.push(
       context,
-      MaterialPageRoute(
-          builder: (context) {
-            return const SettingsPage();
-          }
-      ),
+      MaterialPageRoute(builder: (context) {
+        return const SettingsPage();
+      }),
     );
   }
 
   void onPressedAchiviements() {
     Navigator.push(
       context,
-      MaterialPageRoute(
-          builder: (context) {
-            return const PacoteConquista();
-          }
-      ),
+      MaterialPageRoute(builder: (context) {
+        return const PacoteConquista();
+      }),
     );
   }
 
   void onPressedAboutUs() {
     Navigator.push(
       context,
-      MaterialPageRoute(
-          builder: (context) {
-            return const AboutUsPage();
-          }
-      ),
+      MaterialPageRoute(builder: (context) {
+        return const AboutUsPage();
+      }),
     );
   }
 }
