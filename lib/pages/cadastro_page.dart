@@ -1,4 +1,4 @@
-import 'package:asapp/pages/pacote_telaPrincipal.dart';
+import '../pages/pacote_telaPrincipal.dart';
 import 'package:flutter/material.dart';
 import '../pages/login_page.dart';
 
