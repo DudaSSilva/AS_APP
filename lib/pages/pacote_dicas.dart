@@ -22,8 +22,15 @@ class _PacoteDicasState extends State<PacoteDicas> {
 
   PacoteDica pacote1 = PacoteDica(
     title: 'PLANEJAMENTO',
+    color: 0xFFFFC690,
+  );
+  
+  /*
+  PacoteDica pacote2 = PacoteDica(
+    title: 'CRONOGRAMA',
     color: 0xFFFFCEEF,
   );
+  */
 
   @override
   Widget build(BuildContext context) {
@@ -59,12 +66,18 @@ class _PacoteDicasState extends State<PacoteDicas> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 8),
                   const SizedBox(height: 16),
                   CardPacoteDica(
                       pacoteDica: pacote1,
                       tela: const Dica1Page(),
                   ),
+                  /*
+                  const SizedBox(height: 16),
+                  CardPacoteDica(
+                      pacoteDica: pacote2,
+                      tela: const Dica2Page(),
+                  ),
+                  */
                 ],
               ),
             ),
