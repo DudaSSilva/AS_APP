@@ -1,103 +1,54 @@
+import 'package:fluentui_icons/fluentui_icons.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../widget/pacote_rotina_card.dart';
-
-import '../domain/pacote_planejamento.dart';
+import 'package:untitled/domain/pacote_planejamento.dart';
+import 'package:untitled/pages/home_rotina.dart';
 
 class PacoteRotina extends StatefulWidget {
-  final PacotePlanejamento pacotePlanejamento;
-
-  const PacoteRotina({
-    Key? key,
-    required this.pacotePlanejamento,
-  }) : super(key: key);
+  const PacoteRotina({Key? key}) : super(key: key);
 
   @override
-  _PacoteRotinaState createState() => _PacoteRotinaState();
+  State<PacoteRotina> createState() => _PacoteRotinaState();
 }
 
 class _PacoteRotinaState extends State<PacoteRotina> {
-  PacotePlanejamento get pacote => widget.pacotePlanejamento;
+  int _selectedIndex=3;
+  static final List<Widget>_widgetOptions = <Widget>[
+    HomeRotina(),
+    const Text("livros"),
+    const Text("linha do tempo"),
+    const Text("Conquistas"),
+  ];
 
-  PacotePlanejamento pacote1 = PacotePlanejamento(
-    icon: const Icon(Icons.calendar_month),
-    titulo: 'Metas diárias',
-    cor: 0xFFFFCEEF,
-  );
-  PacotePlanejamento pacote2 = PacotePlanejamento(
-    icon: const Icon(Icons.list),
-    titulo: 'IFAL',
-    cor: 0xFFF8E9CE,
-  );
-  PacotePlanejamento pacote3 = PacotePlanejamento(
-    icon: const Icon(Icons.book),
-    titulo: 'ENEM',
-    cor: 0xFFFFCC99,
-  );
-  PacotePlanejamento pacote4 = PacotePlanejamento(
-    icon: const Icon(Icons.lock_clock),
-    titulo: 'Importante',
-    cor: 0xFFF8E9CE,
-  );
-
+  void _onItemTapped(int index){
+    _selectedIndex=index;
+    //print('Tapped index is ${_selectedIndex}');
+    setState(() {
+      _selectedIndex=index;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFE8E8),
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('PLANEJAMENTO SEMANAL'),
-        backgroundColor: const Color(0xFFC2334D),
+      body: Center(
+        child: _widgetOptions[_selectedIndex],
       ),
-      body: buildBody(),
-    );
-  }
-  buildBody() {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: ListView(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-                color: Colors.pink.shade200, borderRadius: BorderRadius.circular(16)),
-            padding: const EdgeInsets.all(16),
-            child: Row(
-              children: [
-                //ONDE VAI FICAR O CALENDÁRIO:
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      const Text(
-                        'Sexta - feira',
-                          textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(height: 24),
-                      const Text(
-                        '07.06.2022',
-                        style: TextStyle(color: Colors.white, fontSize: 15),
-                      ),
-                      const SizedBox(height: 8),
-                    ],
-                  ),
-                ),
-                const SizedBox(width: 24),
-              ],
-            ),
-          ),
-          const SizedBox(height: 16),
-          CardPacoteRotina(pacotePlanejamento: pacote1),
-          const SizedBox(height: 16),
-          CardPacoteRotina(pacotePlanejamento: pacote2),
-          const SizedBox(height: 16),
-          CardPacoteRotina(pacotePlanejamento: pacote3),
-          const SizedBox(height: 16),
-          CardPacoteRotina(pacotePlanejamento: pacote4),
-        ],
-      ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+          elevation: 10,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: const Color(0xFF526480),
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: "Home"),
+            BottomNavigationBarItem(icon: Icon(Icons.book_outlined), label: "Livros"),
+            BottomNavigationBarItem(icon: Icon(Icons.timeline_sharp), label: "Linha do tempo"),
+            BottomNavigationBarItem(icon: Icon(Icons.redeem_rounded), label: "Conquistas"),
+          ],
+        ) ,
     );
   }
 }
