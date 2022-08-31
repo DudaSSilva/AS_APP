@@ -85,13 +85,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
           const SizedBox(height: 16),
           CardPacotePlanejamento(
             pacotePlanejamento: pacote1,
-            tela: PacoteRotina(
-              pacotePlanejamento: PacotePlanejamento(
-                icon: const Icon(Icons.calendar_month),
-                titulo: 'PLANEJAMENTO SEMANAL',
-                cor: 0xFFFFCEEF,
-              ),
-            ),
+            tela: const PacoteRotina(),
           ),
           const SizedBox(height: 16),
           CardPacotePlanejamento(
