@@ -24,6 +24,7 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
   bool value3 = false;
   bool value4 = false;
   bool value5 = false;
+  //bool value = false;
 
   @override
   Widget build(BuildContext context) {
@@ -135,6 +136,7 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
                         ),
                         onChanged: (value) => setState(() => this.value5 = value!),
                       ),
+                      //buildCheckbox(value),
                     ],
                   ),
                 ),
@@ -157,148 +159,21 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
   }
 }
 
-// buildCard({
-//   required String tarefa1,
-//   required String tarefa2,
-//   required String tarefa3,
-//   required String tarefa4,
-//   required String tarefa5,
-// }) {
-//   return Card(
-//     shape: RoundedRectangleBorder(
-//       borderRadius: BorderRadius.circular(16),
-//     ),
-//     child: Column(
-//       crossAxisAlignment: CrossAxisAlignment.start,
-//       children: [
-//         Row(
-//           mainAxisAlignment: MainAxisAlignment.spaceAround,
-//           children: [
-//             const Icon(Icons.circle),
-//             const ClipRRect(
-//               borderRadius: BorderRadius.vertical(
-//               top: Radius.circular(16),
-//             ),
-//           ),
-//           //colocar checkbox aqui
-//           Padding(
-//             padding: const EdgeInsets.all(8.0),
-//             child: Row(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Text(
-//                   tarefa1,
-//                  style: const TextStyle(fontWeight: FontWeight.bold),
-//                ),
-//               ],
-//             ),
-//            ),
-//             const Icon(Icons.remove_outlined),
-//           ],
-//         ),
-//         const SizedBox(height: 8),
-//         Row(
-//           children: [
-//             const Icon(Icons.circle),
-//             const ClipRRect(
-//               borderRadius: BorderRadius.vertical(
-//               top: Radius.circular(16),
-//             ),
-//           ),
-//           //colocar checkbox aqui
-//           Padding(
-//             padding: const EdgeInsets.all(8.0),
-//             child: Row(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Text(
-//                   tarefa2,
-//                  style: const TextStyle(fontWeight: FontWeight.bold),
-//                ),
-//               ],
-//             ),
-//            ),
-//             const Icon(Icons.remove_outlined),
-//           ],
-//         ),
-//         const SizedBox(height: 8),
-//         Row(
-//           children: [
-//             const Icon(Icons.circle),
-//             const ClipRRect(
-//               borderRadius: BorderRadius.vertical(
-//               top: Radius.circular(16),
-//             ),
-//           ),
-//           //colocar checkbox aqui
-//           Padding(
-//             padding: const EdgeInsets.all(8.0),
-//             child: Row(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Text(
-//                   tarefa3,
-//                  style: const TextStyle(fontWeight: FontWeight.bold),
-//                ),
-//               ],
-//             ),
-//            ),
-//             const Icon(Icons.remove_outlined),
-//           ],
-//         ),
-//         const SizedBox(height: 8),
-//         Row(
-//           children: [
-//             const Icon(Icons.circle),
-//             const ClipRRect(
-//               borderRadius: BorderRadius.vertical(
-//               top: Radius.circular(16),
-//             ),
-//           ),
-//           //colocar checkbox aqui
-//           Padding(
-//             padding: const EdgeInsets.all(8.0),
-//             child: Row(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Text(
-//                   tarefa4,
-//                  style: const TextStyle(fontWeight: FontWeight.bold),
-//                ),
-//               ],
-//             ),
-//            ),
-//             const Icon(Icons.remove_outlined),
-//           ],
-//         ),
-//         const SizedBox(height: 8),
-//         Row(
-//           children: [
-//             const Icon(Icons.circle),
-//             const ClipRRect(
-//               borderRadius: BorderRadius.vertical(
-//               top: Radius.circular(16),
-//             ),
-//           ),
-//           //colocar checkbox aqui
-//           Padding(
-//             padding: const EdgeInsets.all(8.0),
-//             child: Row(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Text(
-//                   tarefa5,
-//                  style: const TextStyle(fontWeight: FontWeight.bold),
-//                ),
-//               ],
-//             ),
-//            ),
-//             const Icon(Icons.remove_outlined),
-//           ],
-//         ),
-//       ],
-//     ),
-//   );
-
-
-//}
+/*
+buildCheckbox(value){
+  return CheckboxListTile(
+    controlAffinity: ListTileControlAffinity.leading,
+    activeColor: Color(0xFFF25E7A),
+    checkColor: Colors.white,
+    value: value,
+    title: Text(
+      pacote.tarefa3,
+      style: const TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 20,
+      ),
+    ),
+    onChanged: (value) => setState(() => this.value = value!),
+  ),
+}
+*/
