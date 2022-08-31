@@ -9,3 +9,12 @@ https://academicsillabussite.eduardasoares1.repl.co/
 Link do instagram do nosso projeto:
 
 https://www.instagram.com/academicsyllabus/
+
+Este trabalho está sendo apresentado junto à disciplina de Programação Móvel do curso Técnico em Informática do Instituto Federal de Alagoas (IFAL), Campus Arapiraca, como requisito para obtenção de nota bimestral.
+
+#### Integrantes da equipe:
+
+* Camile Vitória
+* Eduarda Soares
+* Maria Izabel Petuba
+* Viviane Maria
