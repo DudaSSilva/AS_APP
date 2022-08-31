@@ -19,7 +19,11 @@ class CardPacoteLista extends StatefulWidget {
 
 class _CardPacoteListaState extends State<CardPacoteLista> {
   PacoteTarefas get pacote => widget.pacoteTarefas;
-  bool value = false;
+  bool value1 = false;
+  bool value2 = false;
+  bool value3 = false;
+  bool value4 = false;
+  bool value5 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +69,7 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
                         controlAffinity: ListTileControlAffinity.leading,
                         activeColor: Color(0xFFF25E7A),
                         checkColor: Colors.white,
-                        value: value,
+                        value: value1,
                         title: Text(
                           pacote.tarefa1,
                           style: const TextStyle(
@@ -73,13 +77,13 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.value = value!),
+                        onChanged: (value) => setState(() => this.value1 = value!),
                       ),
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
                         activeColor: Color(0xFFF25E7A),
                         checkColor: Colors.white,
-                        value: value,
+                        value: value2,
                         title: Text(
                           pacote.tarefa2,
                           style: const TextStyle(
@@ -87,13 +91,13 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.value = value!),
+                        onChanged: (value) => setState(() => this.value2 = value!),
                       ),
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
                         activeColor: Color(0xFFF25E7A),
                         checkColor: Colors.white,
-                        value: value,
+                        value: value3,
                         title: Text(
                           pacote.tarefa3,
                           style: const TextStyle(
@@ -101,13 +105,13 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.value = value!),
+                        onChanged: (value) => setState(() => this.value3 = value!),
                       ),
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
                         activeColor: Color(0xFFF25E7A),
                         checkColor: Colors.white,
-                        value: value,
+                        value: value4,
                         title: Text(
                           pacote.tarefa4,
                           style: const TextStyle(
@@ -115,13 +119,13 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.value = value!),
+                        onChanged: (value) => setState(() => this.value4 = value!),
                       ),
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
                         activeColor: Color(0xFFF25E7A),
                         checkColor: Colors.white,
-                        value: value,
+                        value: value5,
                         title: Text(
                           pacote.tarefa5,
                           style: const TextStyle(
@@ -129,7 +133,7 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.value = value!),
+                        onChanged: (value) => setState(() => this.value5 = value!),
                       ),
                     ],
                   ),
