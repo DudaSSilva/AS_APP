@@ -10,7 +10,7 @@ Link do instagram do nosso projeto:
 
 https://www.instagram.com/academicsyllabus/
 
-Este trabalho está sendo apresentado junto à disciplina de Programação Móvel do curso Técnico em Informática do Instituto Federal de Alagoas (IFAL), Campus Arapiraca, como requisito para obtenção de nota bimestral.
+Este trabalho está sendo apresentado junto à disciplina de Programação Móvel do curso Técnico em Informática do Instituto Federal de Alagoas (IFAL), Campus Arapiraca.
 
 #### Integrantes da equipe:
 
