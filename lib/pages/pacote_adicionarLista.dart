@@ -1,7 +1,5 @@
-import '../domain/pacote_checkbox.dart';
 import '../pages/pacote_telaPrincipal.dart';
 import 'package:flutter/material.dart';
-import '../widget/checkBox.dart';
 
 class PacoteAdicionarLista extends StatefulWidget {
 
@@ -74,7 +72,7 @@ class _PacoteAdicionarListaState extends State<PacoteAdicionarLista> {
                   color: Colors.grey,
                 ),
               ),
-              buildCheck(),
+              //buildCheck(),
               const SizedBox(height: 16),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,14 +93,14 @@ class _PacoteAdicionarListaState extends State<PacoteAdicionarLista> {
     );
   }
 
-  buildCheck() {
-    return ListView.builder(
-      itemCount: itens.length,
-      itemBuilder: (_, int index){
-        return CheckboxWidget(item: itens[index]);
-      }
-    );
-  }
+  // buildCheck() {
+  //   return ListView.builder(
+  //     itemCount: itens.length,
+  //     itemBuilder: (_, int index){
+  //       return CheckboxWidget(item: itens[index]);
+  //     }
+  //   );
+  // }
 
   void goAnotations() {
     Navigator.push(
