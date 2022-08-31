@@ -22,6 +22,7 @@ class PacoteLista extends StatefulWidget {
 }
 
 class _PacoteListaState extends State<PacoteLista> {
+
   PacotePlanejamento get pacote => widget.pacotePlanejamento;
   Future<List<PacoteTarefas>> lista = BD.getPacoteTarefas();
 
@@ -163,7 +164,7 @@ class _PacoteListaState extends State<PacoteLista> {
             );
           }
 
-          return Center(child: const CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         }
 
     );
