@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import '../domain/pacote_tarefas.dart';
 import '../pages/pacote_adicionarLista.dart';
@@ -17,6 +19,7 @@ class CardPacoteLista extends StatefulWidget {
 
 class _CardPacoteListaState extends State<CardPacoteLista> {
   PacoteTarefas get pacote => widget.pacoteTarefas;
+  bool value = false;
 
   @override
   Widget build(BuildContext context) {
@@ -58,18 +61,75 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
                   padding: const EdgeInsets.all(8),
                   child: Column(
                     children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          buildCard(
-                            tarefa1: pacote.tarefa1,
-                            tarefa2: pacote.tarefa2,
-                            tarefa3: pacote.tarefa3,
-                            tarefa4: pacote.tarefa4,
-                            tarefa5: pacote.tarefa5,
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        activeColor: Color(0xFFF25E7A),
+                        checkColor: Colors.white,
+                        value: value,
+                        title: Text(
+                          pacote.tarefa1,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
                           ),
-                        ],
+                        ),
+                        onChanged: (value) => setState(() => this.value = value!),
+                      ),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        activeColor: Color(0xFFF25E7A),
+                        checkColor: Colors.white,
+                        value: value,
+                        title: Text(
+                          pacote.tarefa2,
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                        onChanged: (value) => setState(() => this.value = value!),
+                      ),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        activeColor: Color(0xFFF25E7A),
+                        checkColor: Colors.white,
+                        value: value,
+                        title: Text(
+                          pacote.tarefa3,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                        onChanged: (value) => setState(() => this.value = value!),
+                      ),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        activeColor: Color(0xFFF25E7A),
+                        checkColor: Colors.white,
+                        value: value,
+                        title: Text(
+                          pacote.tarefa4,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                        onChanged: (value) => setState(() => this.value = value!),
+                      ),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        activeColor: Color(0xFFF25E7A),
+                        checkColor: Colors.white,
+                        value: value,
+                        title: Text(
+                          pacote.tarefa5,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                        onChanged: (value) => setState(() => this.value = value!),
                       ),
                     ],
                   ),
@@ -93,148 +153,148 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
   }
 }
 
-buildCard({
-  required String tarefa1,
-  required String tarefa2,
-  required String tarefa3,
-  required String tarefa4,
-  required String tarefa5,
-}) {
-  return Card(
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(16),
-    ),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            const Icon(Icons.circle),
-            const ClipRRect(
-              borderRadius: BorderRadius.vertical(
-              top: Radius.circular(16),
-            ),
-          ),
-          //colocar checkbox aqui
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  tarefa1,
-                 style: const TextStyle(fontWeight: FontWeight.bold),
-               ),
-              ],
-            ),
-           ),
-            const Icon(Icons.remove_outlined),
-          ],
-        ),
-        const SizedBox(height: 8),
-        Row(
-          children: [
-            const Icon(Icons.circle),
-            const ClipRRect(
-              borderRadius: BorderRadius.vertical(
-              top: Radius.circular(16),
-            ),
-          ),
-          //colocar checkbox aqui
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  tarefa2,
-                 style: const TextStyle(fontWeight: FontWeight.bold),
-               ),
-              ],
-            ),
-           ),
-            const Icon(Icons.remove_outlined),
-          ],
-        ),
-        const SizedBox(height: 8),
-        Row(
-          children: [
-            const Icon(Icons.circle),
-            const ClipRRect(
-              borderRadius: BorderRadius.vertical(
-              top: Radius.circular(16),
-            ),
-          ),
-          //colocar checkbox aqui
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  tarefa3,
-                 style: const TextStyle(fontWeight: FontWeight.bold),
-               ),
-              ],
-            ),
-           ),
-            const Icon(Icons.remove_outlined),
-          ],
-        ),
-        const SizedBox(height: 8),
-        Row(
-          children: [
-            const Icon(Icons.circle),
-            const ClipRRect(
-              borderRadius: BorderRadius.vertical(
-              top: Radius.circular(16),
-            ),
-          ),
-          //colocar checkbox aqui
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  tarefa4,
-                 style: const TextStyle(fontWeight: FontWeight.bold),
-               ),
-              ],
-            ),
-           ),
-            const Icon(Icons.remove_outlined),
-          ],
-        ),
-        const SizedBox(height: 8),
-        Row(
-          children: [
-            const Icon(Icons.circle),
-            const ClipRRect(
-              borderRadius: BorderRadius.vertical(
-              top: Radius.circular(16),
-            ),
-          ),
-          //colocar checkbox aqui
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  tarefa5,
-                 style: const TextStyle(fontWeight: FontWeight.bold),
-               ),
-              ],
-            ),
-           ),
-            const Icon(Icons.remove_outlined),
-          ],
-        ),
-      ],
-    ),
-  );
+// buildCard({
+//   required String tarefa1,
+//   required String tarefa2,
+//   required String tarefa3,
+//   required String tarefa4,
+//   required String tarefa5,
+// }) {
+//   return Card(
+//     shape: RoundedRectangleBorder(
+//       borderRadius: BorderRadius.circular(16),
+//     ),
+//     child: Column(
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       children: [
+//         Row(
+//           mainAxisAlignment: MainAxisAlignment.spaceAround,
+//           children: [
+//             const Icon(Icons.circle),
+//             const ClipRRect(
+//               borderRadius: BorderRadius.vertical(
+//               top: Radius.circular(16),
+//             ),
+//           ),
+//           //colocar checkbox aqui
+//           Padding(
+//             padding: const EdgeInsets.all(8.0),
+//             child: Row(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Text(
+//                   tarefa1,
+//                  style: const TextStyle(fontWeight: FontWeight.bold),
+//                ),
+//               ],
+//             ),
+//            ),
+//             const Icon(Icons.remove_outlined),
+//           ],
+//         ),
+//         const SizedBox(height: 8),
+//         Row(
+//           children: [
+//             const Icon(Icons.circle),
+//             const ClipRRect(
+//               borderRadius: BorderRadius.vertical(
+//               top: Radius.circular(16),
+//             ),
+//           ),
+//           //colocar checkbox aqui
+//           Padding(
+//             padding: const EdgeInsets.all(8.0),
+//             child: Row(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Text(
+//                   tarefa2,
+//                  style: const TextStyle(fontWeight: FontWeight.bold),
+//                ),
+//               ],
+//             ),
+//            ),
+//             const Icon(Icons.remove_outlined),
+//           ],
+//         ),
+//         const SizedBox(height: 8),
+//         Row(
+//           children: [
+//             const Icon(Icons.circle),
+//             const ClipRRect(
+//               borderRadius: BorderRadius.vertical(
+//               top: Radius.circular(16),
+//             ),
+//           ),
+//           //colocar checkbox aqui
+//           Padding(
+//             padding: const EdgeInsets.all(8.0),
+//             child: Row(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Text(
+//                   tarefa3,
+//                  style: const TextStyle(fontWeight: FontWeight.bold),
+//                ),
+//               ],
+//             ),
+//            ),
+//             const Icon(Icons.remove_outlined),
+//           ],
+//         ),
+//         const SizedBox(height: 8),
+//         Row(
+//           children: [
+//             const Icon(Icons.circle),
+//             const ClipRRect(
+//               borderRadius: BorderRadius.vertical(
+//               top: Radius.circular(16),
+//             ),
+//           ),
+//           //colocar checkbox aqui
+//           Padding(
+//             padding: const EdgeInsets.all(8.0),
+//             child: Row(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Text(
+//                   tarefa4,
+//                  style: const TextStyle(fontWeight: FontWeight.bold),
+//                ),
+//               ],
+//             ),
+//            ),
+//             const Icon(Icons.remove_outlined),
+//           ],
+//         ),
+//         const SizedBox(height: 8),
+//         Row(
+//           children: [
+//             const Icon(Icons.circle),
+//             const ClipRRect(
+//               borderRadius: BorderRadius.vertical(
+//               top: Radius.circular(16),
+//             ),
+//           ),
+//           //colocar checkbox aqui
+//           Padding(
+//             padding: const EdgeInsets.all(8.0),
+//             child: Row(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Text(
+//                   tarefa5,
+//                  style: const TextStyle(fontWeight: FontWeight.bold),
+//                ),
+//               ],
+//             ),
+//            ),
+//             const Icon(Icons.remove_outlined),
+//           ],
+//         ),
+//       ],
+//     ),
+//   );
 
 
-}
+//}
