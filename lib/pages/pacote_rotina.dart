@@ -1,7 +1,6 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled/domain/pacote_planejamento.dart';
 import 'package:untitled/pages/home_rotina.dart';
 
 class PacoteRotina extends StatefulWidget {
@@ -12,9 +11,9 @@ class PacoteRotina extends StatefulWidget {
 }
 
 class _PacoteRotinaState extends State<PacoteRotina> {
-  int _selectedIndex=3;
+  int _selectedIndex=0;
   static final List<Widget>_widgetOptions = <Widget>[
-    HomeRotina(),
+    const HomeRotina(),
     const Text("livros"),
     const Text("linha do tempo"),
     const Text("Conquistas"),
@@ -33,22 +32,22 @@ class _PacoteRotinaState extends State<PacoteRotina> {
       body: Center(
         child: _widgetOptions[_selectedIndex],
       ),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
-          elevation: 10,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          selectedItemColor: Colors.black,
-          unselectedItemColor: const Color(0xFF526480),
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.book_outlined), label: "Livros"),
-            BottomNavigationBarItem(icon: Icon(Icons.timeline_sharp), label: "Linha do tempo"),
-            BottomNavigationBarItem(icon: Icon(Icons.redeem_rounded), label: "Conquistas"),
-          ],
-        ) ,
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        elevation: 10,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: const Color(0xFF526480),
+        type: BottomNavigationBarType.fixed,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.book_outlined), label: "Livros"),
+          BottomNavigationBarItem(icon: Icon(Icons.timeline_sharp), label: "Linha do tempo"),
+          BottomNavigationBarItem(icon: Icon(Icons.redeem_rounded), label: "Conquistas"),
+        ],
+      ) ,
     );
   }
 }
