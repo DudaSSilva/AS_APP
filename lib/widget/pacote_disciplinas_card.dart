@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../domain/pacote_materias.dart';
 import '../domain/pacote_planejamento.dart';
-import '../pages/pacote_conteudo.dart';
+import '../pages/subjects/pacote_conteudo.dart';
 //import '../domain/pacote_tarefas.dart';
 
 class CardPacoteDisciplinas extends StatefulWidget {

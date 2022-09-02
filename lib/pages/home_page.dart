@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../pages/login_page.dart';
+import 'package:flutter/services.dart';
+import 'login/login_page.dart';
 import '../pages/pacote_telaPrincipal.dart';
 
 class HomePage extends StatefulWidget {
@@ -10,6 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,12 +33,12 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const SizedBox(height: 16),
                   const Text(
-                      'ACADEMIC SYLLABUS',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 50,
-                        color: Colors.white,
-                      ),
+                    'ACADEMIC SYLLABUS',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 50,
+                      color: Colors.white,
+                    ),
                   ),
                   const SizedBox(height: 32),
                   ElevatedButton(

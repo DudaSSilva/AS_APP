@@ -42,7 +42,7 @@ class BD {
     ),
 
   ];
-  
+
   static Future<List<PacoteConteudos>> getPacoteConteudos() async {
     print("ANTES");
     await Future.delayed(const Duration(seconds: 10));

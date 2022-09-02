@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 //import '../pages/pacote_listaTarefas.dart';
 import '../domain/pacote_planejamento.dart';
-import '../pages/pacote_rotina.dart';
+import '../pages/planner/pacote_rotina.dart';
 
 class CardPacoteRotina extends StatefulWidget {
   final PacotePlanejamento pacotePlanejamento;
@@ -22,21 +22,21 @@ class _CardPacoteRotinaState extends State<CardPacoteRotina> {
   @override
   Widget build(BuildContext context) {
     return Card(
-        color: Color(pacote.cor),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Column(
-          children: [
-            const ClipRRect(
-              borderRadius: BorderRadius.vertical(
-                top: Radius.circular(16),
-              ),
+      color: Color(pacote.cor),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        children: [
+          const ClipRRect(
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(16),
             ),
-            Padding(
+          ),
+          Padding(
               padding: const EdgeInsets.all(24.0),
               child: Column(
-               crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Row(
 
@@ -62,9 +62,9 @@ class _CardPacoteRotinaState extends State<CardPacoteRotina> {
 
               )
 
-            )
-          ],
-        ),
+          )
+        ],
+      ),
     );
   }
 }

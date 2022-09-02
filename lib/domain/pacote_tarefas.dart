@@ -2,9 +2,6 @@
 //import 'package:flutter/cupertino.dart';
 
 class PacoteTarefas {
-  //final Icon icon;
-  //final String imagem;
-  //final String tarefa;
   final String nomeLista;
   final String tarefa1;
   final String tarefa2;

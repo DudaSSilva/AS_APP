@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/domain/pacote_conteudos.dart';
 import '../domain/pacote_tarefas.dart';
-import '../pages/pacote_adicionarConteudos.dart';
+import '../pages/add/pacote_adicionarConteudos.dart';
 //import '../pages/pacote_listaTarefas.dart';
 
 class CardPacoteConteudos extends StatefulWidget {

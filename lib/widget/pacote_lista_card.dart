@@ -1,8 +1,6 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import '../domain/pacote_tarefas.dart';
-import '../pages/pacote_adicionarLista.dart';
+import '../pages/add/pacote_adicionarLista.dart';
 //import '../pages/pacote_listaTarefas.dart';
 
 class CardPacoteLista extends StatefulWidget {
@@ -88,7 +86,7 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
                         title: Text(
                           pacote.tarefa2,
                           style: const TextStyle(
-                              fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.bold,
                             fontSize: 20,
                           ),
                         ),

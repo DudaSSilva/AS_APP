@@ -30,7 +30,7 @@ class BD {
       tarefa5: 'Comprar materiais de desenho',
     ),
   ];
-  
+
   static Future<List<PacoteTarefas>> getPacoteTarefas() async {
     print("ANTES");
     await Future.delayed(const Duration(seconds: 4));
