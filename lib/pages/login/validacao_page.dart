@@ -85,7 +85,7 @@ class _ValidacaoPageState extends State<ValidacaoPage> {
                     child: const Padding(
                       padding: EdgeInsets.symmetric(vertical: 12.0),
                       child: Text(
-                        'ENTRAR',
+                        'ENVIAR',
                         style: TextStyle(
                             fontSize: 21,
                             fontWeight: FontWeight.w500,
@@ -136,7 +136,7 @@ class _ValidacaoPageState extends State<ValidacaoPage> {
                           child: const Padding(
                             padding: EdgeInsets.symmetric(vertical: 8.0),
                             child: Text(
-                              'CADASRE-SE',
+                              'CADASTRE-SE',
                               style: TextStyle(
                                 //fontSize: 21,
                                   fontWeight: FontWeight.w500,
