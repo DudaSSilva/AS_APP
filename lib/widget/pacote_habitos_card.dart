@@ -74,7 +74,7 @@ class _CardPacoteHabitosState extends State<CardPacoteHabitos> {
                 ),
 
                 Text(
-                  'Responder simulado',
+                  'Simulado',
                   style: const TextStyle(
                     fontSize: 14,
                   ),
@@ -86,7 +86,7 @@ class _CardPacoteHabitosState extends State<CardPacoteHabitos> {
                 const Icon(Icons.circle),
 
                 Text(
-                  'Responder atividade',
+                  'Atividades',
                   style: const TextStyle(
                     fontSize: 14,
                   ),
