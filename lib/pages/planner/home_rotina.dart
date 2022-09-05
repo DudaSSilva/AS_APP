@@ -111,7 +111,18 @@ class _HomeRotinaState extends State<HomeRotina> {
             ],
           ),
           SizedBox(height: 15,),
-          Semanas(),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(right: 20),
+            child: Row(
+              children: [
+                Semanas(),
+                Semanas(),
+              ],
+            ),
+          )
+
+
         ],
       ),
     );
