@@ -2,11 +2,14 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/pages/pacote_telaPrincipal.dart';
+import 'package:untitled/pages/planner/conquistas.dart';
 import 'package:untitled/pages/planner/semanas.dart';
 import '../../models/auxiliar_styles.dart';
 
 class HomeRotina extends StatefulWidget {
-  const HomeRotina({Key? key}) : super(key: key);
+  final Map<String, dynamic> conquistas;
+
+  const HomeRotina({Key? key, required this.conquistas}) : super(key: key);
 
   @override
   State<HomeRotina> createState() => _HomeRotinaState();
@@ -113,16 +116,44 @@ class _HomeRotinaState extends State<HomeRotina> {
           SizedBox(height: 15,),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.only(right: 20),
+            padding: const EdgeInsets.only(left: 20),
             child: Row(
               children: [
                 Semanas(),
                 Semanas(),
               ],
             ),
-          )
-
-
+          ),
+          SizedBox(height: 15,),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Metas:", style: Styles.headLineStyle2,),
+                InkWell(
+                    onTap: (){
+                      print("You are Tapped");
+                    },
+                    child: Text("ver tudo", style: Styles.textStyle.copyWith(color: Styles.primaryColor),)),
+              ],
+            ),
+          ),
+          SizedBox(height: 15,),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.only(left: 20),
+              child: Row(
+                children: [
+                  Conquistas(),
+                  //Conquistas(),
+                  //Conquistas(),
+                  //Conquistas(),
+                  //Semanas(),
+                ],
+              ),
+          ),
+          SizedBox(height: 15,),
         ],
       ),
     );
