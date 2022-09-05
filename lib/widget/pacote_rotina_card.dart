@@ -1,15 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled/domain/pacote_rotina_arg.dart';
 //import '../pages/pacote_listaTarefas.dart';
 import '../domain/pacote_planejamento.dart';
 import '../pages/planner/pacote_rotina.dart';
 
 class CardPacoteRotina extends StatefulWidget {
-  final PacotePlanejamento pacotePlanejamento;
+  final PacoteRotinaArg pacoteRotinaArg;
 
   const CardPacoteRotina({
     Key? key,
-    required this.pacotePlanejamento,
+    required this.pacoteRotinaArg,
   }) : super(key: key);
 
   @override
@@ -17,7 +18,7 @@ class CardPacoteRotina extends StatefulWidget {
 }
 
 class _CardPacoteRotinaState extends State<CardPacoteRotina> {
-  PacotePlanejamento get pacote => widget.pacotePlanejamento;
+  PacoteRotinaArg get pacote => widget.pacoteRotinaArg;
 
   @override
   Widget build(BuildContext context) {
@@ -38,21 +39,21 @@ class _CardPacoteRotinaState extends State<CardPacoteRotina> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Row(
-
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      pacote.icon,
-                      const SizedBox(width: 8),
-                      Text(
-                        pacote.titulo,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
+                  // Row(
+                  //
+                  //   crossAxisAlignment: CrossAxisAlignment.start,
+                  //   children: [
+                  //     pacote.icon,
+                  //     const SizedBox(width: 8),
+                  //     Text(
+                  //       pacote.titulo,
+                  //       style: const TextStyle(
+                  //         fontSize: 20,
+                  //         fontWeight: FontWeight.bold,
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                   SizedBox(height: 24),
                   Container(
                     color: Color(0xFFFFFFCC),
