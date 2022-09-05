@@ -16,13 +16,14 @@ class _SemanasState extends State<Semanas> {
   Widget build(BuildContext context) {
     final size = Applayout.getSize(context);
     return SizedBox(
-      width: size.width,
+      width: size.width*0.85,
       height: 200,
       child: Container(
-        margin: const EdgeInsets.only(left:16),
+        margin: const EdgeInsets.only(right:16),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            //primeiro container
             Container(
               decoration: const BoxDecoration(
                 color: const Color(0xFFFFCC99),
