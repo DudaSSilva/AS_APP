@@ -41,7 +41,7 @@ class _PacoteDisciplinasState extends State<PacoteDisciplinas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFE8E8),
+      backgroundColor: const Color(0xFFF25E7A),
       appBar: AppBar(
         centerTitle: true,
         title: const Text('DISCIPLINAS E CONTEÚDOS'),
@@ -56,10 +56,11 @@ class _PacoteDisciplinasState extends State<PacoteDisciplinas> {
       padding: const EdgeInsets.all(16.0),
       child: ListView(
         children: [
-          Container(
-            decoration: BoxDecoration(
-                color: Colors.purple, borderRadius: BorderRadius.circular(16)),
-            padding: const EdgeInsets.all(16),
+          Image.asset(
+            "images/disciplinas.jpg",
+            width: 400,
+            height: 300,
+            fit: BoxFit.cover,
           ),
           const SizedBox(height: 16),
           CardPacoteDisciplinas(pacoteMaterias: pacote1),
@@ -72,8 +73,8 @@ class _PacoteDisciplinasState extends State<PacoteDisciplinas> {
           const SizedBox(height: 16),
           CardPacoteDisciplinas(pacoteMaterias: pacote5),
           const SizedBox(height: 16),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
@@ -86,6 +87,12 @@ class _PacoteDisciplinasState extends State<PacoteDisciplinas> {
                 icon: const Icon(
                   Icons.add_circle,
                   color: Colors.black,
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: const Color(0xFFFFCC99),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
                 ),
                 label: Text(''),
               ),
