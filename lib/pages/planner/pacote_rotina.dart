@@ -2,6 +2,9 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/pages/planner/home_rotina.dart';
+import 'package:untitled/pages/planner/livros.dart';
+import 'package:untitled/widget/pacote_rotina_card.dart';
+import '../../domain/pacote_rotina_arg.dart';
 
 class PacoteRotina extends StatefulWidget {
   const PacoteRotina({Key? key}) : super(key: key);
@@ -12,9 +15,10 @@ class PacoteRotina extends StatefulWidget {
 
 class _PacoteRotinaState extends State<PacoteRotina> {
   int _selectedIndex=0;
+
   static final List<Widget>_widgetOptions = <Widget>[
-    const HomeRotina(),
-    const Text("livros"),
+    const HomeRotina(conquistas: {}),
+    const PacoteLivros(),
     const Text("linha do tempo"),
     const Text("Conquistas"),
   ];
@@ -50,4 +54,5 @@ class _PacoteRotinaState extends State<PacoteRotina> {
       ) ,
     );
   }
+
 }
