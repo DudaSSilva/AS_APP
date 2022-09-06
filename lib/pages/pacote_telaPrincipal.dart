@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'victorys/pacote_conquista.dart';
 import 'tips/pacote_dicas.dart';
 import '../domain/pacote_materias.dart';
@@ -48,6 +49,11 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
   );
 
   @override
+  mudarOrientacao() {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeRight]);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFFFE8E8),
@@ -72,6 +78,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
         title: const Text('ACADEMIC SYLLABUS'),
         backgroundColor: const Color(0xFFDD2E44),
       ),
+      floatingActionButton: BuildFloatButton(),
       body: buildBody(),
     );
   }
@@ -180,6 +187,27 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  BuildFloatButton(){
+    return FloatingActionButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return mudarOrientacao();
+            },
+          ),
+        );
+      },
+      backgroundColor: const Color(0xFFDD2E44),
+      child: const Icon(
+        Icons.change_circle_outlined,
+        color: Color(0xFFFFE8E8),
+        size: 50,
       ),
     );
   }
