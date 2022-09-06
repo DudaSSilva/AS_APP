@@ -79,6 +79,7 @@ class _CardPacoteLivrosState extends State<CardPacoteLivros> {
                         ),
                         onChanged: (value) => setState(() => this.value3 = value!),
                       ),
+
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
                         activeColor: Color(0xFFF25E7A),
@@ -107,7 +108,6 @@ class _CardPacoteLivrosState extends State<CardPacoteLivros> {
                         ),
                         onChanged: (value) => setState(() => this.value5 = value!),
                       ),
-                      //buildCheckbox(value),
                     ],
                   ),
                 ),
