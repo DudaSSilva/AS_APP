@@ -74,15 +74,14 @@ class _AboutUsPageState extends State<AboutUsPage> {
                     child: SizedBox.expand(
                       child: TextButton(
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            Container(
-                              child: SizedBox(
-                                child: Image.asset(
-                                  "images/insta1.png",
-                                  height: 50,
-                                  width: 50,
-                                ),
+                            SizedBox(
+                              child: Image.asset(
+                                "images/instagram.png",
+                                width: 28,
+                                height: 28,
+                                fit: BoxFit.fitHeight,
                               ),
                             ),
                             const Text(
@@ -125,9 +124,17 @@ class _AboutUsPageState extends State<AboutUsPage> {
                     child: SizedBox.expand(
                       child: TextButton(
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SizedBox(
+                              child: Image.asset(
+                                "images/web.png",
+                                width: 28,
+                                height: 28,
+                                fit: BoxFit.fitHeight,
+                              ),
+                            ),
+                            const Text(
                               "CONFIRA NOSSO SITE",
                               style: TextStyle(
                                 //fontWeight: FontWeight.bold,

@@ -36,30 +36,15 @@ class _PacoteConteudoState extends State<PacoteConteudo> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: const [
-                        Icon(Icons.person_outline),
-                        SizedBox(width: 8),
-                        Text(
-                          'JUNHO:',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
                     BuildListView(),
                     const SizedBox(height: 8),
-                    const Text(
-                      'JULHO:',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                    // const Text(
+                    //   'JULHO:',
+                    //   style: TextStyle(
+                    //     fontSize: 16,
+                    //     fontWeight: FontWeight.bold,
+                    //   ),
+                    // ),
                     Row(
                       children: [
                         ElevatedButton.icon(

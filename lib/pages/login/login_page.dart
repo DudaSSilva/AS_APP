@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+//import { mdiInstagram } from '@mdi/js';
+import '../../data/bdUsuarios.dart';
+import '../../domain/usuario.dart';
 import 'cadastro_page.dart';
 import '../pacote_telaPrincipal.dart';
 import 'redefinirSenha_page.dart';
@@ -12,10 +15,13 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController userController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
+
+  TextEditingController userController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -39,12 +45,16 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     const SizedBox(height: 32),
                     TextFormField(
-                      controller: userController,
+                      keyboardType: TextInputType.text,
+                      controller: _emailController,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
-                      validator: (value) {
+                      validator: (String? value) {
                         if (value == null || value.isEmpty) {
                           return 'Campo e-mail obrigatório';
+                        } else if (!value.contains("@")) {
+                          return 'Um e-mail válido deve possuir um "@"!';
                         }
+                        return null;
                       },
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
@@ -54,14 +64,16 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     const SizedBox(height: 16),
                     TextFormField(
-                      controller: passwordController,
+                      keyboardType: TextInputType.text,
+                      controller: _passController,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
-                      validator: (value) {
+                      validator: (String? value) {
                         if (value == null || value.isEmpty) {
                           return 'Campo senha obrigatório';
                         } else if (value.length < 9) {
                           return 'A senha deve conter o mínimo de 8 dígitos';
                         }
+                        return null;
                       },
                       obscureText: true,
                       decoration: const InputDecoration(
@@ -95,7 +107,7 @@ class _LoginPageState extends State<LoginPage> {
                     ElevatedButton(
                       style:
                       ElevatedButton.styleFrom(primary: Color(0xFFFFCC99)),
-                      onPressed: onPressed,
+                      onPressed: onPressedLogin,
                       child: const Padding(
                         padding: EdgeInsets.symmetric(vertical: 12.0),
                         child: Text(
@@ -157,15 +169,14 @@ class _LoginPageState extends State<LoginPage> {
                       child: SizedBox.expand(
                         child: TextButton(
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Container(
-                                child: SizedBox(
-                                  child: Image.asset(
-                                    "images/insta1.png",
-                                    height: 50,
-                                    width: 50,
-                                  ),
+                              SizedBox(
+                                child: Image.asset(
+                                  "images/instagram.png",
+                                  width: 28,
+                                  height: 28,
+                                  fit: BoxFit.fitHeight,
                                 ),
                               ),
                               const Text(
@@ -208,9 +219,17 @@ class _LoginPageState extends State<LoginPage> {
                       child: SizedBox.expand(
                         child: TextButton(
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              Text(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              SizedBox(
+                                child: Image.asset(
+                                  "images/web.png",
+                                  width: 28,
+                                  height: 28,
+                                  fit: BoxFit.fitHeight,
+                                ),
+                              ),
+                              const Text(
                                 "CONFIRA NOSSO SITE",
                                 style: TextStyle(
                                   //fontWeight: FontWeight.bold,
@@ -236,26 +255,62 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  void onPressed() {
+  onPressedLogin() {
     if (_formKey.currentState!.validate()) {
-      String userLogin = "AcademicSyllabus2022";
-      String passwordLogin = "ASapp2022";
+      List<Usuario> listaUsuario = BD.lista;
+      String email = _emailController.text;
+      String pass = _passController.text;
+      bool auth = false;
 
-      String user = userController.text;
-      String pwd = passwordController.text;
-
-      if (userLogin == user && passwordLogin == pwd) {
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) {
-              return const TelaPrincipalPage();
-            }));
-      } else {
-        print("Usuário ou senha incorretos. Tente novamente.");
+      // Verificando usuarios
+      for (Usuario user in listaUsuario) {
+        //Checando email e senha
+        if (user.email == email && user.senha == pass) {
+          auth = true;
+        }
       }
-    } else {
-      print("Formulário inválido.");
+
+      if (auth) {
+        // Push para pag de login
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const TelaPrincipalPage();
+            },
+          ),
+        );
+      } else {
+        // Mostrar a mensagem de erro
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("Usuario e/ou senha incorretos"),
+          ),
+        );
+      }
     }
   }
+
+  // void onPressed() {
+  //   if (_formKey.currentState!.validate()) {
+  //     String userLogin = "AcademicSyllabus2022";
+  //     String passwordLogin = "ASapp2022";
+  //
+  //     String user = userController.text;
+  //     String pwd = passwordController.text;
+  //
+  //     if (userLogin == user && passwordLogin == pwd) {
+  //       Navigator.pushReplacement(context,
+  //           MaterialPageRoute(builder: (context) {
+  //             return const TelaPrincipalPage();
+  //           }));
+  //     } else {
+  //       print("Usuário ou senha incorretos. Tente novamente.");
+  //     }
+  //   } else {
+  //     print("Formulário inválido.");
+  //   }
+  // }
 
   void onPressedCadastro() {
     Navigator.push(
