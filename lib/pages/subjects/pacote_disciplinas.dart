@@ -79,22 +79,25 @@ class _PacoteDisciplinasState extends State<PacoteDisciplinas> {
             children: [
               const Text(
                 'Adicionar disciplina',
-                style: TextStyle(fontSize: 22),
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Color(0xFFFFCC99),
+                )
               ),
               const SizedBox(width: 8),
-              ElevatedButton.icon(
+              IconButton(
                 onPressed: (){},
                 icon: const Icon(
                   Icons.add_circle,
-                  color: Colors.black,
+                  color: Color(0xFFFFCC99),
                 ),
-                style: ElevatedButton.styleFrom(
-                  primary: const Color(0xFFFFCC99),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                ),
-                label: Text(''),
+                // style: ElevatedButton.styleFrom(
+                //   primary: const Color(0xFFFFCC99),
+                //   shape: RoundedRectangleBorder(
+                //     borderRadius: BorderRadius.circular(16),
+                //   ),
+                // ),
+                // label: Text(''),
               ),
             ],
           ),

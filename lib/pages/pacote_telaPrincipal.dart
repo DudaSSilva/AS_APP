@@ -48,10 +48,10 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
     cor: 0xFFFFCEEF,
   );
 
-  @override
-  mudarOrientacao() {
-    SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeRight]);
-  }
+  // @override
+  // mudarOrientacao() {
+  //   SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeRight]);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +78,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
         title: const Text('ACADEMIC SYLLABUS'),
         backgroundColor: const Color(0xFFDD2E44),
       ),
-      floatingActionButton: BuildFloatButton(),
+      //floatingActionButton: BuildFloatButton(),
       body: buildBody(),
     );
   }
@@ -99,10 +99,10 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
             pacotePlanejamento: pacote2,
             tela: PacoteLista(
                 pacotePlanejamento: PacotePlanejamento(
-              icon: const Icon(Icons.list),
-              titulo: 'LISTA DE TAREFAS',
-              cor: 0xFFF8E9CE,
-            )),
+                  icon: const Icon(Icons.list),
+                  titulo: 'LISTA DE TAREFAS',
+                  cor: 0xFFF8E9CE,
+                )),
           ),
           const SizedBox(height: 16),
           CardPacotePlanejamento(
@@ -191,26 +191,27 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
     );
   }
 
-  BuildFloatButton(){
-    return FloatingActionButton(
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return mudarOrientacao();
-            },
-          ),
-        );
-      },
-      backgroundColor: const Color(0xFFDD2E44),
-      child: const Icon(
-        Icons.change_circle_outlined,
-        color: Color(0xFFFFE8E8),
-        size: 50,
-      ),
-    );
-  }
+  // BuildFloatButton(){
+  //   mudarOrientacao();
+  //   return FloatingActionButton(
+  //     onPressed: () {
+  //       Navigator.push(
+  //         context,
+  //         MaterialPageRoute(
+  //           builder: (context) {
+  //             return TelaPrincipalPage();
+  //           },
+  //         ),
+  //       );
+  //      },
+  //     backgroundColor: const Color(0xFFDD2E44),
+  //     child: const Icon(
+  //       Icons.change_circle_outlined,
+  //       color: Color(0xFFFFE8E8),
+  //       size: 50,
+  //     ),
+  //   );
+  // }
 
   BuildPerfil() {
     return Column(

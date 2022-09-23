@@ -1,6 +1,4 @@
 //ALTERAR PARA TELA DE ANOTAÇÕES
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import '../pacote_telaPrincipal.dart';
 

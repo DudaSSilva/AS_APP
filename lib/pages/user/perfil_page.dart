@@ -97,7 +97,7 @@ class _PerfilPageState extends State<PerfilPage> {
                               ? Image.file(_image!, fit: BoxFit.cover)
                               : const Center(
                             child: Icon(
-                              Icons.camera,
+                              Icons.face_retouching_natural,
                               size: 100,
                               color: Color(0xFFDD2E44),
                             ),
