@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/domain/pacote_conquistas.dart';
+import '../domain/pacote_conquistas.dart';
 import '../pages/list/pacote_listaTarefas.dart';
 import '../domain/pacote_planejamento.dart';
-//import '../domain/pacote_tarefas.dart';
 
 class CardPacoteConquistas extends StatefulWidget {
   final PacoteConquistas pacoteConquistas;

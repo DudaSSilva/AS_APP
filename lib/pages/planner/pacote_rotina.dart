@@ -1,10 +1,9 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/planner/home_rotina.dart';
-import 'package:untitled/pages/planner/livros.dart';
-import 'package:untitled/widget/pacote_rotina_card.dart';
 import '../../domain/pacote_rotina_arg.dart';
+import 'home_rotina.dart';
+import 'livros.dart';
 
 class PacoteRotina extends StatefulWidget {
   const PacoteRotina({Key? key}) : super(key: key);

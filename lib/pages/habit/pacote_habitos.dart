@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/add/pacote_adicionarHabito.dart';
+import '../../pages/add/pacote_adicionarHabito.dart';
 import '../../domain/pacote_planejamento.dart';
-//import '../domain/pacote_tarefas.dart';
 import '../../widget/pacote_habitos_card.dart';
 
 class PacoteHabitos extends StatefulWidget {

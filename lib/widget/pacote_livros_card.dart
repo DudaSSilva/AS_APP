@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/domain/pacote_livros.dart';
+import '../domain/pacote_livros.dart';
 import '../pages/add/pacote_adicionarLista.dart';
 
 class CardPacoteLivros extends StatefulWidget {

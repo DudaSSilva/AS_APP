@@ -1,4 +1,4 @@
-name: untitled
+name: asapp
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -30,6 +30,9 @@ dependencies:
   flutter:
     sdk: flutter
   table_calendar: ^3.0.3
+
+  sqflite:
+  path:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

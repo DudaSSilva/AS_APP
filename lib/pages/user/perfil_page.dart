@@ -1,9 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/victorys/pacote_conquista.dart';
 import '../pacote_telaPrincipal.dart';
 import '../app/settings_page.dart';
 import 'package:image_picker/image_picker.dart';
+
+import '../victorys/pacote_conquista.dart';
 
 class PerfilPage extends StatefulWidget {
   const PerfilPage({Key? key}) : super(key: key);

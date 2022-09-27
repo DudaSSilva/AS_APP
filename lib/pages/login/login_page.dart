@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 //import { mdiInstagram } from '@mdi/js';
-import '../../data/bdUsuarios.dart';
+import '../../data/dataSimulatory/bdUsuarios.dart';
 import '../../domain/usuario.dart';
 import 'cadastro_page.dart';
 import '../pacote_telaPrincipal.dart';

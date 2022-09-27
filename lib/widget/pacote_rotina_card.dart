@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled/domain/pacote_rotina_arg.dart';
-//import '../pages/pacote_listaTarefas.dart';
-import '../domain/pacote_planejamento.dart';
-import '../pages/planner/pacote_rotina.dart';
+
+import '../domain/pacote_rotina_arg.dart';
 
 class CardPacoteRotina extends StatefulWidget {
   final PacoteRotinaArg pacoteRotinaArg;

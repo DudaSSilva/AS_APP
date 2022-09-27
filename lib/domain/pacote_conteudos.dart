@@ -2,21 +2,45 @@
 //import 'package:flutter/cupertino.dart';
 
 class PacoteConteudos {
-  final String nomeLista;
-  final String tarefa1;
-  final String tarefa2;
-  final String tarefa3;
-  final String tarefa4;
-  final String tarefa5;
-  final int cor;
+  late final String nomedisciplina;
+  late final String conteudo1;
+  late final String conteudo2;
+  late final String conteudo3;
+  late final String conteudo4;
+  late final int cor;
+  late final bool value;
 
   PacoteConteudos({
-    required this.nomeLista,
-    required this.tarefa1,
-    required this.tarefa2,
-    required this.tarefa3,
-    required this.tarefa4,
-    required this.tarefa5,
+    required this.nomedisciplina,
+    required this.conteudo1,
+    required this.conteudo2,
+    required this.conteudo3,
+    required this.conteudo4,
     required this.cor,
+    required this.value,
   });
+
+  Map<String, Object?> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+
+    data['nomedisciplina'] = nomedisciplina;
+    data['conteudo1'] = conteudo1;
+    data['conteudo2'] = conteudo2;
+    data['conteudo3'] = conteudo3;
+    data['conteudo4'] = conteudo4;
+    data['cor'] = cor.toString();
+    data['valor'] = value;
+
+    return data;
+  }
+
+  PacoteConteudos.fromJson(Map<String, dynamic> json) {
+    nomedisciplina = json['nomedisciplina'];
+    conteudo1 = json['conteudo1'];
+    conteudo2 = json['conteudo2'];
+    conteudo3 = json['conteudo3'];
+    conteudo4 = json['conteudo4'];
+    cor = int.parse(json['cor']);
+    value = json['valor'] == 0 ? false : true;
+  }
 }

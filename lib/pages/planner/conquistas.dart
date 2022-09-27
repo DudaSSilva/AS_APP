@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled/models/app_layout.dart';
-
+import '../../models/app_layout.dart';
 import '../../models/auxiliar_styles.dart';
+
 class Conquistas extends StatefulWidget {
   const Conquistas({Key? key}) : super(key: key);
 

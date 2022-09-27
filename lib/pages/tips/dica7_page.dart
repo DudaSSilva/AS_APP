@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/domain/pacote_dica.dart';
-import 'package:untitled/widget/pacote_dica_card.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../pacote_telaPrincipal.dart';
 
 class Dica7Page extends StatefulWidget {
