@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/add/pacote_adicionarConteudos.dart';
-import 'package:untitled/widget/pacote_conteudos_card.dart';
-import 'package:untitled/data/bdListaConteudos.dart';
+import '../../data/dataSimulatory/bdListaConteudos.dart';
 import '../../domain/pacote_conteudos.dart';
+import '../../widget/pacote_conteudos_card.dart';
+import '../add/pacote_adicionarConteudos.dart';
 
 class PacoteConteudo extends StatefulWidget {
   const PacoteConteudo({

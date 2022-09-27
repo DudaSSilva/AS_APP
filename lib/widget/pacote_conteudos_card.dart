@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/domain/pacote_conteudos.dart';
-import '../domain/pacote_tarefas.dart';
+import '../domain/pacote_conteudos.dart';
 import '../pages/add/pacote_adicionarConteudos.dart';
-//import '../pages/pacote_listaTarefas.dart';
 
 class CardPacoteConteudos extends StatefulWidget {
   final PacoteConteudos pacoteConteudos;
@@ -18,10 +16,10 @@ class CardPacoteConteudos extends StatefulWidget {
 
 class _CardPacoteConteudosState extends State<CardPacoteConteudos> {
   PacoteConteudos get pacote => widget.pacoteConteudos;
-  bool value1 = false;
-  bool value2 = false;
-  bool value3 = false;
-  bool value4 = false;
+  // bool value1 = false;
+  // bool value2 = false;
+  // bool value3 = false;
+  // bool value4 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +40,7 @@ class _CardPacoteConteudosState extends State<CardPacoteConteudos> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        pacote.nomeLista,
+                        pacote.nomedisciplina,
                         style: const TextStyle(
                           fontSize: 22,
                         ),
@@ -67,57 +65,57 @@ class _CardPacoteConteudosState extends State<CardPacoteConteudos> {
                         controlAffinity: ListTileControlAffinity.leading,
                         activeColor: Color(0xFFF25E7A),
                         checkColor: Colors.white,
-                        value: value1,
+                        value: pacote.value,
                         title: Text(
-                          pacote.tarefa1,
+                          pacote.conteudo1,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.value1 = value!),
+                        onChanged: (value) => setState(() => this.pacote.value = value!),
                       ),
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
                         activeColor: Color(0xFFF25E7A),
                         checkColor: Colors.white,
-                        value: value2,
+                        value: pacote.value,
                         title: Text(
-                          pacote.tarefa2,
+                          pacote.conteudo2,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.value2 = value!),
+                        onChanged: (value) => setState(() => this.pacote.value = value!),
                       ),
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
                         activeColor: Color(0xFFF25E7A),
                         checkColor: Colors.white,
-                        value: value3,
+                        value: pacote.value,
                         title: Text(
-                          pacote.tarefa3,
+                          pacote.conteudo3,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.value3 = value!),
+                        onChanged: (value) => setState(() => this.pacote.value = value!),
                       ),
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
                         activeColor: Color(0xFFF25E7A),
                         checkColor: Colors.white,
-                        value: value4,
+                        value: pacote.value,
                         title: Text(
-                          pacote.tarefa4,
+                          pacote.conteudo4,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.value4 = value!),
+                        onChanged: (value) => setState(() => this.pacote.value = value!),
                       ),
                     ],
                   ),

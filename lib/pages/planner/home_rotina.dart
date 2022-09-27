@@ -1,10 +1,10 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/pacote_telaPrincipal.dart';
-import 'package:untitled/pages/planner/conquistas.dart';
-import 'package:untitled/pages/planner/semanas.dart';
 import '../../models/auxiliar_styles.dart';
+import '../pacote_telaPrincipal.dart';
+import 'conquistas.dart';
+import 'semanas.dart';
 
 class HomeRotina extends StatefulWidget {
   final Map<String, dynamic> conquistas;

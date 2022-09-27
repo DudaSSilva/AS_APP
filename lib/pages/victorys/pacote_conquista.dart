@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/widget/pacote_conquistas_card.dart';
-import '../../data/bdConquistas.dart';
+import '../../data/dataSimulatory/bdConquistas.dart';
 import '../../domain/pacote_conquistas.dart';
+import '../../widget/pacote_conquistas_card.dart';
 
 class PacoteConquista extends StatefulWidget {
 

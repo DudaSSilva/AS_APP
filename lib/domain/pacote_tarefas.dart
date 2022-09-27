@@ -1,14 +1,12 @@
-
-//import 'package:flutter/cupertino.dart';
-
 class PacoteTarefas {
-  final String nomeLista;
-  final String tarefa1;
-  final String tarefa2;
-  final String tarefa3;
-  final String tarefa4;
-  final String tarefa5;
-  final int cor;
+  late final String nomeLista;
+  late final String tarefa1;
+  late final String tarefa2;
+  late final String tarefa3;
+  late final String tarefa4;
+  late final String tarefa5;
+  late final int cor;
+  late final bool value;
 
   PacoteTarefas({
     required this.nomeLista,
@@ -18,5 +16,32 @@ class PacoteTarefas {
     required this.tarefa4,
     required this.tarefa5,
     required this.cor,
+    required this.value,
   });
+
+  Map<String, Object?> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+
+    data['nomeLista'] = nomeLista;
+    data['tarefa1'] = tarefa1;
+    data['tarefa2'] = tarefa2;
+    data['tarefa3'] = tarefa3;
+    data['tarefa4'] = tarefa4;
+    data['tarefa5'] = tarefa5;
+    data['cor'] = cor.toString();
+    data['valor'] = value;
+
+    return data;
+  }
+
+  PacoteTarefas.fromJson(Map<String, dynamic> json) {
+    nomeLista = json['nomeLista'];
+    tarefa1 = json['tarefa1'];
+    tarefa2 = json['tarefa2'];
+    tarefa3 = json['tarefa3'];
+    tarefa4 = json['tarefa4'];
+    tarefa5 = json['tarefa5'];
+    cor = int.parse(json['cor']);
+    value = json['valor'] == 0 ? false : true;
+  }
 }

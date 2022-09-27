@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/pacote_telaPrincipal.dart';
-import 'package:untitled/widget/pacote_livros_card.dart';
-import '../../data/bdLivros.dart';
+import '../../data/dataSimulatory/bdLivros.dart';
 import '../../domain/pacote_livros.dart';
+import '../../widget/pacote_livros_card.dart';
+import '../pacote_telaPrincipal.dart';
 
 class PacoteLivros extends StatefulWidget {
   //final PacoteLivro pacoteLivros;

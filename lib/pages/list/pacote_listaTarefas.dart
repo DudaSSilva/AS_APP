@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import '../add/pacote_adicionarConteudos.dart';
+import '../../data/dao/tarefas_dao.dart';
 import '../add/pacote_adicionarLista.dart';
 import 'pacote_anotacoes.dart';
 import '../pacote_telaPrincipal.dart';
 import '../../domain/pacote_planejamento.dart';
 import '../../domain/pacote_tarefas.dart';
 import '../../widget/pacote_lista_card.dart';
-//import '../widget/pacote_planejamento_card.dart';
-import '../../data/bdListaTarefas.dart';
 
 class PacoteLista extends StatefulWidget {
   final PacotePlanejamento pacotePlanejamento;
@@ -24,7 +22,7 @@ class PacoteLista extends StatefulWidget {
 class _PacoteListaState extends State<PacoteLista> {
 
   PacotePlanejamento get pacote => widget.pacotePlanejamento;
-  Future<List<PacoteTarefas>> lista = BD.getPacoteTarefas();
+  Future<List<PacoteTarefas>> lista = TarefasDao().listarTarefas();
 
   @override
   Widget build(BuildContext context) {
@@ -144,7 +142,6 @@ class _PacoteListaState extends State<PacoteLista> {
       ),
     );
   }
-
 
   BuildListView() {
     return FutureBuilder<List<PacoteTarefas>>(

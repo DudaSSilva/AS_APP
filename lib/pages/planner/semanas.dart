@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled/models/app_layout.dart';
-import 'package:untitled/models/auxiliar_styles.dart';
-import 'package:untitled/widget/pacote_semanas_card.dart';
+import '../../models/app_layout.dart';
+import '../../models/auxiliar_styles.dart';
+import '../../widget/pacote_semanas_card.dart';
 
 class Semanas extends StatefulWidget {
   const Semanas({Key? key}) : super(key: key);

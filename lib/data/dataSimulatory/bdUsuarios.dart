@@ -1,4 +1,4 @@
-import '../domain/usuario.dart';
+import '../../domain/usuario.dart';
 
 class BD {
   static final List<Usuario> lista = [

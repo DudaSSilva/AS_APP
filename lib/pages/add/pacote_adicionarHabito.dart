@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/domain/pacote_planejamento.dart';
-import 'package:untitled/pages/habit/pacote_habitos.dart';
+import '../../domain/pacote_planejamento.dart';
+import '../habit/pacote_habitos.dart';
 
 class PacoteAdicionarHabito extends StatefulWidget {
 
