@@ -52,7 +52,6 @@ class _LoginPageState extends State<LoginPage> {
                         if (value == null || value.isEmpty) {
                           return 'Campo usuario obrigatório';
                         }
-
                         return null;
                       },
                       decoration: const InputDecoration(
@@ -261,10 +260,12 @@ class _LoginPageState extends State<LoginPage> {
       String pass = _passController.text;
       bool auth = false;
 
+      //bool resultado = await
+
       // Verificando usuarios
       for (Usuario usuario in listaUsuario) {
         //Checando email e senha
-        if (usuario.username == user && usuario.senha == pass) {
+        if (usuario.usuario == user && usuario.senha == pass) {
           auth = true;
         }
       }

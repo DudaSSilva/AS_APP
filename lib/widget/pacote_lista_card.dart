@@ -17,12 +17,6 @@ class CardPacoteLista extends StatefulWidget {
 
 class _CardPacoteListaState extends State<CardPacoteLista> {
   PacoteTarefas get pacote => widget.pacoteTarefas;
-  // bool value1 = false;
-  // bool value2 = false;
-  // bool value3 = false;
-  // bool value4 = false;
-  // bool value5 = false;
-  //bool value = false;
 
   @override
   Widget build(BuildContext context) {
