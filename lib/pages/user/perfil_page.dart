@@ -131,50 +131,9 @@ class _PerfilPageState extends State<PerfilPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              TextFormField(
-                // controller: userNameController,
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Campo habito obrigatório';
-                  }
-                },
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Nome de usuário...',
-                ),
-                cursorColor: Color(0xFFDD2E44),
-              ),
+              Text('Nome do usuário'),
               const SizedBox(height: 16),
-              TextFormField(
-                // controller: userNameController,
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Campo email obrigatório';
-                  }
-                },
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Email...',
-                ),
-                cursorColor: Color(0xFFDD2E44),
-              ),
-              const SizedBox(height: 16),
-              TextFormField(
-                // controller: userNameController,
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Campo senha obrigatório';
-                  }
-                },
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Senha...',
-                ),
-                cursorColor: Color(0xFFDD2E44),
-              ),
+              Text('Senha oculta'),
               const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: onPressedAchiviements,

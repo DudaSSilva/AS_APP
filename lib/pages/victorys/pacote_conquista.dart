@@ -1,5 +1,5 @@
+import 'package:asapp/data/dao/consquistas_dao.dart';
 import 'package:flutter/material.dart';
-import '../../data/dataSimulatory/bdConquistas.dart';
 import '../../domain/pacote_conquistas.dart';
 import '../../widget/pacote_conquistas_card.dart';
 
@@ -14,7 +14,7 @@ class PacoteConquista extends StatefulWidget {
 }
 
 class _PacoteConquistaState extends State<PacoteConquista> {
-  Future<List<PacoteConquistas>> lista = BD.getPacoteConquistas();
+  Future<List<PacoteConquistas>> lista = ConquistasDao().listarConquistas();
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +35,7 @@ class _PacoteConquistaState extends State<PacoteConquista> {
       child: BuildListView(),
     );
   }
+
   BuildListView() {
     return FutureBuilder<List<PacoteConquistas>>(
         future: lista,
@@ -57,4 +58,5 @@ class _PacoteConquistaState extends State<PacoteConquista> {
 
     );
   }
+
 }

@@ -3,28 +3,28 @@ import '../../domain/usuario.dart';
 class BD {
   static final List<Usuario> lista = [
     Usuario(
-      nome: 'Camile',
-      email: 'cvfa2@email.com',
-      username: 'cami123',
+      usuario: 'cami123',
       senha: '123456789',
+      // nome: 'Camile',
+      // email: 'cvfa2@email.com',
     ),
     Usuario(
-      nome: 'Eduarda',
-      email: 'ess47@email.com',
-      username: 'Eddyss',
+      usuario: 'Eddyss',
       senha: '123456789',
+      // nome: 'Eduarda',
+      // email: 'ess47@email.com',
     ),
     Usuario(
-      nome: 'Izabel',
-      email: 'mips1@email.com',
-      username: 'MipsBelchior',
+      usuario: 'MipsBelchior',
       senha: '123456789',
+      // nome: 'Izabel',
+      // email: 'mips1@email.com',
     ),
     Usuario(
-      nome: 'Viviane',
-      email: 'vmss5@email.com',
-      username: 'viviMaria',
+      usuario: 'viviMaria',
       senha: '123456789',
+      // nome: 'Viviane',
+      // email: 'vmss5@email.com',
     ),
   ];
 
