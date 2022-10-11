@@ -17,132 +17,66 @@ class _CardPacoteHabitosState extends State<CardPacoteHabitos> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: const Color(0xFFFFF6E5),
-      //shape: RoundedRectangleBorder(
-      //borderRadius: BorderRadius.circular(8),
-      //),
+    return SingleChildScrollView(
+      child: Container(
+        height: 500,
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+        ),
+        child: GridView(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 4,
+            childAspectRatio: 10,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 0,
+          ),
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                //Envolver cada imagem com um card para ficar clicável
 
-      child: Column(
-        children: [
-          Container(
-            height: 250,
-            child: GridView(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 6,
-                childAspectRatio: 1,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 0,
-              ),
-              children: const [
-                Text(
-                  'Tarefas',
-                  style: const TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
+                Image.asset(
+                  "images/beleza.png",
+                  width: 200,
+                  height: 200,
+                  fit: BoxFit.fitHeight,
                 ),
-                Text(
-                  'S',
-                  style: const TextStyle(
-                    fontSize: 22,
-                  ),
+                const SizedBox(height: 20),
+                Image.asset(
+                  "images/casa.png",
+                  width: 200,
+                  height: 200,
+                  fit: BoxFit.fitHeight,
                 ),
-                Text(
-                  'T',
-                  style: const TextStyle(
-                    fontSize: 22,
-                  ),
-                ),
-                Text(
-                  'Q',
-                  style: const TextStyle(
-                    fontSize: 22,
-                  ),
-                ),
-                Text(
-                  'Q',
-                  style: const TextStyle(
-                    fontSize: 22,
-                  ),
-                ),
-                Text(
-                  'S',
-                  style: TextStyle(
-                    fontSize: 22,
-                  ),
-                ),
-
-                Text(
-                  'Simulado',
-                  style: const TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-
-                Text(
-                  'Atividades',
-                  style: const TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-
-                Text(
-                  'Mapas mentais',
-                  style: const TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-
-                Text(
-                  'Resumos',
-                  style: const TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-
-                Text(
-                  'Vídeo aula',
-                  style: const TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-                const Icon(Icons.circle),
-
               ],
             ),
-          ),
-          const SizedBox(height: 24),
-        ],
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Image.asset(
+                  "images/estudos.png",
+                  width: 200,
+                  height: 200,
+                  fit: BoxFit.fitHeight,
+                ),
+                const SizedBox(height: 20),
+                Image.asset(
+                  "images/saude.png",
+                  width: 200,
+                  height: 200,
+                  fit: BoxFit.fitHeight,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
-
     );
   }
 
+  /*
   SingleChildScrollView buildListView() {
     return SingleChildScrollView(
       child: Column(
@@ -454,4 +388,5 @@ class _CardPacoteHabitosState extends State<CardPacoteHabitos> {
       ),
     );
   }
+  */
 }

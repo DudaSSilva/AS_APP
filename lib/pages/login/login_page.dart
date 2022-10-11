@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
 
   TextEditingController userController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  final _emailController = TextEditingController();
+  final _userController = TextEditingController();
   final _passController = TextEditingController();
 
   @override
@@ -46,14 +46,13 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(height: 32),
                     TextFormField(
                       keyboardType: TextInputType.text,
-                      controller: _emailController,
+                      controller: _userController,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (String? value) {
                         if (value == null || value.isEmpty) {
-                          return 'Campo e-mail obrigatório';
-                        } else if (!value.contains("@")) {
-                          return 'Um e-mail válido deve possuir um "@"!';
+                          return 'Campo usuario obrigatório';
                         }
+
                         return null;
                       },
                       decoration: const InputDecoration(
@@ -258,14 +257,14 @@ class _LoginPageState extends State<LoginPage> {
   onPressedLogin() {
     if (_formKey.currentState!.validate()) {
       List<Usuario> listaUsuario = BD.lista;
-      String email = _emailController.text;
+      String user = _userController.text;
       String pass = _passController.text;
       bool auth = false;
 
       // Verificando usuarios
-      for (Usuario user in listaUsuario) {
+      for (Usuario usuario in listaUsuario) {
         //Checando email e senha
-        if (user.email == email && user.senha == pass) {
+        if (usuario.username == user && usuario.senha == pass) {
           auth = true;
         }
       }
@@ -290,27 +289,6 @@ class _LoginPageState extends State<LoginPage> {
       }
     }
   }
-
-  // void onPressed() {
-  //   if (_formKey.currentState!.validate()) {
-  //     String userLogin = "AcademicSyllabus2022";
-  //     String passwordLogin = "ASapp2022";
-  //
-  //     String user = userController.text;
-  //     String pwd = passwordController.text;
-  //
-  //     if (userLogin == user && passwordLogin == pwd) {
-  //       Navigator.pushReplacement(context,
-  //           MaterialPageRoute(builder: (context) {
-  //             return const TelaPrincipalPage();
-  //           }));
-  //     } else {
-  //       print("Usuário ou senha incorretos. Tente novamente.");
-  //     }
-  //   } else {
-  //     print("Formulário inválido.");
-  //   }
-  // }
 
   void onPressedCadastro() {
     Navigator.push(
