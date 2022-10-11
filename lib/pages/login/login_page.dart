@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-//import { mdiInstagram } from '@mdi/js';
-import '../../data/dataSimulatory/bdUsuarios.dart';
-import '../../domain/usuario.dart';
+import '../../data/dao/usuario_dao.dart';
 import 'cadastro_page.dart';
 import '../pacote_telaPrincipal.dart';
 import 'redefinirSenha_page.dart';
@@ -20,8 +18,6 @@ class _LoginPageState extends State<LoginPage> {
 
   TextEditingController userController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  final _userController = TextEditingController();
-  final _passController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(height: 32),
                     TextFormField(
                       keyboardType: TextInputType.text,
-                      controller: _userController,
+                      controller: userController,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (String? value) {
                         if (value == null || value.isEmpty) {
@@ -58,12 +54,12 @@ class _LoginPageState extends State<LoginPage> {
                         border: OutlineInputBorder(),
                         labelText: 'E-mail ou usuário',
                       ),
-                      cursorColor: Color(0xFFDD2E44),
+                      cursorColor: const Color(0xFFDD2E44),
                     ),
                     const SizedBox(height: 16),
                     TextFormField(
                       keyboardType: TextInputType.text,
-                      controller: _passController,
+                      controller: passwordController,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (String? value) {
                         if (value == null || value.isEmpty) {
@@ -78,13 +74,13 @@ class _LoginPageState extends State<LoginPage> {
                         border: OutlineInputBorder(),
                         labelText: 'Senha',
                       ),
-                      cursorColor: Color(0xFFDD2E44),
+                      cursorColor: const Color(0xFFDD2E44),
                     ),
                     const SizedBox(height: 24),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: Color(0xFFDD2E44),
-                        padding: EdgeInsets.all(0),
+                        primary: const Color(0xFFDD2E44),
+                        padding: const EdgeInsets.all(0),
                       ),
                       child: const Text(
                         'Esqueci minha senha',
@@ -97,14 +93,14 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => RedefinirSenhaPage()),
+                              builder: (context) => const RedefinirSenhaPage()),
                         );
                       },
                     ),
                     const SizedBox(height: 16),
                     ElevatedButton(
                       style:
-                      ElevatedButton.styleFrom(primary: Color(0xFFFFCC99)),
+                      ElevatedButton.styleFrom(primary: const Color(0xFFFFCC99)),
                       onPressed: onPressedLogin,
                       child: const Padding(
                         padding: EdgeInsets.symmetric(vertical: 12.0),
@@ -189,7 +185,7 @@ class _LoginPageState extends State<LoginPage> {
                             ],
                           ),
                           style: ElevatedButton.styleFrom(
-                            padding: EdgeInsets.all(20),
+                            padding: const EdgeInsets.all(20),
                           ),
                           onPressed: openInstagram,
                         ),
@@ -239,7 +235,7 @@ class _LoginPageState extends State<LoginPage> {
                             ],
                           ),
                           style: ElevatedButton.styleFrom(
-                            padding: EdgeInsets.all(20),
+                            padding: const EdgeInsets.all(20),
                           ),
                           onPressed: openSite,
                         ),
@@ -253,24 +249,15 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  onPressedLogin() {
+  onPressedLogin() async {
     if (_formKey.currentState!.validate()) {
-      List<Usuario> listaUsuario = BD.lista;
-      String user = _userController.text;
-      String pass = _passController.text;
-      bool auth = false;
+      String user = userController.text;
+      String pass = passwordController.text;
 
-      //bool resultado = await
 
-      // Verificando usuarios
-      for (Usuario usuario in listaUsuario) {
-        //Checando email e senha
-        if (usuario.usuario == user && usuario.senha == pass) {
-          auth = true;
-        }
-      }
+      bool resultado = await UsuarioDao().autenticar(user: user, password: pass);
 
-      if (auth) {
+      if (resultado) {
         // Push para pag de login
         Navigator.pushReplacement(
           context,

@@ -6,7 +6,7 @@ class DBHelper {
 
   initDB() async {
     String databasePath = await getDatabasesPath();
-    String path = join(databasePath, "banco.db");
+    String path = join(databasePath, "banco2.db");
     Database database = await openDatabase(
       path,
       version: 1,
@@ -23,6 +23,34 @@ class DBHelper {
 
     sql =
     "INSERT INTO CONQUISTAS (id, title, text) VALUES (1, 'PARABÉNS','Você realizou todas as tarefas desta semana.');";
+    await db.execute(sql);
+
+    sql =
+    "INSERT INTO CONQUISTAS (id, title, text) VALUES (2, 'PARABÉNS','Você realizou todas as tarefas desta semana.');";
+    await db.execute(sql);
+
+    sql =
+    "INSERT INTO CONQUISTAS (id, title, text) VALUES (3, 'PARABÉNS','Você realizou todas as tarefas desta semana.');";
+    await db.execute(sql);
+
+    sql =
+    "INSERT INTO CONQUISTAS (id, title, text) VALUES (4, 'PARABÉNS','Você realizou todas as tarefas desta semana.');";
+    await db.execute(sql);
+
+    sql =
+    "INSERT INTO CONQUISTAS (id, title, text) VALUES (5, 'PARABÉNS','Você realizou todas as tarefas desta semana.');";
+    await db.execute(sql);
+
+    sql =
+    "INSERT INTO CONQUISTAS (id, title, text) VALUES (6, 'PARABÉNS','Você realizou todas as tarefas desta semana.');";
+    await db.execute(sql);
+
+    sql =
+    "INSERT INTO CONQUISTAS (id, title, text) VALUES (7, 'PARABÉNS','Você realizou todas as tarefas desta semana.');";
+    await db.execute(sql);
+
+    sql =
+    "INSERT INTO CONQUISTAS (id, title, text) VALUES (8, 'PARABÉNS','Você realizou todas as tarefas desta semana.');";
     await db.execute(sql);
   }
 

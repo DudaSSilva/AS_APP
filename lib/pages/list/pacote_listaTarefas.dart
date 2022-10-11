@@ -58,8 +58,6 @@ class _PacoteListaState extends State<PacoteLista> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 8),
-                  BuildListView(),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -112,6 +110,8 @@ class _PacoteListaState extends State<PacoteLista> {
                       ),
                     ],
                   ),
+                  const SizedBox(height: 8),
+                  BuildListView(),
                 ],
               ),
             ),
