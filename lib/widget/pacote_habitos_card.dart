@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../domain/habitos.dart';
+
 class CardPacoteHabitos extends StatefulWidget {
-  //final PacoteTarefas pacoteTarefas;
+  final PacoteImages pacoteImages;
 
   const CardPacoteHabitos({
     Key? key,
-    //required this.pacoteTarefas,
+    required this.pacoteImages,
   }) : super(key: key);
 
   @override
@@ -13,7 +15,7 @@ class CardPacoteHabitos extends StatefulWidget {
 }
 
 class _CardPacoteHabitosState extends State<CardPacoteHabitos> {
-  //PacoteTarefas get pacote => widget.pacoteTarefas;
+  PacoteImages get pacote => widget.pacoteImages;
 
   @override
   Widget build(BuildContext context) {
@@ -37,36 +39,55 @@ class _CardPacoteHabitosState extends State<CardPacoteHabitos> {
               children: [
                 //Envolver cada imagem com um card para ficar clicável
 
-                Image.asset(
-                  "images/beleza.png",
-                  width: 200,
-                  height: 200,
-                  fit: BoxFit.fitHeight,
+                Card(
+                  child: Image.asset(
+                    pacote.images,
+                    width: 200,
+                    height: 200,
+                    fit: BoxFit.fitHeight,
+                  ),
                 ),
                 const SizedBox(height: 20),
-                Image.asset(
-                  "images/casa.png",
-                  width: 200,
-                  height: 200,
-                  fit: BoxFit.fitHeight,
+                Card(
+                  child: Image.asset(
+                    pacote.images2,
+                    width: 200,
+                    height: 200,
+                    fit: BoxFit.fitHeight,
+                  ),
                 ),
               ],
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Image.asset(
-                  "images/estudos.png",
-                  width: 200,
-                  height: 200,
-                  fit: BoxFit.fitHeight,
-                ),
+                // InkWell(
+                //   onTap: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (context) {
+                //           return tela;
+                //         },
+                //       ),
+                //     );
+                //   },
+                  Card(
+                    child: Image.asset(
+                      pacote.images3,
+                      width: 200,
+                      height: 200,
+                      fit: BoxFit.fitHeight,
+                    ),
+                  ),
                 const SizedBox(height: 20),
-                Image.asset(
-                  "images/saude.png",
-                  width: 200,
-                  height: 200,
-                  fit: BoxFit.fitHeight,
+                Card(
+                  child: Image.asset(
+                    pacote.images4,
+                    width: 200,
+                    height: 200,
+                    fit: BoxFit.fitHeight,
+                  ),
                 ),
               ],
             ),
