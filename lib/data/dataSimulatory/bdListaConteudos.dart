@@ -4,7 +4,6 @@ class BD {
   static List<PacoteConteudos> lista = [
     PacoteConteudos(
       nomedisciplina: 'Português',
-      cor: 0xFFF4D9A9,
       conteudo1: 'Modernismo',
       conteudo2: 'Interpretação de texto',
       conteudo3: 'Orações subordinadas',
@@ -13,7 +12,6 @@ class BD {
     ),
     PacoteConteudos(
       nomedisciplina: 'Português',
-      cor: 0xFFF4D9A9,
       conteudo1: 'Modernismo',
       conteudo2: 'Interpretação de texto',
       conteudo3: 'Orações subordinadas',
@@ -22,7 +20,6 @@ class BD {
     ),
     PacoteConteudos(
       nomedisciplina: 'Português',
-      cor: 0xFFF4D9A9,
       conteudo1: 'Modernismo',
       conteudo2: 'Interpretação de texto',
       conteudo3: 'Orações subordinadas',
@@ -31,7 +28,6 @@ class BD {
     ),
     PacoteConteudos(
       nomedisciplina: 'Português',
-      cor: 0xFFF4D9A9,
       conteudo1: 'Modernismo',
       conteudo2: 'Interpretação de texto',
       conteudo3: 'Orações subordinadas',
@@ -40,7 +36,6 @@ class BD {
     ),
     PacoteConteudos(
       nomedisciplina: 'Português',
-      cor: 0xFFF4D9A9,
       conteudo1: 'Modernismo',
       conteudo2: 'Interpretação de texto',
       conteudo3: 'Orações subordinadas',

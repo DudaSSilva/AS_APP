@@ -7,7 +7,7 @@ class PacoteConteudos {
   late final String conteudo2;
   late final String conteudo3;
   late final String conteudo4;
-  late final int cor;
+  //late final int cor;
   late final bool value;
 
   PacoteConteudos({
@@ -16,7 +16,7 @@ class PacoteConteudos {
     required this.conteudo2,
     required this.conteudo3,
     required this.conteudo4,
-    required this.cor,
+    //required this.cor,
     required this.value,
   });
 
@@ -28,7 +28,7 @@ class PacoteConteudos {
     data['conteudo2'] = conteudo2;
     data['conteudo3'] = conteudo3;
     data['conteudo4'] = conteudo4;
-    data['cor'] = cor.toString();
+    //data['cor'] = cor.toString();
     data['valor'] = value;
 
     return data;
@@ -40,7 +40,7 @@ class PacoteConteudos {
     conteudo2 = json['conteudo2'];
     conteudo3 = json['conteudo3'];
     conteudo4 = json['conteudo4'];
-    cor = int.parse(json['cor']);
+    //cor = int.parse(json['cor']);
     value = json['valor'] == 0 ? false : true;
   }
 }

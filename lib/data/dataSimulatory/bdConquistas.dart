@@ -5,7 +5,6 @@ class BD {
     PacoteConquistas(
       title: 'PARABÉNS!',
       text: 'Você realizou todas as tarefas desta semana.',
-      //cor: 0xFFF4D9A9,
     ),
     PacoteConquistas(
       title: 'PARABÉNS!',

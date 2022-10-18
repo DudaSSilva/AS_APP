@@ -1,6 +1,6 @@
 import 'package:sqflite/sqflite.dart';
 import '../../domain/pacote_conquistas.dart';
-import '../helper/conquistas_db_helper.dart';
+import '../helper/db_helper.dart';
 
 class ConquistasDao {
 

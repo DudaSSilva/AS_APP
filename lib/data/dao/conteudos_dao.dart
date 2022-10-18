@@ -1,7 +1,6 @@
 import 'package:sqflite/sqflite.dart';
 import '../../domain/pacote_conteudos.dart';
-import '../../domain/pacote_tarefas.dart';
-import '../helper/conquistas_db_helper.dart';
+import '../helper/conteudos_db_helper.dart';
 
 class ConteudosDao {
 

@@ -259,8 +259,8 @@ class _LoginPageState extends State<LoginPage> {
       bool resultado = await UsuarioDao().autenticar(user: user, password: pass);
 
       if (resultado) {
-        SharedPrefsHelper().login();
-        // Push para pag de login
+        //SharedPrefsHelper().login();
+
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -270,7 +270,6 @@ class _LoginPageState extends State<LoginPage> {
           ),
         );
       } else {
-        // Mostrar a mensagem de erro
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text("Usuario e/ou senha incorretos"),

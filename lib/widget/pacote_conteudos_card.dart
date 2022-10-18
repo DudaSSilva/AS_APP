@@ -16,15 +16,12 @@ class CardPacoteConteudos extends StatefulWidget {
 
 class _CardPacoteConteudosState extends State<CardPacoteConteudos> {
   PacoteConteudos get pacote => widget.pacoteConteudos;
-  // bool value1 = false;
-  // bool value2 = false;
-  // bool value3 = false;
-  // bool value4 = false;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color(pacote.cor),
+      //color: Color(pacote.cor),
+      color: Color(0xFFF4D9A9),
       child: Column(
         children: [
           Padding(
