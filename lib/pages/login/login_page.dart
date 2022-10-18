@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../data/dao/usuario_dao.dart';
+import '../../data/shared_prefs_helper.dart';
 import 'cadastro_page.dart';
 import '../pacote_telaPrincipal.dart';
 import 'redefinirSenha_page.dart';
@@ -249,7 +250,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  onPressedLogin() async {
+  Future<void> onPressedLogin() async {
     if (_formKey.currentState!.validate()) {
       String user = userController.text;
       String pass = passwordController.text;
@@ -258,6 +259,7 @@ class _LoginPageState extends State<LoginPage> {
       bool resultado = await UsuarioDao().autenticar(user: user, password: pass);
 
       if (resultado) {
+        SharedPrefsHelper().login();
         // Push para pag de login
         Navigator.pushReplacement(
           context,

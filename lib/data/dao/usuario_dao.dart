@@ -1,5 +1,5 @@
-import 'package:asapp/domain/usuario.dart';
 import 'package:sqflite/sqflite.dart';
+import '../../domain/usuario.dart';
 import '../helper/user_db_helper.dart';
 
 class UsuarioDao {
@@ -16,7 +16,7 @@ class UsuarioDao {
     Database db = await dbHelper.initDB();
 
     String sql = 'SELECT * '
-        'FROM user '
+        'FROM USUARIO '
         'WHERE username = ? AND password = ?;';
 
     final result = await db.rawQuery(sql, [user, password]);

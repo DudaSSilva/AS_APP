@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../data/shared_prefs_helper.dart';
+import 'login/login_page.dart';
 import 'victorys/pacote_conquista.dart';
 import 'tips/pacote_dicas.dart';
 import '../domain/pacote_materias.dart';
@@ -70,6 +72,8 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
             BuildAchiviements(),
             const SizedBox(height: 10),
             BuildAboutUs(),
+            const SizedBox(height: 10),
+            BuildLogout(),
           ],
         ),
       ),
@@ -99,10 +103,10 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
             pacotePlanejamento: pacote2,
             tela: PacoteLista(
                 pacotePlanejamento: PacotePlanejamento(
-                  icon: const Icon(Icons.list),
-                  titulo: 'LISTA DE TAREFAS',
-                  cor: 0xFFF8E9CE,
-                )),
+              icon: const Icon(Icons.list),
+              titulo: 'LISTA DE TAREFAS',
+              cor: 0xFFF8E9CE,
+            )),
           ),
           const SizedBox(height: 16),
           CardPacotePlanejamento(
@@ -190,28 +194,6 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
       ),
     );
   }
-
-  // BuildFloatButton(){
-  //   mudarOrientacao();
-  //   return FloatingActionButton(
-  //     onPressed: () {
-  //       Navigator.push(
-  //         context,
-  //         MaterialPageRoute(
-  //           builder: (context) {
-  //             return TelaPrincipalPage();
-  //           },
-  //         ),
-  //       );
-  //      },
-  //     backgroundColor: const Color(0xFFDD2E44),
-  //     child: const Icon(
-  //       Icons.change_circle_outlined,
-  //       color: Color(0xFFFFE8E8),
-  //       size: 50,
-  //     ),
-  //   );
-  // }
 
   BuildPerfil() {
     return Column(
@@ -336,6 +318,61 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
           onPressed: onPressedAboutUs,
           child: const Text(
             'SOBRE NÓS',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Color(0xFFF25E7A),
+              fontSize: 20,
+            ),
+          ),
+          style: ElevatedButton.styleFrom(
+            primary: const Color(0xFFFFE8E8),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+
+  BuildLogout() {
+    return Column(
+      //crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        IconButton(
+          onPressed: () {
+            SharedPrefsHelper().logout();
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return const LoginPage();
+                },
+              ),
+            );
+          },
+          icon: const Icon(
+            Icons.logout_outlined,
+            color: Color(0xFFFFE8E8),
+            size: 50,
+          ),
+        ),
+        const SizedBox(height: 8),
+        ElevatedButton(
+          onPressed: () {
+            SharedPrefsHelper().logout();
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return const LoginPage();
+                },
+              ),
+            );
+          },
+          child: const Text(
+            'SAIR',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Color(0xFFF25E7A),

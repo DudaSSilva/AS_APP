@@ -61,7 +61,7 @@ class _Dica4PageState extends State<Dica4Page> {
                         'Fonte da imagem:',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Color(0xFFF25E7A),
+                          color: Color(0xFFFFC690),
                           fontSize: 10,
                         ),
                       ),
@@ -76,7 +76,7 @@ class _Dica4PageState extends State<Dica4Page> {
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 10,
-                              color: Color(0xFFF25E7A),
+                              color: Color(0xFFFFC690),
                             ),
                           ),
                           onPressed: onPressedFonteImagem,
@@ -89,7 +89,7 @@ class _Dica4PageState extends State<Dica4Page> {
                     '5 dicas para melhorar a Concentração',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Color(0xFFF25E7A),
+                      color: Colors.white,
                       fontSize: 20,
                     ),
                   ),
@@ -98,7 +98,7 @@ class _Dica4PageState extends State<Dica4Page> {
                     'Para melhorar nossa concentração é importante ter disciplina, isto é, ser constante, insistente, dedicado e organizado.',
                     textAlign: TextAlign.justify,
                     style: TextStyle(
-                      color: Color(0xFFF25E7A),
+                      color: Colors.white,
                       fontSize: 14,
                     ),
                   ),
@@ -107,7 +107,7 @@ class _Dica4PageState extends State<Dica4Page> {
                     'A habilidade de manter a concentração pode ser desenvolvida como qualquer outra habilidade, como a de dirigir o carro ou como a de empreender. Para isso, é preciso querer aprender a se concentrar – e querer muito, pois costumamos ter muita resistência. Por isso, segue as dicas.',
                     textAlign: TextAlign.justify,
                     style: TextStyle(
-                      color: Color(0xFFF25E7A),
+                      color: Colors.white,
                       fontSize: 14,
                     ),
                   ),
@@ -125,7 +125,7 @@ class _Dica4PageState extends State<Dica4Page> {
                       'FONTES UTILIZADAS PARA O TEXTO DESSE POST',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: Color(0xFFF25E7A),
+                        color: Color(0xFFFFC690),
                         fontSize: 12,
                       ),
                     ),
@@ -141,7 +141,7 @@ class _Dica4PageState extends State<Dica4Page> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 12,
-                          color: Color(0xFFF25E7A),
+                          color: Color(0xFFFFC690),
                         ),
                       ),
                       onPressed: onPressedFonte,
@@ -185,7 +185,7 @@ class _Dica4PageState extends State<Dica4Page> {
       text,
       textAlign: TextAlign.justify,
       style: const TextStyle(
-        color: Color(0xFFF25E7A),
+        color: Color(0xFFFFC690),
         fontSize: 14,
       ),
     );
@@ -204,10 +204,10 @@ class _Dica4PageState extends State<Dica4Page> {
           title1,
           textAlign: TextAlign.justify,
           style: const TextStyle(
-            color: Color(0xFFF25E7A),
+            color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            backgroundColor: Color(0xFFFFE8E8),
+            backgroundColor: Color(0xFFF25E7A),
           ),
         ),
         const SizedBox(height: 16),
@@ -217,10 +217,10 @@ class _Dica4PageState extends State<Dica4Page> {
           title2,
           textAlign: TextAlign.justify,
           style: const TextStyle(
-            color: Color(0xFFF25E7A),
+            color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            backgroundColor: Color(0xFFFFE8E8),
+            backgroundColor: Color(0xFFF25E7A),
           ),
         ),
         const SizedBox(height: 16),
@@ -230,10 +230,10 @@ class _Dica4PageState extends State<Dica4Page> {
           title3,
           textAlign: TextAlign.justify,
           style: const TextStyle(
-            color: Color(0xFFF25E7A),
+            color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            backgroundColor: Color(0xFFFFE8E8),
+            backgroundColor: Color(0xFFF25E7A),
           ),
         ),
         SizedBox(height: 16),
@@ -243,10 +243,10 @@ class _Dica4PageState extends State<Dica4Page> {
           title4,
           textAlign: TextAlign.justify,
           style: const TextStyle(
-            color: Color(0xFFF25E7A),
+            color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            backgroundColor: Color(0xFFFFE8E8),
+            backgroundColor: Color(0xFFF25E7A),
           ),
         ),
         const SizedBox(height: 16),
@@ -256,10 +256,10 @@ class _Dica4PageState extends State<Dica4Page> {
           title5,
           textAlign: TextAlign.justify,
           style: const TextStyle(
-            color: Color(0xFFF25E7A),
+            color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            backgroundColor: Color(0xFFFFE8E8),
+            backgroundColor: Color(0xFFF25E7A),
           ),
         ),
         const SizedBox(height: 16),

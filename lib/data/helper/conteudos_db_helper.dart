@@ -6,7 +6,7 @@ class DBHelper {
 
   initDB() async {
     String databasePath = await getDatabasesPath();
-    String path = join(databasePath, "conteudos.db");
+    String path = join(databasePath, "conteudos4.db");
     Database database = await openDatabase(path,version: 1, onCreate: onCreate);
 
     print(path);
