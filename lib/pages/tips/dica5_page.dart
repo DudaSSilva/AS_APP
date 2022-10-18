@@ -168,6 +168,19 @@ class _Dica5PageState extends State<Dica5Page> {
       throw 'Could not launch $_url';
     }
   }
+
+  buildText({
+    required String text,
+  }) {
+    return Text(
+      text,
+      textAlign: TextAlign.justify,
+      style: const TextStyle(
+        color: Color(0xFFF25E7A),
+        fontSize: 14,
+      ),
+    );
+  }
   
   buildTittle({
     required String title1,

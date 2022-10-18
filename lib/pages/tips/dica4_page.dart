@@ -117,8 +117,7 @@ class _Dica4PageState extends State<Dica4Page> {
                     title2: '2 - Exercite sua mente',
                     title3: '3 - Aprenda a priorizar',
                     title4: '4 - Aprenda a fazer centramento',
-                    title5: '5 - Ouça música
-',
+                    title5: '5 - Ouça música',
                   ),
                   const SizedBox(height: 32),
                   const Center(
@@ -177,6 +176,19 @@ class _Dica4PageState extends State<Dica4Page> {
     )) {
       throw 'Could not launch $_url';
     }
+  }
+
+  buildText({
+    required String text,
+  }) {
+    return Text(
+      text,
+      textAlign: TextAlign.justify,
+      style: const TextStyle(
+        color: Color(0xFFF25E7A),
+        fontSize: 14,
+      ),
+    );
   }
   
   buildTittle({
