@@ -8,7 +8,7 @@ class UsuarioDao {
     DBHelper dbHelper = DBHelper();
     Database db = await dbHelper.initDB();
 
-    await db.insert('user', usuario.toJson());
+    await db.insert('usuario', usuario.toJson());
   }
 
   Future<bool> autenticar({required String user, required String password}) async {
@@ -16,7 +16,7 @@ class UsuarioDao {
     Database db = await dbHelper.initDB();
 
     String sql = 'SELECT * '
-        'FROM USUARIO'
+        'FROM USUARIO '
         'WHERE username = ? AND password = ?;';
 
     final result = await db.rawQuery(sql, [user, password]);
@@ -28,7 +28,7 @@ class UsuarioDao {
     DBHelper dbHelper = DBHelper();
     Database db = await dbHelper.initDB();
 
-    String sql = 'SELECT * FROM user;';
+    String sql = 'SELECT * FROM USUARIO;';
     final result = await db.rawQuery(sql);
 
     List<Usuario> lista = <Usuario>[];
