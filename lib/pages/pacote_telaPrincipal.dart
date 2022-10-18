@@ -88,7 +88,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
       padding: const EdgeInsets.all(16.0),
       child: ListView(
         children: [
-          CalendarScreen(),
+          //CalendarScreen(),
           const SizedBox(height: 16),
           CardPacotePlanejamento(
             pacotePlanejamento: pacote1,
