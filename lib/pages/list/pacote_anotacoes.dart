@@ -18,7 +18,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
       backgroundColor: const Color(0xFFFFE8E8),
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('ANOTAÇÕES'),
+        title: const Text('LISTAS'),
         backgroundColor: const Color(0xFFDD2E44),
       ),
       body: BuildBody(),
