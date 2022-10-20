@@ -1,4 +1,5 @@
 //ALTERAR PARA TELA DE ANOTAÇÕES
+import 'package:flash_card/flash_card.dart';
 import 'package:flutter/material.dart';
 import '../pacote_telaPrincipal.dart';
 
@@ -11,39 +12,617 @@ class PacoteAnotacoes extends StatefulWidget {
 
 class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
   @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFFFE8E8),
       appBar: AppBar(
         centerTitle: true,
         title: const Text('ANOTAÇÕES'),
-        backgroundColor: const Color(0xFFC2334D),
+        backgroundColor: const Color(0xFFDD2E44),
       ),
-      body: buildBody(),
+      body: BuildBody(),
     );
   }
 
-  buildBody() {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: ListView(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-                color: Color(0xFFC2334D),
-                borderRadius: BorderRadius.circular(16),
-            ),
-            padding: const EdgeInsets.all(16),
-            child: const Text(
-                'FILMES',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 22,
-                  color: Color(0xFFFFE8E8),
-                ),
-            ),
+  //Fazer um buildFlashCard
+
+  List lista = [
+    FlashCard(
+      frontWidget: Container(
+          height: 100,
+          width: 100,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text.rich(TextSpan(
+                  text: 'Nghĩa:',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  children: [
+                    TextSpan(
+                      text: 'Ngôi nhà',
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )
+                  ])),
+              Text.rich(TextSpan(
+                  text: 'Phiên âm:',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  children: [
+                    TextSpan(
+                      text: '/həʊm/',
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )
+                  ])),
+              // Image.network(
+              //   'https://fn.vinhphuc.edu.vn/UploadImages/mnhoanglau/admin/anh%20nha.jpg?w=700',
+              //   width: 30,
+              //   height: 30,
+              // ),
+            ],
+          )),
+      backWidget: Container(
+        height: 100,
+        width: 100,
+        child: Center(
+          child: Text(
+            'Home',
+            style: TextStyle(
+                color: Colors.deepPurple,
+                fontSize: 30,
+                fontWeight: FontWeight.w900),
           ),
-        ],
+        ),
+      ),
+      width: 300,
+      height: 400,
+    ),
+    FlashCard(
+      frontWidget: Container(
+          height: 100,
+          width: 100,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text.rich(TextSpan(
+                  text: 'Nghĩa:',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  children: [
+                    TextSpan(
+                      text: 'Ngôi nhà',
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )
+                  ])),
+              Text.rich(TextSpan(
+                  text: 'Phiên âm:',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  children: [
+                    TextSpan(
+                      text: '/həʊm/',
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )
+                  ])),
+              Container(
+                height: 40,
+                width: 40,
+                margin: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    border: Border.all(color: Colors.blue, width: 2),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey,
+                          offset: Offset(2, 2),
+                          spreadRadius: 1,
+                          blurRadius: 15)
+                    ]),
+                child: Center(
+                    child:
+                    Icon(Icons.volume_down_sharp, color: Colors.blue)),
+              ),
+            ],
+          )),
+      backWidget: Container(
+        height: 100,
+        width: 100,
+        child: Center(
+          child: Text(
+            'Home',
+            style: TextStyle(
+                color: Colors.deepPurple,
+                fontSize: 30,
+                fontWeight: FontWeight.w900),
+          ),
+        ),
+      ),
+      width: 300,
+      height: 400,
+    ),
+    FlashCard(
+      frontWidget: Container(
+          height: 100,
+          width: 100,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text.rich(TextSpan(
+                  text: 'Nghĩa:',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  children: [
+                    TextSpan(
+                      text: 'Ngôi nhà',
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )
+                  ])),
+              Text.rich(TextSpan(
+                  text: 'Phiên âm:',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  children: [
+                    TextSpan(
+                      text: '/həʊm/',
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )
+                  ])),
+              Container(
+                height: 40,
+                width: 40,
+                margin: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    border: Border.all(color: Colors.blue, width: 2),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey,
+                          offset: Offset(2, 2),
+                          spreadRadius: 1,
+                          blurRadius: 15)
+                    ]),
+                child: Center(
+                    child:
+                    Icon(Icons.volume_down_sharp, color: Colors.blue)),
+              ),
+            ],
+          )),
+      backWidget: Container(
+        height: 100,
+        width: 100,
+        child: Center(
+          child: Text(
+            'Home',
+            style: TextStyle(
+                color: Colors.deepPurple,
+                fontSize: 30,
+                fontWeight: FontWeight.w900),
+          ),
+        ),
+      ),
+      width: 300,
+      height: 400,
+    ),
+    FlashCard(
+      frontWidget: Container(
+          height: 100,
+          width: 100,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text.rich(TextSpan(
+                  text: 'Nghĩa:',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  children: [
+                    TextSpan(
+                      text: 'Ngôi nhà',
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )
+                  ])),
+              Text.rich(TextSpan(
+                  text: 'Phiên âm:',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  children: [
+                    TextSpan(
+                      text: '/həʊm/',
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )
+                  ])),
+              Container(
+                height: 40,
+                width: 40,
+                margin: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    border: Border.all(color: Colors.blue, width: 2),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey,
+                          offset: Offset(2, 2),
+                          spreadRadius: 1,
+                          blurRadius: 15)
+                    ]),
+                child: Center(
+                    child:
+                    Icon(Icons.volume_down_sharp, color: Colors.blue)),
+              ),
+            ],
+          )),
+      backWidget: Container(
+        height: 100,
+        width: 100,
+        child: Center(
+          child: Text(
+            'Home',
+            style: TextStyle(
+                color: Colors.deepPurple,
+                fontSize: 30,
+                fontWeight: FontWeight.w900),
+          ),
+        ),
+      ),
+      width: 300,
+      height: 400,
+    ),
+    FlashCard(
+      frontWidget: Container(
+          height: 100,
+          width: 100,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text.rich(TextSpan(
+                  text: 'Nghĩa:',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  children: [
+                    TextSpan(
+                      text: 'Ngôi nhà',
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )
+                  ])),
+              Text.rich(TextSpan(
+                  text: 'Phiên âm:',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  children: [
+                    TextSpan(
+                      text: '/həʊm/',
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )
+                  ])),
+              Container(
+                height: 40,
+                width: 40,
+                margin: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    border: Border.all(color: Colors.blue, width: 2),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey,
+                          offset: Offset(2, 2),
+                          spreadRadius: 1,
+                          blurRadius: 15)
+                    ]),
+                child: Center(
+                    child:
+                    Icon(Icons.volume_down_sharp, color: Colors.blue)),
+              ),
+            ],
+          )),
+      backWidget: Container(
+        height: 100,
+        width: 100,
+        child: Center(
+          child: Text(
+            'Home',
+            style: TextStyle(
+                color: Colors.deepPurple,
+                fontSize: 30,
+                fontWeight: FontWeight.w900),
+          ),
+        ),
+      ),
+      width: 300,
+      height: 400,
+    ),
+    FlashCard(
+      frontWidget: Container(
+          height: 100,
+          width: 100,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text.rich(TextSpan(
+                  text: 'Nghĩa:',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  children: [
+                    TextSpan(
+                      text: 'Ngôi nhà',
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )
+                  ])),
+              Text.rich(TextSpan(
+                  text: 'Phiên âm:',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  children: [
+                    TextSpan(
+                      text: '/həʊm/',
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )
+                  ])),
+              Container(
+                height: 40,
+                width: 40,
+                margin: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    border: Border.all(color: Colors.blue, width: 2),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey,
+                          offset: Offset(2, 2),
+                          spreadRadius: 1,
+                          blurRadius: 15)
+                    ]),
+                child: Center(
+                    child:
+                    Icon(Icons.volume_down_sharp, color: Colors.blue)),
+              ),
+            ],
+          )),
+      backWidget: Container(
+        height: 100,
+        width: 100,
+        child: Center(
+          child: Text(
+            'Home',
+            style: TextStyle(
+                color: Colors.deepPurple,
+                fontSize: 30,
+                fontWeight: FontWeight.w900),
+          ),
+        ),
+      ),
+      width: 300,
+      height: 400,
+    ),
+    FlashCard(
+      frontWidget: Container(
+          height: 100,
+          width: 100,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text.rich(TextSpan(
+                  text: 'Nghĩa:',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  children: [
+                    TextSpan(
+                      text: 'Ngôi nhà',
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )
+                  ])),
+              Text.rich(TextSpan(
+                  text: 'Phiên âm:',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  children: [
+                    TextSpan(
+                      text: '/həʊm/',
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )
+                  ])),
+              Container(
+                height: 40,
+                width: 40,
+                margin: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    border: Border.all(color: Colors.blue, width: 2),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey,
+                          offset: Offset(2, 2),
+                          spreadRadius: 1,
+                          blurRadius: 15)
+                    ]),
+                child: Center(
+                    child:
+                    Icon(Icons.volume_down_sharp, color: Colors.blue)),
+              ),
+            ],
+          )),
+      backWidget: Container(
+        height: 100,
+        width: 100,
+        child: Center(
+          child: Text(
+            'Home',
+            style: TextStyle(
+                color: Colors.deepPurple,
+                fontSize: 30,
+                fontWeight: FontWeight.w900),
+          ),
+        ),
+      ),
+      width: 300,
+      height: 400,
+    ),
+    FlashCard(
+      frontWidget: Container(
+          height: 100,
+          width: 100,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text.rich(TextSpan(
+                  text: 'Nghĩa:',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  children: [
+                    TextSpan(
+                      text: 'Ngôi nhà',
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )
+                  ])),
+              Text.rich(TextSpan(
+                  text: 'Phiên âm:',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  children: [
+                    TextSpan(
+                      text: '/həʊm/',
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )
+                  ])),
+              Container(
+                height: 40,
+                width: 40,
+                margin: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    border: Border.all(color: Colors.blue, width: 2),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey,
+                          offset: Offset(2, 2),
+                          spreadRadius: 1,
+                          blurRadius: 15)
+                    ]),
+                child: Center(
+                    child:
+                    Icon(Icons.volume_down_sharp, color: Colors.blue)),
+              ),
+            ],
+          )),
+      backWidget: Container(
+        height: 100,
+        width: 100,
+        child: Center(
+          child: Text(
+            'Home',
+            style: TextStyle(
+                color: Colors.deepPurple,
+                fontSize: 30,
+                fontWeight: FontWeight.w900),
+          ),
+        ),
+      ),
+      width: 300,
+      height: 400,
+    ),
+  ];
+
+  BuildBody() {
+    return Scaffold(
+      backgroundColor: Colors.grey[100],
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 1
+          ),
+          itemCount: lista.length,
+          itemBuilder: (BuildContext context, int index) {
+            return lista[index];
+          },
+        ),
       ),
     );
   }

@@ -30,6 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   table_calendar: ^3.0.3
+  flash_card: ^0.0.5
 
   sqflite:
   path:
