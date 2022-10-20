@@ -1,14 +1,15 @@
 import 'package:sqflite/sqflite.dart';
+
 import '../../domain/usuario.dart';
 import '../helper/db_helper.dart';
 
 class UsuarioDao {
 
-  Future<void> salvarUser({required Usuario usuario}) async {
+  Future<void> salvarUser({required Usuario user}) async {
     DBHelper dbHelper = DBHelper();
     Database db = await dbHelper.initDB();
 
-    await db.insert('usuario', usuario.toJson());
+    await db.insert('user', user.toJson());
   }
 
   Future<bool> autenticar({required String user, required String password}) async {
@@ -16,8 +17,8 @@ class UsuarioDao {
     Database db = await dbHelper.initDB();
 
     String sql = 'SELECT * '
-        'FROM USUARIO '
-        'WHERE username = ? AND password = ?;';
+        'FROM user '
+        'WHERE usuario = ? AND senha = ?;';
 
     final result = await db.rawQuery(sql, [user, password]);
 
@@ -28,9 +29,10 @@ class UsuarioDao {
     DBHelper dbHelper = DBHelper();
     Database db = await dbHelper.initDB();
 
-    String sql = 'SELECT * FROM USUARIO;';
+    String sql = 'SELECT * FROM user;';
     final result = await db.rawQuery(sql);
 
+    print(result);
     List<Usuario> lista = <Usuario>[];
     for(var json in result){
       Usuario usuario = Usuario.fromJson(json);

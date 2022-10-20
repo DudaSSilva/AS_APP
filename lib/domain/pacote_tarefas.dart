@@ -1,12 +1,12 @@
 class PacoteTarefas {
-  late final String nomeLista;
-  late final String tarefa1;
-  late final String tarefa2;
-  late final String tarefa3;
-  late final String tarefa4;
-  late final String tarefa5;
-  late final int cor;
-  late final bool value;
+  late String nomeLista;
+  late String tarefa1;
+  late String tarefa2;
+  late String tarefa3;
+  late String tarefa4;
+  late String tarefa5;
+  late int cor;
+  late bool value;
 
   PacoteTarefas({
     required this.nomeLista,

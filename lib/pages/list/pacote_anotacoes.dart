@@ -1,4 +1,6 @@
 //ALTERAR PARA TELA DE ANOTAÇÕES
+import 'package:asapp/domain/flashcard.dart';
+import 'package:asapp/widget/widget_flashcard.dart';
 import 'package:flash_card/flash_card.dart';
 import 'package:flutter/material.dart';
 import '../pacote_telaPrincipal.dart';
@@ -11,7 +13,6 @@ class PacoteAnotacoes extends StatefulWidget {
 }
 
 class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
-  @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +28,13 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
 
   //Fazer um buildFlashCard
 
+  // FlashCardClass pacote = FlashCardClass(
+  //   text: 'Anabelle',
+  //   title: 'Filmes',
+  // );
+
   List lista = [
+    //WidgetFlashCard(flashCardClass: pacote),
     FlashCard(
       frontWidget: Container(
           height: 100,
@@ -65,11 +72,25 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
                           fontSize: 20),
                     )
                   ])),
-              // Image.network(
-              //   'https://fn.vinhphuc.edu.vn/UploadImages/mnhoanglau/admin/anh%20nha.jpg?w=700',
-              //   width: 30,
-              //   height: 30,
-              // ),
+              Container(
+                height: 40,
+                width: 40,
+                margin: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    border: Border.all(color: Colors.blue, width: 2),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey,
+                          offset: Offset(2, 2),
+                          spreadRadius: 1,
+                          blurRadius: 15)
+                    ]),
+                child: Center(
+                    child:
+                    Icon(Icons.volume_down_sharp, color: Colors.blue)),
+              ),
             ],
           )),
       backWidget: Container(
@@ -77,7 +98,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
         width: 100,
         child: Center(
           child: Text(
-            'FILMES',
+            'SÉRIES',
             style: TextStyle(
                 color: Colors.deepPurple,
                 fontSize: 30,

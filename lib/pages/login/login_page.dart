@@ -42,27 +42,34 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     const SizedBox(height: 32),
                     TextFormField(
-                      keyboardType: TextInputType.text,
                       controller: userController,
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
-                      validator: (String? value) {
+                      validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Campo usuario obrigatório';
                         }
                         return null;
                       },
                       decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'E-mail ou usuário',
+                        icon: Icon(
+                            Icons.account_box,
+                            color: Color(0xFFDD2E44),
+                        ),
+                        labelText: 'USUÁRIO',
+                        labelStyle: TextStyle(
+                            color: Color(0xFFDD2E44),
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0xFFDD2E44),
+                          ),
+                        ),
                       ),
                       cursorColor: const Color(0xFFDD2E44),
                     ),
                     const SizedBox(height: 16),
                     TextFormField(
-                      keyboardType: TextInputType.text,
                       controller: passwordController,
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
-                      validator: (String? value) {
+                      validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Campo senha obrigatório';
                         } else if (value.length < 9) {
@@ -72,8 +79,19 @@ class _LoginPageState extends State<LoginPage> {
                       },
                       obscureText: true,
                       decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Senha',
+                        icon: Icon(
+                            Icons.lock,
+                            color: Color(0xFFDD2E44),
+                        ),
+                        labelText: 'SENHA',
+                        labelStyle: TextStyle(
+                          color: Color(0xFFDD2E44),
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0xFFDD2E44),
+                          ),
+                        ),
                       ),
                       cursorColor: const Color(0xFFDD2E44),
                     ),
@@ -246,35 +264,64 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-          )),
+          ),
+      ),
     );
   }
 
+  // Future<void> onPressedLogin() async {
+  //   if (_formKey.currentState!.validate()) {
+  //     String user = userController.text;
+  //     String pass = passwordController.text;
+  //
+  //
+  //     bool resultado = await UsuarioDao().autenticar(user: user, password: pass);
+  //
+  //     if (resultado) {
+  //       //SharedPrefsHelper().login();
+  //
+  //       Navigator.pushReplacement(
+  //         context,
+  //         MaterialPageRoute(
+  //           builder: (context) {
+  //             return const TelaPrincipalPage();
+  //           },
+  //         ),
+  //       );
+  //     } else {
+  //       ScaffoldMessenger.of(context).showSnackBar(
+  //         const SnackBar(
+  //           content: Text("Usuario e/ou senha incorretos"),
+  //         ),
+  //       );
+  //     }
+  //   }
+  // }
+
   Future<void> onPressedLogin() async {
+
     if (_formKey.currentState!.validate()) {
       String user = userController.text;
-      String pass = passwordController.text;
+      String pwd = passwordController.text;
 
-
-      bool resultado = await UsuarioDao().autenticar(user: user, password: pass);
+      bool resultado = await UsuarioDao().autenticar(user: user, password: pwd);
 
       if (resultado) {
-        //SharedPrefsHelper().login();
-
-        Navigator.pushReplacement(
+        Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(
             builder: (context) {
               return const TelaPrincipalPage();
             },
           ),
+              (Route<dynamic> route) => false,
         );
-      } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text("Usuario e/ou senha incorretos"),
-          ),
+      } else{
+        final msg = SnackBar(
+          behavior: SnackBarBehavior.floating,
+          content: Text('Usuário ou senha incorretos'),
         );
+        ScaffoldMessenger.of(context).showSnackBar(msg);
       }
     }
   }

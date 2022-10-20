@@ -31,7 +31,10 @@ dependencies:
     sdk: flutter
   table_calendar: ^3.0.3
   flash_card: ^0.0.5
-
+  carousel_slider: ^4.1.1
+  highlight_text: ^1.4.1
+  image_picker: ^0.8.1+4
+  pdf: ^1.11.2
   sqflite:
   path:
   shared_preferences:
