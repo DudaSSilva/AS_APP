@@ -15,7 +15,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFE8E8),
+      //backgroundColor: const Color(0xFFFFE8E8),
       appBar: AppBar(
         centerTitle: true,
         title: const Text('LISTAS'),
@@ -77,7 +77,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
         width: 100,
         child: Center(
           child: Text(
-            'Home',
+            'FILMES',
             style: TextStyle(
                 color: Colors.deepPurple,
                 fontSize: 30,
@@ -151,7 +151,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
         width: 100,
         child: Center(
           child: Text(
-            'Home',
+            'SÉRIES',
             style: TextStyle(
                 color: Colors.deepPurple,
                 fontSize: 30,
@@ -225,7 +225,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
         width: 100,
         child: Center(
           child: Text(
-            'Home',
+            'ROUPAS',
             style: TextStyle(
                 color: Colors.deepPurple,
                 fontSize: 30,
@@ -299,7 +299,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
         width: 100,
         child: Center(
           child: Text(
-            'Home',
+            'COMPRAS',
             style: TextStyle(
                 color: Colors.deepPurple,
                 fontSize: 30,
@@ -373,7 +373,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
         width: 100,
         child: Center(
           child: Text(
-            'Home',
+            'MAKES',
             style: TextStyle(
                 color: Colors.deepPurple,
                 fontSize: 30,
@@ -447,7 +447,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
         width: 100,
         child: Center(
           child: Text(
-            'Home',
+            'MÚSICAS',
             style: TextStyle(
                 color: Colors.deepPurple,
                 fontSize: 30,
@@ -521,7 +521,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
         width: 100,
         child: Center(
           child: Text(
-            'Home',
+            'MÓVEIS',
             style: TextStyle(
                 color: Colors.deepPurple,
                 fontSize: 30,
@@ -595,7 +595,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
         width: 100,
         child: Center(
           child: Text(
-            'Home',
+            'COMIDA',
             style: TextStyle(
                 color: Colors.deepPurple,
                 fontSize: 30,
@@ -610,7 +610,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
 
   BuildBody() {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: const Color(0xFFDD2E44),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: GridView.builder(
