@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flash_card/flash_card.dart';
 
 class AboutUsPage extends StatefulWidget {
   const AboutUsPage({Key? key}) : super(key: key);
@@ -9,7 +10,6 @@ class AboutUsPage extends StatefulWidget {
 }
 
 class _AboutUsPageState extends State<AboutUsPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,38 +21,13 @@ class _AboutUsPageState extends State<AboutUsPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: ListView(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(16),
+        child: FlashCard(
+          frontWidget: Container(
+              height: 600,
+              width: 400,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    "images/logo.png",
-                    width: 300,
-                    height: 300,
-                    fit: BoxFit.fitHeight,
-                  ),
-                  const SizedBox(height: 16),
-                  const Text(
-                    'Academic Syllabus é um aplicativo ainda em desenvolvimento como requisito parcial para obtenção de diploma de conclusão de curso.',
-                    textAlign: TextAlign.justify,
-                    style: TextStyle(
-                      fontSize: 24,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  const Text(
-                    'O objetivo do AS (abreviação) é otimizar a organização do usuário/estudante, uma vez que a rotina acadêmica pode tornar-se cansativa e acumulativa na questão de estudo dos conteúdos abordados em sala. Nisso, estabelecer metas acadêmicas, criar um cronograma e, no geral, definir um planejamento de estudos se faz uma alternativa viável para se manter organizado. ',
-                    textAlign: TextAlign.justify,
-                    style: TextStyle(
-                      fontSize: 24,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(height: 24),
                   Container(
                     height: 60,
                     width: 380,
@@ -69,8 +44,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                         ),
                         borderRadius: BorderRadius.all(
                           Radius.circular(80),
-                        )
-                    ),
+                        )),
                     child: SizedBox.expand(
                       child: TextButton(
                         child: Row(
@@ -119,8 +93,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                         ),
                         borderRadius: BorderRadius.all(
                           Radius.circular(80),
-                        )
-                    ),
+                        )),
                     child: SizedBox.expand(
                       child: TextButton(
                         child: Row(
@@ -153,9 +126,41 @@ class _AboutUsPageState extends State<AboutUsPage> {
                     ),
                   ),
                 ],
-              ),
+              )),
+          backWidget: Container(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "images/logo.png",
+                  width: 300,
+                  height: 300,
+                  fit: BoxFit.fitHeight,
+                ),
+                const SizedBox(height: 16),
+                const Text(
+                  'Academic Syllabus é um aplicativo ainda em desenvolvimento como requisito parcial para obtenção de diploma de conclusão de curso.',
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: const Color(0xFFD7525B),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                const Text(
+                  'O objetivo do AS (abreviação) é otimizar a organização do usuário/estudante, uma vez que a rotina acadêmica pode tornar-se cansativa e acumulativa na questão de estudo dos conteúdos abordados em sala. Nisso, estabelecer metas acadêmicas, criar um cronograma e, no geral, definir um planejamento de estudos se faz uma alternativa viável para se manter organizado. ',
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: Color(0xFFD7525B),
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
+          width: 400,
+          height: 900,
         ),
       ),
     );
@@ -173,7 +178,8 @@ class _AboutUsPageState extends State<AboutUsPage> {
   }
 
   Future<void> openSite() async {
-    final Uri _url = Uri.parse('https://academicsillabussite--eduardasoares1.repl.co/');
+    final Uri _url =
+        Uri.parse('https://academicsillabussite--eduardasoares1.repl.co/');
 
     if (!await launchUrl(
       _url,

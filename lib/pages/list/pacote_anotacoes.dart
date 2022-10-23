@@ -26,8 +26,6 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
     );
   }
 
-  //Fazer um buildFlashCard
-
   // FlashCardClass pacote = FlashCardClass(
   //   text: 'Anabelle',
   //   title: 'Filmes',
@@ -42,36 +40,11 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text.rich(TextSpan(
-                  text: 'Nghĩa:',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  children: [
-                    TextSpan(
-                      text: 'Ngôi nhà',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    )
-                  ])),
-              Text.rich(TextSpan(
-                  text: 'Phiên âm:',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  children: [
-                    TextSpan(
-                      text: '/həʊm/',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    )
-                  ])),
+              Text(
+                'Anabelle',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Color(0xFFDD2E44)),
+              ),
               Container(
                 height: 40,
                 width: 40,
@@ -79,7 +52,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,
-                    border: Border.all(color: Colors.blue, width: 2),
+                    border: Border.all(color: Color(0xFFDD2E44), width: 2),
                     boxShadow: [
                       BoxShadow(
                           color: Colors.grey,
@@ -87,9 +60,8 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
                           spreadRadius: 1,
                           blurRadius: 15)
                     ]),
-                child: Center(
-                    child:
-                    Icon(Icons.volume_down_sharp, color: Colors.blue)),
+                child:
+                    Center(child: Icon(Icons.movie, color: Color(0xFFDD2E44))),
               ),
             ],
           )),
@@ -98,9 +70,9 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
         width: 100,
         child: Center(
           child: Text(
-            'SÉRIES',
+            'FILMES',
             style: TextStyle(
-                color: Colors.deepPurple,
+                color: Color(0xFFDD2E44),
                 fontSize: 30,
                 fontWeight: FontWeight.w900),
           ),
@@ -116,36 +88,11 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text.rich(TextSpan(
-                  text: 'Nghĩa:',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  children: [
-                    TextSpan(
-                      text: 'Ngôi nhà',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    )
-                  ])),
-              Text.rich(TextSpan(
-                  text: 'Phiên âm:',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  children: [
-                    TextSpan(
-                      text: '/həʊm/',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    )
-                  ])),
+              Text(
+                'Uma advogada extraordinária',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Color(0xFFDD2E44)),
+              ),
               Container(
                 height: 40,
                 width: 40,
@@ -153,7 +100,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,
-                    border: Border.all(color: Colors.blue, width: 2),
+                    border: Border.all(color: Color(0xFFDD2E44), width: 2),
                     boxShadow: [
                       BoxShadow(
                           color: Colors.grey,
@@ -163,7 +110,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
                     ]),
                 child: Center(
                     child:
-                    Icon(Icons.volume_down_sharp, color: Colors.blue)),
+                        Icon(Icons.movie_outlined, color: Color(0xFFDD2E44))),
               ),
             ],
           )),
@@ -174,7 +121,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
           child: Text(
             'SÉRIES',
             style: TextStyle(
-                color: Colors.deepPurple,
+                color: Color(0xFFDD2E44),
                 fontSize: 30,
                 fontWeight: FontWeight.w900),
           ),
@@ -190,36 +137,11 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text.rich(TextSpan(
-                  text: 'Nghĩa:',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  children: [
-                    TextSpan(
-                      text: 'Ngôi nhà',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    )
-                  ])),
-              Text.rich(TextSpan(
-                  text: 'Phiên âm:',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  children: [
-                    TextSpan(
-                      text: '/həʊm/',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    )
-                  ])),
+              Text(
+                'Wid leg preta',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Color(0xFFDD2E44)),
+              ),
               Container(
                 height: 40,
                 width: 40,
@@ -227,7 +149,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,
-                    border: Border.all(color: Colors.blue, width: 2),
+                    border: Border.all(color: Color(0xFFDD2E44), width: 2),
                     boxShadow: [
                       BoxShadow(
                           color: Colors.grey,
@@ -235,9 +157,8 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
                           spreadRadius: 1,
                           blurRadius: 15)
                     ]),
-                child: Center(
-                    child:
-                    Icon(Icons.volume_down_sharp, color: Colors.blue)),
+                child:
+                    Center(child: Icon(Icons.circle, color: Color(0xFFDD2E44))),
               ),
             ],
           )),
@@ -248,7 +169,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
           child: Text(
             'ROUPAS',
             style: TextStyle(
-                color: Colors.deepPurple,
+                color: Color(0xFFDD2E44),
                 fontSize: 30,
                 fontWeight: FontWeight.w900),
           ),
@@ -264,36 +185,11 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text.rich(TextSpan(
-                  text: 'Nghĩa:',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  children: [
-                    TextSpan(
-                      text: 'Ngôi nhà',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    )
-                  ])),
-              Text.rich(TextSpan(
-                  text: 'Phiên âm:',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  children: [
-                    TextSpan(
-                      text: '/həʊm/',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    )
-                  ])),
+              Text(
+                'Talheres, liquidificador e xícara',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Color(0xFFDD2E44)),
+              ),
               Container(
                 height: 40,
                 width: 40,
@@ -301,7 +197,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,
-                    border: Border.all(color: Colors.blue, width: 2),
+                    border: Border.all(color: Color(0xFFDD2E44), width: 2),
                     boxShadow: [
                       BoxShadow(
                           color: Colors.grey,
@@ -309,9 +205,8 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
                           spreadRadius: 1,
                           blurRadius: 15)
                     ]),
-                child: Center(
-                    child:
-                    Icon(Icons.volume_down_sharp, color: Colors.blue)),
+                child:
+                    Center(child: Icon(Icons.circle, color: Color(0xFFDD2E44))),
               ),
             ],
           )),
@@ -322,7 +217,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
           child: Text(
             'COMPRAS',
             style: TextStyle(
-                color: Colors.deepPurple,
+                color: Color(0xFFDD2E44),
                 fontSize: 30,
                 fontWeight: FontWeight.w900),
           ),
@@ -338,36 +233,11 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text.rich(TextSpan(
-                  text: 'Nghĩa:',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  children: [
-                    TextSpan(
-                      text: 'Ngôi nhà',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    )
-                  ])),
-              Text.rich(TextSpan(
-                  text: 'Phiên âm:',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  children: [
-                    TextSpan(
-                      text: '/həʊm/',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    )
-                  ])),
+              Text(
+                'Delineador, base e sombras',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Color(0xFFDD2E44)),
+              ),
               Container(
                 height: 40,
                 width: 40,
@@ -375,7 +245,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,
-                    border: Border.all(color: Colors.blue, width: 2),
+                    border: Border.all(color: Color(0xFFDD2E44), width: 2),
                     boxShadow: [
                       BoxShadow(
                           color: Colors.grey,
@@ -383,9 +253,8 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
                           spreadRadius: 1,
                           blurRadius: 15)
                     ]),
-                child: Center(
-                    child:
-                    Icon(Icons.volume_down_sharp, color: Colors.blue)),
+                child:
+                    Center(child: Icon(Icons.circle, color: Color(0xFFDD2E44))),
               ),
             ],
           )),
@@ -396,7 +265,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
           child: Text(
             'MAKES',
             style: TextStyle(
-                color: Colors.deepPurple,
+                color: Color(0xFFDD2E44),
                 fontSize: 30,
                 fontWeight: FontWeight.w900),
           ),
@@ -412,36 +281,11 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text.rich(TextSpan(
-                  text: 'Nghĩa:',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  children: [
-                    TextSpan(
-                      text: 'Ngôi nhà',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    )
-                  ])),
-              Text.rich(TextSpan(
-                  text: 'Phiên âm:',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  children: [
-                    TextSpan(
-                      text: '/həʊm/',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    )
-                  ])),
+              Text(
+                'Paradise e The nights',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Color(0xFFDD2E44)),
+              ),
               Container(
                 height: 40,
                 width: 40,
@@ -449,7 +293,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,
-                    border: Border.all(color: Colors.blue, width: 2),
+                    border: Border.all(color: Color(0xFFDD2E44), width: 2),
                     boxShadow: [
                       BoxShadow(
                           color: Colors.grey,
@@ -458,8 +302,8 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
                           blurRadius: 15)
                     ]),
                 child: Center(
-                    child:
-                    Icon(Icons.volume_down_sharp, color: Colors.blue)),
+                    child: Icon(Icons.music_note_outlined,
+                        color: Color(0xFFDD2E44))),
               ),
             ],
           )),
@@ -470,7 +314,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
           child: Text(
             'MÚSICAS',
             style: TextStyle(
-                color: Colors.deepPurple,
+                color: Color(0xFFDD2E44),
                 fontSize: 30,
                 fontWeight: FontWeight.w900),
           ),
@@ -486,36 +330,11 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text.rich(TextSpan(
-                  text: 'Nghĩa:',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  children: [
-                    TextSpan(
-                      text: 'Ngôi nhà',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    )
-                  ])),
-              Text.rich(TextSpan(
-                  text: 'Phiên âm:',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  children: [
-                    TextSpan(
-                      text: '/həʊm/',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    )
-                  ])),
+              Text(
+                'Mesa e pallet',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Color(0xFFDD2E44)),
+              ),
               Container(
                 height: 40,
                 width: 40,
@@ -523,7 +342,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,
-                    border: Border.all(color: Colors.blue, width: 2),
+                    border: Border.all(color: Color(0xFFDD2E44), width: 2),
                     boxShadow: [
                       BoxShadow(
                           color: Colors.grey,
@@ -532,8 +351,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
                           blurRadius: 15)
                     ]),
                 child: Center(
-                    child:
-                    Icon(Icons.volume_down_sharp, color: Colors.blue)),
+                    child: Icon(Icons.table_bar, color: Color(0xFFDD2E44))),
               ),
             ],
           )),
@@ -544,7 +362,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
           child: Text(
             'MÓVEIS',
             style: TextStyle(
-                color: Colors.deepPurple,
+                color: Color(0xFFDD2E44),
                 fontSize: 30,
                 fontWeight: FontWeight.w900),
           ),
@@ -560,36 +378,11 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text.rich(TextSpan(
-                  text: 'Nghĩa:',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  children: [
-                    TextSpan(
-                      text: 'Ngôi nhà',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    )
-                  ])),
-              Text.rich(TextSpan(
-                  text: 'Phiên âm:',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  children: [
-                    TextSpan(
-                      text: '/həʊm/',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    )
-                  ])),
+              Text(
+                'Mousse de abacaxi e pizza',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Color(0xFFDD2E44)),
+              ),
               Container(
                 height: 40,
                 width: 40,
@@ -597,7 +390,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,
-                    border: Border.all(color: Colors.blue, width: 2),
+                    border: Border.all(color: Color(0xFFDD2E44), width: 2),
                     boxShadow: [
                       BoxShadow(
                           color: Colors.grey,
@@ -606,8 +399,8 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
                           blurRadius: 15)
                     ]),
                 child: Center(
-                    child:
-                    Icon(Icons.volume_down_sharp, color: Colors.blue)),
+                    child: Icon(Icons.food_bank_outlined,
+                        color: Color(0xFFDD2E44))),
               ),
             ],
           )),
@@ -618,7 +411,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
           child: Text(
             'COMIDA',
             style: TextStyle(
-                color: Colors.deepPurple,
+                color: Color(0xFFDD2E44),
                 fontSize: 30,
                 fontWeight: FontWeight.w900),
           ),
@@ -636,9 +429,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
         padding: const EdgeInsets.all(16.0),
         child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 1
-          ),
+              crossAxisCount: 2, childAspectRatio: 1),
           itemCount: lista.length,
           itemBuilder: (BuildContext context, int index) {
             return lista[index];
