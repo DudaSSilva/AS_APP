@@ -6,7 +6,7 @@ class DBHelper {
 
   initDB() async {
     String databasePath = await getDatabasesPath();
-    String path = join(databasePath, "asApp4.db");
+    String path = join(databasePath, "asApp8.db");
     Database database = await openDatabase(
       path,
       version: 1,
@@ -20,10 +20,10 @@ class DBHelper {
 
   Future<void> onUpgrade(Database db, int oldVersion, int newVersion) async {
     if(oldVersion == 1 && newVersion == 2){
-      String sql = "CREATE TABLE user (usuario varchar(100) PRIMARY KEY, senha varchar(100))";
+      String sql = "CREATE TABLE user (usuario varchar(100) PRIMARY KEY, senha varchar(100));";
       await db.execute(sql);
 
-      sql = "INSERT INTO user (username, password) VALUES ('academicsyllabus@gmail.com', '123456')";
+      sql = "INSERT INTO user (username, password) VALUES ('academicsyllabus@gmail.com', '123456');";
       await db.execute(sql);
     }
   }
@@ -123,28 +123,28 @@ class DBHelper {
 
     //CONTEÚDOS
 
-    // String sql3 = 'create table CONTEUDOS (id INTEGER PRIMARY KEY, nomedisciplina varchar(100), conteudo1 varchar(100), conteudo2 varchar(100), conteudo3 varchar(100), conteudo4 varchar(100), valor boolean);';
-    // await db.execute(sql3);
-    //
-    // sql3 =
-    // "INSERT INTO CONTEUDOS (id, nomeLista, conteudo1, conteudo2, conteudo3, conteudo4, conteudo5, valor) VALUES (1, 'PORTUGUÊS', 'Modernismo', 'Interpretação de texto', 'Orações subordinadas', 'Aposto e vocativo', 0);";
-    // await db.execute(sql3);
-    //
-    // sql3 =
-    // "INSERT INTO CONTEUDOS (id, nomeLista, conteudo1, conteudo2, conteudo3, conteudo4, conteudo5, valor) VALUES (2, 'MATEMÁTICA', 'Estatística', 'Porcentagem', 'Probabilidade', 'Geometria plana', 0);";
-    // await db.execute(sql3);
-    //
-    // sql3 =
-    // "INSERT INTO CONTEUDOS (id, nomeLista, conteudo1, conteudo2, conteudo3, conteudo4, conteudo5, valor) VALUES (3, 'HISTÓRIA', 'Modernismo', 'Interpretação de texto', 'Orações subordinadas', 'Aposto e vocativo', 0);";
-    // await db.execute(sql3);
-    //
-    // sql3 =
-    // "INSERT INTO CONTEUDOS (id, nomeLista, conteudo1, conteudo2, conteudo3, conteudo4, conteudo5, valor) VALUES (4, 'ESPANHOL', 'Modernismo', 'Interpretação de texto', 'Orações subordinadas', 'Aposto e vocativo', 0);";
-    // await db.execute(sql3);
-    //
-    // sql3 =
-    // "INSERT INTO CONTEUDOS (id, nomeLista, conteudo1, conteudo2, conteudo3, conteudo4, conteudo5, valor) VALUES (5, 'SOCIOLOGIA', 'Modernismo', 'Interpretação de texto', 'Orações subordinadas', 'Aposto e vocativo', 0);";
-    // await db.execute(sql3);
+    String sql3 = 'create table CONTEUDOS (id INTEGER PRIMARY KEY, nomedisciplina varchar(100), conteudo1 varchar(100), conteudo2 varchar(100), conteudo3 varchar(100), conteudo4 varchar(100), valor boolean);';
+    await db.execute(sql3);
+
+    sql3 =
+    "INSERT INTO CONTEUDOS (id, nomedisciplina, conteudo1, conteudo2, conteudo3, conteudo4, valor) VALUES (1, 'PORTUGUÊS', 'Modernismo', 'Interpretação de texto', 'Orações subordinadas', 'Aposto e vocativo', 0);";
+    await db.execute(sql3);
+
+    sql3 =
+    "INSERT INTO CONTEUDOS (id, nomedisciplina, conteudo1, conteudo2, conteudo3, conteudo4, valor) VALUES (2, 'MATEMÁTICA', 'Estatística', 'Porcentagem', 'Probabilidade', 'Geometria plana', 0);";
+    await db.execute(sql3);
+
+    sql3 =
+    "INSERT INTO CONTEUDOS (id, nomedisciplina, conteudo1, conteudo2, conteudo3, conteudo4, valor) VALUES (3, 'HISTÓRIA', 'Modernismo', 'Interpretação de texto', 'Orações subordinadas', 'Aposto e vocativo', 0);";
+    await db.execute(sql3);
+
+    sql3 =
+    "INSERT INTO CONTEUDOS (id, nomedisciplina, conteudo1, conteudo2, conteudo3, conteudo4, valor) VALUES (4, 'ESPANHOL', 'Modernismo', 'Interpretação de texto', 'Orações subordinadas', 'Aposto e vocativo', 0);";
+    await db.execute(sql3);
+
+    sql3 =
+    "INSERT INTO CONTEUDOS (id, nomedisciplina, conteudo1, conteudo2, conteudo3, conteudo4, valor) VALUES (5, 'SOCIOLOGIA', 'Modernismo', 'Interpretação de texto', 'Orações subordinadas', 'Aposto e vocativo', 0);";
+    await db.execute(sql3);
 
     //IMAGENS
 
@@ -162,6 +162,35 @@ class DBHelper {
 
     sql4 = "INSERT INTO IMAGES (id, URL) VALUES (4, 'images/saude.png');";
     await db.execute(sql4);
+
+    //FLASHCARDS
+
+    String sql5 = "CREATE TABLE FLASHCARDS (id INTEGER PRIMARY KEY, URL varchar(100), text varchar(300), title varchar(100));";
+    await db.execute(sql5);
+
+    sql5 = "INSERT INTO FLASHCARDS (id, URL, text, title) VALUES (1, 'images/filme.png', 'Anabelle', 'filmes');";
+    await db.execute(sql5);
+
+    sql5 = "INSERT INTO FLASHCARDS (id, URL, text, title) VALUES (2, 'images/serie.png', 'Uma advogada extraordinária', 'séries');";
+    await db.execute(sql5);
+
+    sql5 = "INSERT INTO FLASHCARDS (id, URL, text, title) VALUES (3, 'images/roupa.png', 'Wid leg preta', 'roupas');";
+    await db.execute(sql5);
+
+    sql5 = "INSERT INTO FLASHCARDS (id, URL, text, title) VALUES (4, 'images/compra.png', 'Talheres e liquidificador', 'compras');";
+    await db.execute(sql5);
+
+    sql5 = "INSERT INTO FLASHCARDS (id, URL, text, title) VALUES (5, 'images/make.png', 'Base e sombras ', 'makes');";
+    await db.execute(sql5);
+
+    sql5 = "INSERT INTO FLASHCARDS (id, URL, text, title) VALUES (6, 'images/musica.png', 'Paradise e The nights', 'músicas');";
+    await db.execute(sql5);
+
+    sql5 = "INSERT INTO FLASHCARDS (id, URL, text, title) VALUES (7, 'images/mesa.png', 'Mesa e escrivaninha', 'móveis');";
+    await db.execute(sql5);
+
+    sql5 = "INSERT INTO FLASHCARDS (id, URL, text, title) VALUES (8, 'images/comida.png', 'Mousse de abacaxi e pizza', 'comida');";
+    await db.execute(sql5);
   }
 
 }
