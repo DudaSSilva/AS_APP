@@ -17,7 +17,7 @@ class _PacoteRotinaState extends State<PacoteRotina> {
 
   static final List<Widget>_widgetOptions = <Widget>[
     const HomeRotina(conquistas: {}),
-    const PacoteLivros(),
+    //const PacoteLivros(),
     const Text("linha do tempo"),
     const Text("Conquistas"),
   ];
