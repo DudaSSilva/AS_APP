@@ -79,6 +79,21 @@ class _PacoteHabitosState extends State<PacoteHabitos> {
                           ),
                         ),
                       ),
+                      const SizedBox(width: 16),
+                      // ElevatedButton.icon(
+                      //   onPressed: () {},
+                      //   icon: Icon(
+                      //     Icons.watch_later_outlined,
+                      //     color: Colors.red[600],
+                      //   ),
+                      //   label: const Text('Remover'),
+                      //   style: ElevatedButton.styleFrom(
+                      //     primary: const Color(0xFFFFCC99),
+                      //     shape: RoundedRectangleBorder(
+                      //       borderRadius: BorderRadius.circular(16),
+                      //     ),
+                      //   ),
+                      // ),
                     ],
                   ),
                   const SizedBox(height: 16),
@@ -100,7 +115,7 @@ class _PacoteHabitosState extends State<PacoteHabitos> {
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.book_outlined), label: "Timer"),
+          BottomNavigationBarItem(icon: Icon(Icons.watch_later_outlined), label: "Timer"),
           BottomNavigationBarItem(icon: Icon(Icons.timeline_sharp), label: "Graphics"),
         ],
       ) ,

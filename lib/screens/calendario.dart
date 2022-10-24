@@ -77,7 +77,7 @@ class _CalendarioState extends State<Calendario> {
                 const SizedBox(width: 8),
                 const Expanded(
                   child: Text(
-                    'COM ORGANIZAÇÃO O SEU DIA FICA MAIS FÁCIL',
+                    'O segredo do sucesso é a constância do propósito. - Benjamin Disraeli',
                     textAlign: TextAlign.justify,
                     style: TextStyle(
                       color: Color(0xFFF25E7A),
