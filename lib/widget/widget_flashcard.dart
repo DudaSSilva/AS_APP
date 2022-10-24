@@ -31,16 +31,17 @@ class _WidgetFlashCardState extends State<WidgetFlashCard> {
                   TextSpan(
                     text: pacote.text,
                     style: const TextStyle(
-                        color: Colors.black,
+                        color: Color(0xFFDD2E44),
                         fontWeight: FontWeight.bold,
                         fontSize: 20),
                   ),
                 ),
               ),
-              Image.network(
-                'https://fn.vinhphuc.edu.vn/UploadImages/mnhoanglau/admin/anh%20nha.jpg?w=700',
-                width: 30,
-                height: 30,
+              const SizedBox(height: 16),
+              Image.asset(
+                pacote.URL,
+                width: 50,
+                height: 50,
               ),
             ],
           )),
@@ -51,14 +52,14 @@ class _WidgetFlashCardState extends State<WidgetFlashCard> {
           child: Text(
             pacote.title.toUpperCase(),
             style: const TextStyle(
-                color: Colors.deepPurple,
+                color: Color(0xFFDD2E44),
                 fontSize: 30,
                 fontWeight: FontWeight.w900),
           ),
         ),
       ),
-      width: 300,
-      height: 400,
+      width: 400,
+      height: 350,
     );
   }
 }
