@@ -6,7 +6,7 @@ class DBHelper {
 
   initDB() async {
     String databasePath = await getDatabasesPath();
-    String path = join(databasePath, "asApp2.db");
+    String path = join(databasePath, "asApp4.db");
     Database database = await openDatabase(
       path,
       version: 1,
@@ -145,6 +145,23 @@ class DBHelper {
     // sql3 =
     // "INSERT INTO CONTEUDOS (id, nomeLista, conteudo1, conteudo2, conteudo3, conteudo4, conteudo5, valor) VALUES (5, 'SOCIOLOGIA', 'Modernismo', 'Interpretação de texto', 'Orações subordinadas', 'Aposto e vocativo', 0);";
     // await db.execute(sql3);
+
+    //IMAGENS
+
+    String sql4 = "CREATE TABLE IMAGES (id INTEGER PRIMARY KEY, URL varchar(100));";
+    await db.execute(sql4);
+
+    sql4 = "INSERT INTO IMAGES (id, URL) VALUES (1, 'images/beleza.png');";
+    await db.execute(sql4);
+
+    sql4 = "INSERT INTO IMAGES (id, URL) VALUES (2, 'images/casa.png');";
+    await db.execute(sql4);
+
+    sql4 = "INSERT INTO IMAGES (id, URL) VALUES (3, 'images/estudos.png');";
+    await db.execute(sql4);
+
+    sql4 = "INSERT INTO IMAGES (id, URL) VALUES (4, 'images/saude.png');";
+    await db.execute(sql4);
   }
 
 }

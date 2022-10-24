@@ -1,9 +1,9 @@
+import 'package:asapp/widget/widget_flashcard_habit.dart';
 import 'package:flutter/material.dart';
 import '../../data/dao/images_dao.dart';
 import '../../domain/habitos.dart';
 import '../../pages/add/pacote_adicionarHabito.dart';
 import '../../domain/pacote_planejamento.dart';
-import '../../widget/pacote_habitos_card.dart';
 
 class PacoteHabitos extends StatefulWidget {
   final PacotePlanejamento pacotePlanejamento;
@@ -20,8 +20,6 @@ class PacoteHabitos extends StatefulWidget {
 class _PacoteHabitosState extends State<PacoteHabitos> {
   PacotePlanejamento get pacote => widget.pacotePlanejamento;
   Future<List<PacoteImages>> lista = ImagesDao().listarHabitos();
-
-
 
   int _selectedIndex=0;
 
@@ -130,7 +128,7 @@ class _PacoteHabitosState extends State<PacoteHabitos> {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: lista.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return CardPacoteHabitos(pacoteImages: lista[index]);
+                  return WidgetFlashCardHabit(pacoteImages: lista[index]);
                 }
             );
           }

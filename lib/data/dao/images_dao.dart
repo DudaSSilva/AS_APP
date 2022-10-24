@@ -1,7 +1,7 @@
 import 'package:sqflite/sqflite.dart';
 
 import '../../domain/habitos.dart';
-import '../helper/images_habit_db_helper.dart';
+import '../helper/db_helper.dart';
 
 class ImagesDao {
 
