@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../data/dao/images_dao.dart';
+import '../../domain/habitos.dart';
 import '../../pages/add/pacote_adicionarHabito.dart';
 import '../../domain/pacote_planejamento.dart';
 import '../../widget/pacote_habitos_card.dart';
@@ -17,6 +19,19 @@ class PacoteHabitos extends StatefulWidget {
 
 class _PacoteHabitosState extends State<PacoteHabitos> {
   PacotePlanejamento get pacote => widget.pacotePlanejamento;
+  Future<List<PacoteImages>> lista = ImagesDao().listarHabitos();
+
+
+
+  int _selectedIndex=0;
+
+  void _onItemTapped(int index){
+    _selectedIndex=index;
+    //print('Tapped index is ${_selectedIndex}');
+    setState(() {
+      _selectedIndex=index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,13 +84,28 @@ class _PacoteHabitosState extends State<PacoteHabitos> {
                     ],
                   ),
                   const SizedBox(height: 16),
-                  const CardPacoteHabitos(),
+                  BuildListView(),
                 ],
               ),
             ),
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        elevation: 10,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: const Color(0xFF526480),
+        type: BottomNavigationBarType.fixed,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.book_outlined), label: "Timer"),
+          BottomNavigationBarItem(icon: Icon(Icons.timeline_sharp), label: "Graphics"),
+        ],
+      ) ,
     );
   }
 
@@ -87,4 +117,28 @@ class _PacoteHabitosState extends State<PacoteHabitos> {
       }),
     );
   }
+
+  BuildListView() {
+    return FutureBuilder<List<PacoteImages>>(
+        future: lista,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            List<PacoteImages> lista = snapshot.data ?? [];
+
+            return ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: lista.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return CardPacoteHabitos(pacoteImages: lista[index]);
+                }
+            );
+          }
+
+          return const Center(child: CircularProgressIndicator());
+        }
+
+    );
+  }
 }
+
