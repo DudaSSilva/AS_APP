@@ -124,11 +124,11 @@ class DBHelper {
     //CONTEÚDOS
 
     String sql3 = 'create table CONTEUDOS (id INTEGER PRIMARY KEY, nomedisciplina varchar(100), conteudo1 varchar(100), conteudo2 varchar(100), conteudo3 varchar(100), conteudo4 varchar(100), valor boolean);';
-    await db.execute(sql3);
+    await db.execute(sql3); //cria a tabela definindo o id como chave primária e definindo os atributos como parâmetro, o await é pra esperar a execução do banco de dados.
 
     sql3 =
     "INSERT INTO CONTEUDOS (id, nomedisciplina, conteudo1, conteudo2, conteudo3, conteudo4, valor) VALUES (1, 'PORTUGUÊS', 'Modernismo', 'Interpretação de texto', 'Orações subordinadas', 'Aposto e vocativo', 0);";
-    await db.execute(sql3);
+    await db.execute(sql3); //insere os valores na tabela
 
     sql3 =
     "INSERT INTO CONTEUDOS (id, nomedisciplina, conteudo1, conteudo2, conteudo3, conteudo4, valor) VALUES (2, 'MATEMÁTICA', 'Estatística', 'Porcentagem', 'Probabilidade', 'Geometria plana', 0);";

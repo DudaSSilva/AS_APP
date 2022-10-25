@@ -41,11 +41,11 @@ class _PacoteDisciplinasState extends State<PacoteDisciplinas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF25E7A),
+      backgroundColor: const Color(0xFFF9E8EA),
       appBar: AppBar(
         centerTitle: true,
         title: const Text('DISCIPLINAS E CONTEÚDOS'),
-        backgroundColor: const Color(0xFFF25E7A),
+        backgroundColor: const Color(0xFFF5BFA1),
       ),
       body: buildBody(),
     );
@@ -57,7 +57,7 @@ class _PacoteDisciplinasState extends State<PacoteDisciplinas> {
       child: ListView(
         children: [
           Image.asset(
-            "images/disciplinas.jpg",
+            "images/livro1.jpg",
             width: 400,
             height: 300,
             fit: BoxFit.cover,
@@ -81,7 +81,7 @@ class _PacoteDisciplinasState extends State<PacoteDisciplinas> {
                 'Adicionar disciplina',
                 style: TextStyle(
                   fontSize: 22,
-                  color: Color(0xFFFFCC99),
+                  color: Color(0xFF272524),
                 )
               ),
               const SizedBox(width: 8),
@@ -89,7 +89,7 @@ class _PacoteDisciplinasState extends State<PacoteDisciplinas> {
                 onPressed: (){},
                 icon: const Icon(
                   Icons.add_circle,
-                  color: Color(0xFFFFCC99),
+                  color: Color(0xFF211E1D),
                 ),
                 // style: ElevatedButton.styleFrom(
                 //   primary: const Color(0xFFFFCC99),

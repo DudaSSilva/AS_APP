@@ -34,13 +34,14 @@ class PacoteConteudos {
     return data;
   }
 
-  PacoteConteudos.fromJson(Map<String, dynamic> json) {
+  PacoteConteudos.fromJson(Map<String, dynamic> json) { //mapeia o objeeto e converte as variáveis de json pra classe
     nomedisciplina = json['nomedisciplina'];
     conteudo1 = json['conteudo1'];
     conteudo2 = json['conteudo2'];
     conteudo3 = json['conteudo3'];
     conteudo4 = json['conteudo4'];
     //cor = int.parse(json['cor']);
-    value = json['valor'] == 0 ? false : true;
+    value = json['valor'] == 0 ? false : true;  // além de converter o json para uma clase, também faz a condição para que se o valor for 0,
+    // o card do objeto receber o valor falso (aí o checkbox está desmarcado), e se for diferente é verdadeiro (aí o checkbox é marcado como concluído)
   }
 }
