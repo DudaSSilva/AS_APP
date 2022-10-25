@@ -14,7 +14,7 @@ class PacoteConteudo extends StatefulWidget {
 }
 
 class _PacoteConteudoState extends State<PacoteConteudo> {
-  Future<List<PacoteConteudos>> lista = BD.getPacoteConteudos();
+  Future<List<PacoteConteudos>> lista = BD.getPacoteConteudos(); //declara a lista ó que recebendo como parâmetro o banco de dados
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class _PacoteConteudoState extends State<PacoteConteudo> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text('PORTUGUÊS'),
-        backgroundColor: const Color(0xFFF25E7A),
+        backgroundColor: const Color(0xFFF5BFA1),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -38,13 +38,6 @@ class _PacoteConteudoState extends State<PacoteConteudo> {
                   children: [
                     BuildListView(),
                     const SizedBox(height: 8),
-                    // const Text(
-                    //   'JULHO:',
-                    //   style: TextStyle(
-                    //     fontSize: 16,
-                    //     fontWeight: FontWeight.bold,
-                    //   ),
-                    // ),
                     Row(
                       children: [
                         ElevatedButton.icon(
@@ -98,19 +91,19 @@ class _PacoteConteudoState extends State<PacoteConteudo> {
   }
 
   BuildListView() {
-    return FutureBuilder<List<PacoteConteudos>>(
+    return FutureBuilder<List<PacoteConteudos>>( //retorna uma lista futura
         future: lista,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            // ?? -> Verificar ser o conteudo de snapshot.data é nulo
             List<PacoteConteudos> lista = snapshot.data ?? [];
 
-            return ListView.builder(
+            return ListView.builder( //monta a lista
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: lista.length,
+                itemCount: lista.length, //faz a contagem dos elementos pra rodar/montar a lista até atingir essa contagem
                 itemBuilder: (BuildContext context, int index) {
-                  return CardPacoteConteudos(pacoteConteudos: lista[index]);
+                  return CardPacoteConteudos(pacoteConteudos: lista[index]);//retorna o card de conteúdos que recebe como parâmetro
+                  // os dados do banco de dadops armzenados na lista
                 }
             );
           }

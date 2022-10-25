@@ -35,7 +35,7 @@ class _CardPacoteDisciplinasState extends State<CardPacoteDisciplinas> {
         );
       },
       child: Card(
-        color: Color(0xFFFFCC99),
+        color: Color(0xFFF5BFA1),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
