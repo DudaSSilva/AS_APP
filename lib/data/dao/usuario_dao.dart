@@ -25,6 +25,19 @@ class UsuarioDao {
     return result.isNotEmpty;
   }
 
+  Future<bool> recuperar({required String email}) async {
+    DBHelper dbHelper = DBHelper();
+    Database db = await dbHelper.initDB();
+
+    String sql = 'SELECT * '
+        'FROM user '
+        'WHERE email = ?;';
+
+    final result = await db.rawQuery(sql, [email]);
+
+    return result.isNotEmpty;
+  }
+
   listarUsers() async {
     DBHelper dbHelper = DBHelper();
     Database db = await dbHelper.initDB();

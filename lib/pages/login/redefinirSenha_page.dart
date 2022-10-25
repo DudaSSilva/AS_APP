@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../data/dao/usuario_dao.dart';
 import 'cadastro_page.dart';
 import 'validacao_page.dart';
 import 'login_page.dart';
@@ -152,22 +153,49 @@ class _RedefinirSenhaPageState extends State<RedefinirSenhaPage> {
     );
   }
 
-  void onPressed() {
-    if (_formKey.currentState!.validate()) {
-      String userEmail = "academicsyllabus2022@gmail.com";
+  // void onPressed() {
+  //   if (_formKey.currentState!.validate()) {
+  //     String userEmail = "academicsyllabus2022@gmail.com";
+  //
+  //     String email = userEmailController.text;
+  //
+  //     if (userEmail == email) {
+  //       Navigator.pushReplacement(context,
+  //           MaterialPageRoute(builder: (context) {
+  //             return const ValidacaoPage();
+  //           }));
+  //     } else {
+  //       print("Email incorreto. Tente novamente.");
+  //     }
+  //   } else {
+  //     print("Formulário inválido.");
+  //   }
+  // }
 
+  Future<void> onPressed() async {
+
+    if (_formKey.currentState!.validate()) {
       String email = userEmailController.text;
 
-      if (userEmail == email) {
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) {
+      bool resultado = await UsuarioDao().recuperar(email: email);
+
+      if (resultado) {
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
               return const ValidacaoPage();
-            }));
-      } else {
-        print("Email incorreto. Tente novamente.");
+            },
+          ),
+              (Route<dynamic> route) => false,
+        );
+      } else{
+        final msg = SnackBar(
+          behavior: SnackBarBehavior.floating,
+          content: Text('Não reconhecemos esse email'),
+        );
+        ScaffoldMessenger.of(context).showSnackBar(msg);
       }
-    } else {
-      print("Formulário inválido.");
     }
   }
 

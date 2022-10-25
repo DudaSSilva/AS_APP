@@ -95,42 +95,49 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       cursorColor: const Color(0xFFDD2E44),
                     ),
-                    const SizedBox(height: 24),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: const Color(0xFFDD2E44),
-                        padding: const EdgeInsets.all(0),
-                      ),
-                      child: const Text(
-                        'Esqueci minha senha',
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: Colors.white,
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const RedefinirSenhaPage()),
-                        );
-                      },
-                    ),
                     const SizedBox(height: 16),
-                    ElevatedButton(
-                      style:
-                      ElevatedButton.styleFrom(primary: const Color(0xFFFFCC99)),
-                      onPressed: onPressedLogin,
-                      child: const Padding(
-                        padding: EdgeInsets.symmetric(vertical: 12.0),
-                        child: Text(
-                          'ENTRAR',
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xFFDD2E44)),
+                    Row(
+                      children: [
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              primary: const Color(0xFFFFCC99)),
+                          onPressed: onPressedLogin,
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                            child: Text(
+                              'ENTRAR',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500,
+                                  color: Color(0xFFDD2E44)),
+                            ),
+                          ),
                         ),
-                      ),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.transparent,
+                              shadowColor: Colors.transparent,
+                            ),
+                            child: const Text(
+                              'Esqueci minha senha',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                                color: Color(0xFFDD2E44),
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const RedefinirSenhaPage()),
+                              );
+                            },
+                          ),
+                        ),
+                      ],
                     ),
                     const SizedBox(height: 16),
                     Column(
@@ -268,35 +275,6 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
-  // Future<void> onPressedLogin() async {
-  //   if (_formKey.currentState!.validate()) {
-  //     String user = userController.text;
-  //     String pass = passwordController.text;
-  //
-  //
-  //     bool resultado = await UsuarioDao().autenticar(user: user, password: pass);
-  //
-  //     if (resultado) {
-  //       //SharedPrefsHelper().login();
-  //
-  //       Navigator.pushReplacement(
-  //         context,
-  //         MaterialPageRoute(
-  //           builder: (context) {
-  //             return const TelaPrincipalPage();
-  //           },
-  //         ),
-  //       );
-  //     } else {
-  //       ScaffoldMessenger.of(context).showSnackBar(
-  //         const SnackBar(
-  //           content: Text("Usuario e/ou senha incorretos"),
-  //         ),
-  //       );
-  //     }
-  //   }
-  // }
 
   Future<void> onPressedLogin() async {
 

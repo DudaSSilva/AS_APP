@@ -6,7 +6,7 @@ class DBHelper {
 
   initDB() async {
     String databasePath = await getDatabasesPath();
-    String path = join(databasePath, "asApp8.db");
+    String path = join(databasePath, "asApp19.db");
     Database database = await openDatabase(
       path,
       version: 1,
@@ -32,27 +32,27 @@ class DBHelper {
     //USUÁRIO
 
     String sqlUser =
-        "create table USER (id int PRIMARY KEY, usuario varchar(100), senha varchar(10));";
+        "create table USER (id int PRIMARY KEY, usuario varchar(100), senha varchar(10), email varchar(100));";
     await db.execute(sqlUser);
 
     sqlUser =
-    "INSERT INTO USER (id, usuario, senha) VALUES (1, 'Camis123', '123456789');";
+    "INSERT INTO USER (id, usuario, senha, email) VALUES (1, 'Camis123', '123456789', 'camile@email.com');";
     await db.execute(sqlUser);
 
     sqlUser =
-    "INSERT INTO USER (id, usuario, senha) VALUES (2, 'Eddyss', '123456789');";
+    "INSERT INTO USER (id, usuario, senha, email) VALUES (2, 'Eddyss', '123456789', 'eduarda@email.com');";
     await db.execute(sqlUser);
 
     sqlUser =
-    "INSERT INTO USER (id, usuario, senha) VALUES (3, 'MipsBelchior', '123456789');";
+    "INSERT INTO USER (id, usuario, senha, email) VALUES (3, 'MipsBelchior', '123456789', 'izabel@email.com');";
     await db.execute(sqlUser);
 
     sqlUser =
-    "INSERT INTO USER (id, usuario, senha) VALUES (4, 'ViviMaria', '123456789');";
+    "INSERT INTO USER (id, usuario, senha, email) VALUES (4, 'ViviMaria', '123456789', 'viviane@email.com');";
     await db.execute(sqlUser);
 
     sqlUser =
-    "INSERT INTO USER (id, usuario, senha) VALUES (5, 'academicsyllabusapp@gmail.com', 'ASapp2022');";
+    "INSERT INTO USER (id, usuario, senha, email) VALUES (5, 'academicSyllabus', 'ASapp2022', 'academicsyllabusapp@gmail.com');";
     await db.execute(sqlUser);
 
     //TAREFAS

@@ -22,13 +22,20 @@ class _AboutUsPageState extends State<AboutUsPage> {
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: FlashCard(
-          frontWidget: Scaffold(
+           frontWidget: Scaffold(
             body: Container(
                 height: 600,
                 width: 400,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    Image.asset(
+                      "images/logo.png",
+                      width: 200,
+                      height: 200,
+                      fit: BoxFit.fitHeight,
+                    ),
+                    const SizedBox(height: 32),
                     Container(
                       height: 60,
                       width: 380,

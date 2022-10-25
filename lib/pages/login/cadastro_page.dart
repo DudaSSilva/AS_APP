@@ -14,7 +14,7 @@ class CadastroPage extends StatefulWidget {
 
 class _CadastroPageState extends State<CadastroPage> {
   TextEditingController userController = TextEditingController();
-  TextEditingController userNameController = TextEditingController();
+  //TextEditingController userNameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController emailController = TextEditingController();
 
@@ -68,6 +68,38 @@ class _CadastroPageState extends State<CadastroPage> {
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'usuário',
+                  labelStyle: TextStyle(
+                    color: Color(0xFFDD2E44),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFFDD2E44),
+                    ),
+                  ),
+                ),
+                cursorColor: Color(0xFFDD2E44),
+              ),
+              const SizedBox(height: 32),
+              TextFormField(
+                controller: emailController,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Campo email obrigatório';
+                  }
+                  return null;
+                },
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'email',
+                  labelStyle: TextStyle(
+                    color: Color(0xFFDD2E44),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFFDD2E44),
+                    ),
+                  ),
                 ),
                 cursorColor: Color(0xFFDD2E44),
               ),
@@ -87,6 +119,14 @@ class _CadastroPageState extends State<CadastroPage> {
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Senha',
+                  labelStyle: TextStyle(
+                    color: Color(0xFFDD2E44),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFFDD2E44),
+                    ),
+                  ),
                 ),
                 cursorColor: Color(0xFFDD2E44),
               ),
