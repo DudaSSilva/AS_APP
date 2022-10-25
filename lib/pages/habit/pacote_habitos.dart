@@ -1,3 +1,4 @@
+import 'package:asapp/pages/timer/cronometro.dart';
 import 'package:asapp/widget/widget_flashcard_habit.dart';
 import 'package:flutter/material.dart';
 import '../../data/dao/images_dao.dart';
@@ -31,7 +32,7 @@ class _PacoteHabitosState extends State<PacoteHabitos> {
     super.initState();
     pages = [
       buildHomePageHabit(),
-      const Center(child: Text('PAGE 1', style: TextStyle(fontSize: 40))),
+      Cronometro(),
       const Center(child: Text('PAGE 2', style: TextStyle(fontSize: 40))),
     ];
   }
