@@ -17,6 +17,12 @@ class Livros extends StatefulWidget {
 }
 
 class _LivrosState extends State<Livros> {
+  showNotification(){
+    setState(() {
+      valor = !valor;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,6 +36,9 @@ class _LivrosState extends State<Livros> {
           )
         ],
       ),
+      routes: Routes.list,
+      initialRoute: Routes.initial,
+      navigadorKey: Routes.navigatorKey,
     );
   }
   _appBar(){

@@ -10,7 +10,8 @@ FlutterLocalNotificationsPlugin notificationsPlugin = FlutterLocalNotificationsP
 
 
 void main() async {
-    WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
+    /*WidgetsFlutterBinding.ensureInitialized();
     AndroidInitializationSettings androidSettings = AndroidInitializationSettings("@mipmap/ic_launcher");
 
     DarwinInitializationSettings iosSettings = DarwinInitializationSettings(
@@ -28,7 +29,7 @@ void main() async {
     bool? initialized = await notificationsPlugin.initialize(initializationSettings);
 
     log("Notifications $initialized");
-
+*/
   runApp(
     const MaterialApp(
       debugShowCheckedModeBanner: false,
