@@ -6,7 +6,8 @@ import '../pages/pacote_telaPrincipal.dart';
 import 'calendar_screen.dart';
 
 class Calendario extends StatefulWidget {
-  const Calendario({Key? key}) : super(key: key);
+  final String nomeUsuario;
+  const Calendario({Key? key, required this.nomeUsuario}) : super(key: key);
 
   @override
   _CalendarioState createState() => _CalendarioState();
@@ -50,6 +51,7 @@ class _CalendarioState extends State<Calendario> {
                           titulo: 'HABIT TRACKER',
                           cor: 0xFFF8E9CE,
                         ),
+                        nomeUsuario: widget.nomeUsuario,
                       );
                     },
                   ),

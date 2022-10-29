@@ -138,7 +138,7 @@ class _ValidacaoPageState extends State<ValidacaoPage> {
                             child: Text(
                               'CADASTRE-SE',
                               style: TextStyle(
-                                //fontSize: 21,
+                                  //fontSize: 21,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.white),
                             ),
@@ -163,14 +163,10 @@ class _ValidacaoPageState extends State<ValidacaoPage> {
       String code = codeController.text;
 
       if (userCode == code) {
-        Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-                builder: (context) {
-                  return const TelaPrincipalPage();
-                }
-            )
-        );
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) {
+          return TelaPrincipalPage(nomeUsuario: 'ASAPP');
+        }));
       } else {
         print("Código incorreto. Tente novamente.");
       }

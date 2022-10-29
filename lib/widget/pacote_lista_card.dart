@@ -5,10 +5,12 @@ import '../pages/add/pacote_adicionarLista.dart';
 
 class CardPacoteLista extends StatefulWidget {
   final PacoteTarefas pacoteTarefas;
+  final String nomeUsuario;
 
   const CardPacoteLista({
     Key? key,
     required this.pacoteTarefas,
+    required this.nomeUsuario,
   }) : super(key: key);
 
   @override
@@ -70,7 +72,8 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.pacote.value = value!),
+                        onChanged: (value) =>
+                            setState(() => this.pacote.value = value!),
                       ),
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
@@ -84,7 +87,8 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.pacote.value = value!),
+                        onChanged: (value) =>
+                            setState(() => this.pacote.value = value!),
                       ),
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
@@ -98,7 +102,8 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.pacote.value = value!),
+                        onChanged: (value) =>
+                            setState(() => this.pacote.value = value!),
                       ),
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
@@ -112,7 +117,8 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.pacote.value = value!),
+                        onChanged: (value) =>
+                            setState(() => this.pacote.value = value!),
                       ),
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
@@ -126,7 +132,8 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.pacote.value = value!),
+                        onChanged: (value) =>
+                            setState(() => this.pacote.value = value!),
                       ),
                       //buildCheckbox(value),
                     ],
@@ -139,14 +146,13 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
       ),
     );
   }
+
   void onPressedButtonAdd() {
     Navigator.push(
       context,
-      MaterialPageRoute(
-          builder: (context) {
-            return const PacoteAdicionarLista();
-          }
-      ),
+      MaterialPageRoute(builder: (context) {
+        return PacoteAdicionarLista(nomeUsuario: widget.nomeUsuario);
+      }),
     );
   }
 }

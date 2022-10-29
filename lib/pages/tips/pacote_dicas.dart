@@ -13,10 +13,12 @@ import '../../domain/pacote_planejamento.dart';
 
 class PacoteDicas extends StatefulWidget {
   final PacotePlanejamento pacotePlanejamento;
+  final String nomeUsuario;
 
   const PacoteDicas({
     Key? key,
     required this.pacotePlanejamento,
+    required this.nomeUsuario,
   }) : super(key: key);
 
   @override
@@ -78,7 +80,7 @@ class _PacoteDicasState extends State<PacoteDicas> {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return const TelaPrincipalPage();
+                    return TelaPrincipalPage(nomeUsuario: widget.nomeUsuario);
                   },
                 ),
               );
@@ -86,7 +88,6 @@ class _PacoteDicasState extends State<PacoteDicas> {
           ),
         ],
       ),
-
       body: SingleChildScrollView(
         child: Column(
           children: [

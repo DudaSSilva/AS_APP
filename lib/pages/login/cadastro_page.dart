@@ -250,7 +250,7 @@ class _CadastroPageState extends State<CadastroPage> {
       context,
       MaterialPageRoute(
         builder: (context) {
-          return const TelaPrincipalPage();
+          return TelaPrincipalPage(nomeUsuario: 'ACADEMIC SYLLABUS');
         },
       ),
     );

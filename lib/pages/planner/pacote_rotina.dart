@@ -6,6 +6,7 @@ import 'home_rotina.dart';
 import 'livros.dart';
 
 class PacoteRotina extends StatefulWidget {
+  //final String nomeUsuario;
   const PacoteRotina({Key? key}) : super(key: key);
 
   @override
@@ -13,22 +14,23 @@ class PacoteRotina extends StatefulWidget {
 }
 
 class _PacoteRotinaState extends State<PacoteRotina> {
-  int _selectedIndex=0;
+  int _selectedIndex = 0;
 
-  static final List<Widget>_widgetOptions = <Widget>[
+  static final List<Widget> _widgetOptions = <Widget>[
     const HomeRotina(conquistas: {}),
     const PacoteLivros(),
     const Text("linha do tempo"),
     const Text("Conquistas"),
   ];
 
-  void _onItemTapped(int index){
-    _selectedIndex=index;
+  void _onItemTapped(int index) {
+    _selectedIndex = index;
     //print('Tapped index is ${_selectedIndex}');
     setState(() {
-      _selectedIndex=index;
+      _selectedIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,13 +47,16 @@ class _PacoteRotinaState extends State<PacoteRotina> {
         unselectedItemColor: const Color(0xFF526480),
         type: BottomNavigationBarType.fixed,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.book_outlined), label: "Livros"),
-          BottomNavigationBarItem(icon: Icon(Icons.timeline_sharp), label: "Linha do tempo"),
-          BottomNavigationBarItem(icon: Icon(Icons.redeem_rounded), label: "Conquistas"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined), label: "Home"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.book_outlined), label: "Livros"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.timeline_sharp), label: "Linha do tempo"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.redeem_rounded), label: "Conquistas"),
         ],
-      ) ,
+      ),
     );
   }
-
 }

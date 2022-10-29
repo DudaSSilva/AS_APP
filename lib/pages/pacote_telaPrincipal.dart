@@ -1,4 +1,6 @@
+import 'dart:html';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import '../data/shared_prefs_helper.dart';
 import 'login/login_page.dart';
@@ -15,9 +17,15 @@ import 'app/settings_page.dart';
 import '../widget/pacote_planejamento_card.dart';
 import '../domain/pacote_planejamento.dart';
 import '../screens/calendar_screen.dart';
+import '../../domain/usuario.dart';
 
 class TelaPrincipalPage extends StatefulWidget {
-  const TelaPrincipalPage({Key? key}) : super(key: key);
+  final String nomeUsuario;
+
+  const TelaPrincipalPage({
+    Key? key,
+    required this.nomeUsuario,
+  }) : super(key: key);
 
   @override
   _TelaPrincipalPageState createState() => _TelaPrincipalPageState();
@@ -96,17 +104,19 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
           const SizedBox(height: 16),
           CardPacotePlanejamento(
             pacotePlanejamento: pacote1,
-            tela: const PacoteRotina(),
+            tela: PacoteRotina(),
           ),
           const SizedBox(height: 16),
           CardPacotePlanejamento(
             pacotePlanejamento: pacote2,
             tela: PacoteLista(
-                pacotePlanejamento: PacotePlanejamento(
-              icon: const Icon(Icons.list),
-              titulo: 'LISTA DE TAREFAS',
-              cor: 0xFFF8E9CE,
-            )),
+              pacotePlanejamento: PacotePlanejamento(
+                icon: const Icon(Icons.list),
+                titulo: 'LISTA DE TAREFAS',
+                cor: 0xFFF8E9CE,
+              ),
+              nomeUsuario: widget.nomeUsuario,
+            ),
           ),
           const SizedBox(height: 16),
           CardPacotePlanejamento(
@@ -131,6 +141,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
                 titulo: 'HABIT TRACKER',
                 cor: 0xFFF8E9CE,
               ),
+              nomeUsuario: widget.nomeUsuario,
             ),
           ),
           const SizedBox(height: 16),
@@ -142,6 +153,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
                 titulo: 'DICAS',
                 cor: 0xFFFFCEEF,
               ),
+              nomeUsuario: widget.nomeUsuario,
             ),
           ),
           const SizedBox(height: 16),
@@ -394,7 +406,7 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) {
-        return const PerfilPage();
+        return PerfilPage(nomeusuario: widget.nomeUsuario);
       }),
     );
   }

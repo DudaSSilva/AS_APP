@@ -8,10 +8,12 @@ import '../screens/calendar_screen.dart';
 
 class WidgetFlashCardHabit extends StatefulWidget {
   final PacoteImages pacoteImages;
+  final String nomeUsuario;
 
   const WidgetFlashCardHabit({
     Key? key,
     required this.pacoteImages,
+    required this.nomeUsuario,
   }) : super(key: key);
 
   @override
@@ -32,8 +34,8 @@ class _WidgetFlashCardHabitState extends State<WidgetFlashCardHabit> {
             children: [
               Center(
                 child: ElevatedButton(
-                  style:
-                  ElevatedButton.styleFrom(primary: const Color(0xFFFFCC99)),
+                  style: ElevatedButton.styleFrom(
+                      primary: const Color(0xFFFFCC99)),
                   onPressed: onPressed,
                   child: const Padding(
                     padding: EdgeInsets.symmetric(vertical: 12.0),
@@ -52,9 +54,7 @@ class _WidgetFlashCardHabitState extends State<WidgetFlashCardHabit> {
       backWidget: Container(
         height: 100,
         width: 100,
-        child: Center(
-          child: Image.asset(pacote.URL)
-        ),
+        child: Center(child: Image.asset(pacote.URL)),
       ),
       width: 400,
       height: 400,
@@ -66,7 +66,7 @@ class _WidgetFlashCardHabitState extends State<WidgetFlashCardHabit> {
       context,
       MaterialPageRoute(
         builder: (context) {
-          return const Calendario();
+          return Calendario(nomeUsuario: widget.nomeUsuario);
         },
       ),
     );

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../pacote_telaPrincipal.dart';
 
 class Dica6Page extends StatefulWidget {
-
   const Dica6Page({
     Key? key,
   }) : super(key: key);
@@ -12,7 +11,6 @@ class Dica6Page extends StatefulWidget {
 }
 
 class _Dica6PageState extends State<Dica6Page> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +19,7 @@ class _Dica6PageState extends State<Dica6Page> {
         centerTitle: true,
         title: const Text('ESTUDOS'),
         backgroundColor: const Color(0xFFD7525B),
-        toolbarHeight: 64,
+        /*toolbarHeight: 64,
         actions: [
           IconButton(
             icon: const Icon(Icons.house),
@@ -36,9 +34,8 @@ class _Dica6PageState extends State<Dica6Page> {
               );
             },
           ),
-        ],
+        ],*/
       ),
-
       body: SingleChildScrollView(
         child: Column(
           children: [

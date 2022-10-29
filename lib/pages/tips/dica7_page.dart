@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../pacote_telaPrincipal.dart';
 
 class Dica7Page extends StatefulWidget {
-
   const Dica7Page({
     Key? key,
   }) : super(key: key);
@@ -12,7 +11,6 @@ class Dica7Page extends StatefulWidget {
 }
 
 class _Dica7PageState extends State<Dica7Page> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +19,7 @@ class _Dica7PageState extends State<Dica7Page> {
         centerTitle: true,
         title: const Text('ORGANIZAÇÃO'),
         backgroundColor: const Color(0xFFF49AAA),
-        toolbarHeight: 64,
+        /*toolbarHeight: 64,
         actions: [
           IconButton(
             icon: const Icon(Icons.house),
@@ -36,9 +34,8 @@ class _Dica7PageState extends State<Dica7Page> {
               );
             },
           ),
-        ],
+        ],*/
       ),
-
       body: SingleChildScrollView(
         child: Column(
           children: [

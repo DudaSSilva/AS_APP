@@ -3,7 +3,6 @@ import 'package:url_launcher/url_launcher.dart';
 import '../pacote_telaPrincipal.dart';
 
 class Dica5Page extends StatefulWidget {
-
   const Dica5Page({
     Key? key,
   }) : super(key: key);
@@ -13,7 +12,6 @@ class Dica5Page extends StatefulWidget {
 }
 
 class _Dica5PageState extends State<Dica5Page> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +20,7 @@ class _Dica5PageState extends State<Dica5Page> {
         centerTitle: true,
         title: const Text('MEDITAÇÃO'),
         backgroundColor: const Color(0xFFF4D9A9),
-        toolbarHeight: 64,
+        /*toolbarHeight: 64,
         actions: [
           IconButton(
             icon: const Icon(Icons.house),
@@ -37,9 +35,8 @@ class _Dica5PageState extends State<Dica5Page> {
               );
             },
           ),
-        ],
+        ],*/
       ),
-
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -146,9 +143,10 @@ class _Dica5PageState extends State<Dica5Page> {
       ),
     );
   }
-  
+
   Future<void> onPressedFonteImagem() async {
-    final Uri _url = Uri.parse('https://static.tuasaude.com/media/article/qk/am/como-meditar_23557.webp');
+    final Uri _url = Uri.parse(
+        'https://static.tuasaude.com/media/article/qk/am/como-meditar_23557.webp');
 
     if (!await launchUrl(
       _url,
@@ -181,7 +179,7 @@ class _Dica5PageState extends State<Dica5Page> {
       ),
     );
   }
-  
+
   buildTittle({
     required String title1,
     required String title2,
@@ -202,7 +200,9 @@ class _Dica5PageState extends State<Dica5Page> {
           ),
         ),
         const SizedBox(height: 16),
-        buildText(text: 'Deve-se reservar 1 ou 2 momentos ao longo do dia para se desligar por um tempo. Pode ser ao acordar, para permitir começar o dia com menos ansiedade e mais foco, no meio do dia, para se descansar um pouco das tarefas, ou quando for se deitar, para acalmar a mente antes de dormir. Idealmente, um período de 15 a 20 minutos é um ótimo tempo para trazer os máximos benefícios da meditação, mas 5 minutos já são suficientes para permitir uma viagem para dentro de si, alcançando tranquilidade e foco.'),
+        buildText(
+            text:
+                'Deve-se reservar 1 ou 2 momentos ao longo do dia para se desligar por um tempo. Pode ser ao acordar, para permitir começar o dia com menos ansiedade e mais foco, no meio do dia, para se descansar um pouco das tarefas, ou quando for se deitar, para acalmar a mente antes de dormir. Idealmente, um período de 15 a 20 minutos é um ótimo tempo para trazer os máximos benefícios da meditação, mas 5 minutos já são suficientes para permitir uma viagem para dentro de si, alcançando tranquilidade e foco.'),
         const SizedBox(height: 24),
         Text(
           title2,
@@ -215,7 +215,9 @@ class _Dica5PageState extends State<Dica5Page> {
           ),
         ),
         const SizedBox(height: 16),
-        buildText(text: 'É recomendado separar um espaço onde possa se sentar com um pouco de tranquilidade, como uma sala, um jardim, um sofá, sendo também possível na própria cadeira do escritório, ou até no carro, após estacionar antes de ir para o trabalho, por exemplo. O importante é que possa estar, de preferência, em um ambiente tranquilo e com mínimo de distrações para facilitar a concentração.'),
+        buildText(
+            text:
+                'É recomendado separar um espaço onde possa se sentar com um pouco de tranquilidade, como uma sala, um jardim, um sofá, sendo também possível na própria cadeira do escritório, ou até no carro, após estacionar antes de ir para o trabalho, por exemplo. O importante é que possa estar, de preferência, em um ambiente tranquilo e com mínimo de distrações para facilitar a concentração.'),
         const SizedBox(height: 24),
         Text(
           title3,
@@ -228,7 +230,9 @@ class _Dica5PageState extends State<Dica5Page> {
           ),
         ),
         SizedBox(height: 16),
-        buildText(text: 'A posição ideal para a prática da meditação, de acordo com as técnicas orientais, é a postura de lótus, em que se permanece sentado, com as pernas cruzadas e com os pés sobre as coxas, logo acima dos joelhos, e com a coluna reta. Entretanto, essa posição não é obrigatória, sendo possível ficar sentado ou deitado em qualquer posição, inclusive em uma cadeira ou banco, desde que esteja confortável, com a coluna reta, ombros relaxados e pescoço alinhado. Também deve-se encontrar um apoio para as mãos, que podem repousar no colo, com o dorso de uma sobre a outra, ou ficar uma em cada joelho, com as palmas para baixo ou para cima. Em seguida, deve-se manter os olhos fechados e permitir que os músculos relaxem.'),
+        buildText(
+            text:
+                'A posição ideal para a prática da meditação, de acordo com as técnicas orientais, é a postura de lótus, em que se permanece sentado, com as pernas cruzadas e com os pés sobre as coxas, logo acima dos joelhos, e com a coluna reta. Entretanto, essa posição não é obrigatória, sendo possível ficar sentado ou deitado em qualquer posição, inclusive em uma cadeira ou banco, desde que esteja confortável, com a coluna reta, ombros relaxados e pescoço alinhado. Também deve-se encontrar um apoio para as mãos, que podem repousar no colo, com o dorso de uma sobre a outra, ou ficar uma em cada joelho, com as palmas para baixo ou para cima. Em seguida, deve-se manter os olhos fechados e permitir que os músculos relaxem.'),
         SizedBox(height: 24),
         Text(
           title4,
@@ -241,7 +245,9 @@ class _Dica5PageState extends State<Dica5Page> {
           ),
         ),
         const SizedBox(height: 16),
-        buildText(text: 'É importante aprender a dar uma atenção mais especial à respiração, utilizando os pulmões completamente. Deve ser feita uma inspiração profunda, puxando o ar utilizando a barriga e o tórax, e uma expiração lenta e prazerosa. O controle da respiração pode não ser fácil no começo, o que acontece com a prática, mas é importante que seja confortável e sem forçar, para que não se torne um momento desagradável. Um exercício que pode ser feito é contar até 4 na inspiração, e repetir esse tempo para a expiração.'),
+        buildText(
+            text:
+                'É importante aprender a dar uma atenção mais especial à respiração, utilizando os pulmões completamente. Deve ser feita uma inspiração profunda, puxando o ar utilizando a barriga e o tórax, e uma expiração lenta e prazerosa. O controle da respiração pode não ser fácil no começo, o que acontece com a prática, mas é importante que seja confortável e sem forçar, para que não se torne um momento desagradável. Um exercício que pode ser feito é contar até 4 na inspiração, e repetir esse tempo para a expiração.'),
         const SizedBox(height: 24),
         Text(
           title5,
@@ -254,9 +260,10 @@ class _Dica5PageState extends State<Dica5Page> {
           ),
         ),
         const SizedBox(height: 16),
-        buildText(text: 'Na meditação tradicional, é necessário encontrar um foco para manter a atenção, geralmente um mantra, que é qualquer som, sílaba, palavra ou frase que deve ser repetida várias vezes para que exerça um poder específico sobre a mente, e que auxilie a concentração para a meditação. Ele deve ser vocalizado ou pensado pela pessoa que faz a meditação e, de preferência, se for um mantra de origem no budismo ou Yoga, seja ensinado da forma correta por um professor. O "om" é o mantra mais conhecido, e tem o poder de trazer paz interior durante a meditação.'),
+        buildText(
+            text:
+                'Na meditação tradicional, é necessário encontrar um foco para manter a atenção, geralmente um mantra, que é qualquer som, sílaba, palavra ou frase que deve ser repetida várias vezes para que exerça um poder específico sobre a mente, e que auxilie a concentração para a meditação. Ele deve ser vocalizado ou pensado pela pessoa que faz a meditação e, de preferência, se for um mantra de origem no budismo ou Yoga, seja ensinado da forma correta por um professor. O "om" é o mantra mais conhecido, e tem o poder de trazer paz interior durante a meditação.'),
       ],
     );
   }
-  
 }

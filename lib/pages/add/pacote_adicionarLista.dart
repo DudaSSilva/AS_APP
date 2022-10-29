@@ -2,8 +2,10 @@ import '../pacote_telaPrincipal.dart';
 import 'package:flutter/material.dart';
 
 class PacoteAdicionarLista extends StatefulWidget {
+  final String nomeUsuario;
 
-  const PacoteAdicionarLista({Key? key}) : super(key: key);
+  const PacoteAdicionarLista({Key? key, required this.nomeUsuario})
+      : super(key: key);
 
   @override
   _PacoteAdicionarListaState createState() => _PacoteAdicionarListaState();
@@ -95,11 +97,9 @@ class _PacoteAdicionarListaState extends State<PacoteAdicionarLista> {
   void goAnotations() {
     Navigator.push(
       context,
-      MaterialPageRoute(
-          builder: (context) {
-            return const TelaPrincipalPage();
-          }
-      ),
+      MaterialPageRoute(builder: (context) {
+        return TelaPrincipalPage(nomeUsuario: widget.nomeUsuario);
+      }),
     );
   }
 }
