@@ -283,6 +283,8 @@ class _LoginPageState extends State<LoginPage> {
       bool resultado = await UsuarioDao().autenticar(user: user, password: pwd);
 
       if (resultado) {
+        SharedPrefsHelper().login();
+
         Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(
