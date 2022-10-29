@@ -1,5 +1,4 @@
 import 'package:asapp/domain/usuario.dart';
-
 import '../../data/dao/usuario_dao.dart';
 import '../pacote_telaPrincipal.dart';
 import 'package:flutter/material.dart';
@@ -13,10 +12,9 @@ class CadastroPage extends StatefulWidget {
 }
 
 class _CadastroPageState extends State<CadastroPage> {
-  TextEditingController userController = TextEditingController();
-  //TextEditingController userNameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
+  final _userController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _emailController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
 
@@ -48,7 +46,7 @@ class _CadastroPageState extends State<CadastroPage> {
               ),
               const SizedBox(height: 32),
               const Text(
-                  'CADASTRAR USUÁRIO',
+                'CADASTRAR USUÁRIO',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 30,
@@ -57,17 +55,21 @@ class _CadastroPageState extends State<CadastroPage> {
               ),
               const SizedBox(height: 32),
               TextFormField(
-                controller: userController,
+                controller: _userController,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Campo usuário obrigatório';
+                  }
+                  if (value.length < 5) {
+                    return 'Um nome de usuário válido contém no mínimo 5 dígitos.';
                   }
                   return null;
                 },
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'usuário',
+                  hintText: 'Digite seu nome de usuário',
                   labelStyle: TextStyle(
                     color: Color(0xFFDD2E44),
                   ),
@@ -81,17 +83,21 @@ class _CadastroPageState extends State<CadastroPage> {
               ),
               const SizedBox(height: 32),
               TextFormField(
-                controller: emailController,
+                controller: _emailController,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Campo email obrigatório';
+                  }
+                  if (!value.contains("@")) {
+                    return 'Digite um e-mail válido';
                   }
                   return null;
                 },
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'email',
+                  hintText: 'example@email.com',
                   labelStyle: TextStyle(
                     color: Color(0xFFDD2E44),
                   ),
@@ -105,7 +111,7 @@ class _CadastroPageState extends State<CadastroPage> {
               ),
               const SizedBox(height: 16),
               TextFormField(
-                controller: passwordController,
+                controller: _passwordController,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -119,6 +125,7 @@ class _CadastroPageState extends State<CadastroPage> {
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Senha',
+                  hintText: '*********',
                   labelStyle: TextStyle(
                     color: Color(0xFFDD2E44),
                   ),
@@ -132,13 +139,27 @@ class _CadastroPageState extends State<CadastroPage> {
               ),
               const SizedBox(height: 24),
               ElevatedButton(
-                style:
-                ElevatedButton.styleFrom(primary: Color(0xFFFFCC99)),
-                onPressed: onPressedRegister,
+                style: ElevatedButton.styleFrom(primary: Color(0xFFFFCC99)),
+                onPressed: onPressed,
                 child: const Padding(
                   padding: EdgeInsets.symmetric(vertical: 12.0),
                   child: Text(
                     'CRIAR CONTA GRÁTIS',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFFDD2E44)),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 24),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: Color(0xFFFFCC99)),
+                onPressed: onPressedRegister,
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 12.0),
+                  child: Text(
+                    'ENTRAR',
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
@@ -156,8 +177,8 @@ class _CadastroPageState extends State<CadastroPage> {
                   const SizedBox(width: 8),
                   Expanded(
                     child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          primary: Color(0xFFDD2E44)),
+                      style:
+                          ElevatedButton.styleFrom(primary: Color(0xFFDD2E44)),
                       onPressed: onPressedLogin,
                       child: const Padding(
                         padding: EdgeInsets.symmetric(vertical: 8.0),
@@ -191,21 +212,26 @@ class _CadastroPageState extends State<CadastroPage> {
     );
   }
 
-  // onPressed() async {
-  //   if (_formKey.currentState!.validate()) {
-  //     String usuarioDigitado = userController.text;
-  //     String senhaDigitada = passwordController.text;
-  //
-  //     Usuario usuario = Usuario(usuario: usuarioDigitado, senha: senhaDigitada);
-  //     await UsuarioDao().salvarUser(usuario: usuario);
-  //
-  //     showSnackBar('Usuário foi salvo com sucesso!');
-  //     Navigator.pop(context);
-  //
-  //   } else {
-  //     showSnackBar("Erro na validação");
-  //   }
-  // }
+  onPressed() async {
+    if (_formKey.currentState!.validate()) {
+      String emailDigitado = _emailController.text;
+      String usernameDigitado = _userController.text;
+      String passwordDigitado = _passwordController.text;
+
+      Usuario user = Usuario(
+        email: emailDigitado,
+        usuario: usernameDigitado,
+        senha: passwordDigitado,
+      );
+
+      await UsuarioDao().salvarUser(user: user);
+
+      showSnackBar('CADASTRO REALIZADO!');
+      Navigator.pop(context);
+    } else {
+      showSnackBar("ERRO AO CADASTRAR USUÁRIO!");
+    }
+  }
 
   showSnackBar(String msg) {
     final snackBar = SnackBar(
