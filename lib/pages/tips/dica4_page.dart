@@ -3,7 +3,6 @@ import '../pacote_telaPrincipal.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Dica4Page extends StatefulWidget {
-
   const Dica4Page({
     Key? key,
   }) : super(key: key);
@@ -13,7 +12,6 @@ class Dica4Page extends StatefulWidget {
 }
 
 class _Dica4PageState extends State<Dica4Page> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +20,7 @@ class _Dica4PageState extends State<Dica4Page> {
         centerTitle: true,
         title: const Text('CONCENTRAÇÃO'),
         backgroundColor: const Color(0xFFE88883),
-        toolbarHeight: 64,
+        /*toolbarHeight: 64,
         actions: [
           IconButton(
             icon: const Icon(Icons.house),
@@ -37,9 +35,8 @@ class _Dica4PageState extends State<Dica4Page> {
               );
             },
           ),
-        ],
+        ],*/
       ),
-
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -85,7 +82,7 @@ class _Dica4PageState extends State<Dica4Page> {
                     ],
                   ),
                   const SizedBox(height: 24),
-                   const Text(
+                  const Text(
                     '5 dicas para melhorar a Concentração',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -155,9 +152,10 @@ class _Dica4PageState extends State<Dica4Page> {
       ),
     );
   }
-  
+
   Future<void> onPressedFonteImagem() async {
-    final Uri _url = Uri.parse('https://holos.org.br/wp-content/uploads/2018/11/foco-concentracao-300x250.jpg');
+    final Uri _url = Uri.parse(
+        'https://holos.org.br/wp-content/uploads/2018/11/foco-concentracao-300x250.jpg');
 
     if (!await launchUrl(
       _url,
@@ -166,7 +164,7 @@ class _Dica4PageState extends State<Dica4Page> {
       throw 'Could not launch $_url';
     }
   }
-  
+
   Future<void> onPressedFonte() async {
     final Uri _url = Uri.parse('https://holos.org.br/concentracao-melhorar/');
 
@@ -190,7 +188,7 @@ class _Dica4PageState extends State<Dica4Page> {
       ),
     );
   }
-  
+
   buildTittle({
     required String title1,
     required String title2,
@@ -211,7 +209,9 @@ class _Dica4PageState extends State<Dica4Page> {
           ),
         ),
         const SizedBox(height: 16),
-        buildText(text: 'No início, como sua mente não está acostumada a se concentrar no que você está fazendo, sua mente foge, dispersa, vai pensar em outra coisa. Por isso, tente trazer sua atenção de volta ao que você está fazendo, o quanto for necessário. Pratique e repita sempre. Leve sempre seus pensamentos ao trabalho, para a ação que você está fazendo no momento.'),
+        buildText(
+            text:
+                'No início, como sua mente não está acostumada a se concentrar no que você está fazendo, sua mente foge, dispersa, vai pensar em outra coisa. Por isso, tente trazer sua atenção de volta ao que você está fazendo, o quanto for necessário. Pratique e repita sempre. Leve sempre seus pensamentos ao trabalho, para a ação que você está fazendo no momento.'),
         const SizedBox(height: 24),
         Text(
           title2,
@@ -224,7 +224,9 @@ class _Dica4PageState extends State<Dica4Page> {
           ),
         ),
         const SizedBox(height: 16),
-        buildText(text: 'Sua mente precisa ser treinada. Faça exercícios de palavras cruzadas, jogue xadrez e exercite uma outra língua. Conte de 1 a 100 e depois volte contando de trás para frente. Ponha ordem em seu quarto, suas gavetas, sua mesa de trabalho, com todo cuidado, concentrando-se em cada coisa no que está fazendo. Sua mente é como seus músculos, precisa ser treinada. Estimule sua mente. Aprenda a fazer planos de ação e operacionalize cada uma de suas metas. Mantenha a mente em exercício.'),
+        buildText(
+            text:
+                'Sua mente precisa ser treinada. Faça exercícios de palavras cruzadas, jogue xadrez e exercite uma outra língua. Conte de 1 a 100 e depois volte contando de trás para frente. Ponha ordem em seu quarto, suas gavetas, sua mesa de trabalho, com todo cuidado, concentrando-se em cada coisa no que está fazendo. Sua mente é como seus músculos, precisa ser treinada. Estimule sua mente. Aprenda a fazer planos de ação e operacionalize cada uma de suas metas. Mantenha a mente em exercício.'),
         const SizedBox(height: 24),
         Text(
           title3,
@@ -237,7 +239,9 @@ class _Dica4PageState extends State<Dica4Page> {
           ),
         ),
         SizedBox(height: 16),
-        buildText(text: 'Priorizar é colocar o que é mais importante fazer em primeiro lugar. Você normalmente está com muitas coisas para fazer e precisa se concentrar para saber o que é prioritário. Escolha uma tarefa importante que você vai fazer e concentre-se nela.'),
+        buildText(
+            text:
+                'Priorizar é colocar o que é mais importante fazer em primeiro lugar. Você normalmente está com muitas coisas para fazer e precisa se concentrar para saber o que é prioritário. Escolha uma tarefa importante que você vai fazer e concentre-se nela.'),
         SizedBox(height: 24),
         Text(
           title4,
@@ -250,7 +254,9 @@ class _Dica4PageState extends State<Dica4Page> {
           ),
         ),
         const SizedBox(height: 16),
-        buildText(text: 'Concentrar é trazer para o centro. Trazer para o centro de sua mente. É juntar o que está disperso para o centro de sua mente. É criar densidade e estar aberto a deixar vir novas ideias sem perder o foco. É dar espaço à intuição, à criatividade. Estar centrado é acalmar a mente e ficar tranquilo. Para isso, ajuda muito manter uma respiração tranquila, pausada e relaxar seu corpo. Alternativamente, é bom focar por instantes em sua respiração, em seus batimentos cardíacos, nas sensações de frio e calor por todo seu corpo. E agora sim, determine o foco de sua ação.'),
+        buildText(
+            text:
+                'Concentrar é trazer para o centro. Trazer para o centro de sua mente. É juntar o que está disperso para o centro de sua mente. É criar densidade e estar aberto a deixar vir novas ideias sem perder o foco. É dar espaço à intuição, à criatividade. Estar centrado é acalmar a mente e ficar tranquilo. Para isso, ajuda muito manter uma respiração tranquila, pausada e relaxar seu corpo. Alternativamente, é bom focar por instantes em sua respiração, em seus batimentos cardíacos, nas sensações de frio e calor por todo seu corpo. E agora sim, determine o foco de sua ação.'),
         const SizedBox(height: 24),
         Text(
           title5,
@@ -263,9 +269,10 @@ class _Dica4PageState extends State<Dica4Page> {
           ),
         ),
         const SizedBox(height: 16),
-        buildText(text: 'Ouvir música ajuda muito a manter-se concentrado, seja numa atividade física ou numa atividade mental, como escrever, estudar. É preciso que seja uma música suave, de preferência já conhecida, que não exija sua atenção, pois esta deverá estar focada no que estiver fazendo. A música evita ruídos dispersivos, acalma seu corpo e sua mente, facilitando direcionar sua energia mental para o que está realizando.'),
+        buildText(
+            text:
+                'Ouvir música ajuda muito a manter-se concentrado, seja numa atividade física ou numa atividade mental, como escrever, estudar. É preciso que seja uma música suave, de preferência já conhecida, que não exija sua atenção, pois esta deverá estar focada no que estiver fazendo. A música evita ruídos dispersivos, acalma seu corpo e sua mente, facilitando direcionar sua energia mental para o que está realizando.'),
       ],
     );
   }
-  
 }

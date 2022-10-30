@@ -9,10 +9,12 @@ import '../../widget/pacote_lista_card.dart';
 
 class PacoteLista extends StatefulWidget {
   final PacotePlanejamento pacotePlanejamento;
+  final String nomeUsuario;
 
   const PacoteLista({
     Key? key,
     required this.pacotePlanejamento,
+    required this.nomeUsuario,
   }) : super(key: key);
 
   @override
@@ -20,7 +22,6 @@ class PacoteLista extends StatefulWidget {
 }
 
 class _PacoteListaState extends State<PacoteLista> {
-
   PacotePlanejamento get pacote => widget.pacotePlanejamento;
   Future<List<PacoteTarefas>> lista = TarefasDao().listarTarefas();
 
@@ -49,7 +50,6 @@ class _PacoteListaState extends State<PacoteLista> {
           ),
         ],
       ),
-
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -124,22 +124,18 @@ class _PacoteListaState extends State<PacoteLista> {
   void onPressedButtonAdd() {
     Navigator.push(
       context,
-      MaterialPageRoute(
-          builder: (context) {
-            return const PacoteAdicionarLista();
-          }
-      ),
+      MaterialPageRoute(builder: (context) {
+        return PacoteAdicionarLista(nomeUsuario: widget.nomeUsuario);
+      }),
     );
   }
 
   void goAnotations() {
     Navigator.push(
       context,
-      MaterialPageRoute(
-          builder: (context) {
-            return const TelaPrincipalPage();
-          }
-      ),
+      MaterialPageRoute(builder: (context) {
+        return TelaPrincipalPage(nomeUsuario: widget.nomeUsuario);
+      }),
     );
   }
 
@@ -156,14 +152,13 @@ class _PacoteListaState extends State<PacoteLista> {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: lista.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return CardPacoteLista(pacoteTarefas: lista[index]);
-                }
-            );
+                  return CardPacoteLista(
+                      pacoteTarefas: lista[index],
+                      nomeUsuario: widget.nomeUsuario);
+                });
           }
 
           return const Center(child: CircularProgressIndicator());
-        }
-
-    );
+        });
   }
 }

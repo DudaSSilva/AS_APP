@@ -3,9 +3,11 @@ import '../../domain/pacote_planejamento.dart';
 import '../habit/pacote_habitos.dart';
 
 class PacoteAdicionarHabito extends StatefulWidget {
+  final String nomeUsuario;
 
   const PacoteAdicionarHabito({
     Key? key,
+    required this.nomeUsuario,
   }) : super(key: key);
 
   @override
@@ -41,7 +43,7 @@ class _PacoteAdicionarListaState extends State<PacoteAdicionarHabito> {
               ),
               const SizedBox(height: 32),
               TextFormField(
-               // controller: userNameController,
+                // controller: userNameController,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -56,8 +58,7 @@ class _PacoteAdicionarListaState extends State<PacoteAdicionarHabito> {
               ),
               const SizedBox(height: 24),
               ElevatedButton(
-                style:
-                ElevatedButton.styleFrom(primary: Color(0xFFFFCC99)),
+                style: ElevatedButton.styleFrom(primary: Color(0xFFFFCC99)),
                 onPressed: goHabits,
                 child: const Padding(
                   padding: EdgeInsets.symmetric(vertical: 12.0),
@@ -77,7 +78,7 @@ class _PacoteAdicionarListaState extends State<PacoteAdicionarHabito> {
     );
   }
 
-  void goHabits(){
+  void goHabits() {
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -88,6 +89,7 @@ class _PacoteAdicionarListaState extends State<PacoteAdicionarHabito> {
               titulo: 'HABIT TRACKER',
               cor: 0xFFF8E9CE,
             ),
+            nomeUsuario: widget.nomeUsuario,
           );
         },
       ),

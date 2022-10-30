@@ -3,7 +3,6 @@ import 'package:url_launcher/url_launcher.dart';
 import '../pacote_telaPrincipal.dart';
 
 class Dica2Page extends StatefulWidget {
-
   const Dica2Page({
     Key? key,
   }) : super(key: key);
@@ -13,7 +12,6 @@ class Dica2Page extends StatefulWidget {
 }
 
 class _Dica2PageState extends State<Dica2Page> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +23,7 @@ class _Dica2PageState extends State<Dica2Page> {
           style: TextStyle(color: Color(0xFFF25E7A)),
         ),
         backgroundColor: const Color(0xFFFFCEEF),
-        toolbarHeight: 64,
+        /*toolbarHeight: 64,
         actions: [
           IconButton(
             icon: const Icon(Icons.house),
@@ -40,9 +38,8 @@ class _Dica2PageState extends State<Dica2Page> {
               );
             },
           ),
-        ],
+        ],*/
       ),
-
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -397,8 +394,10 @@ class _Dica2PageState extends State<Dica2Page> {
       ),
     );
   }
+
   Future<void> onPressedFonte() async {
-    final Uri _url = Uri.parse('https://www.bing.com/ck/a?!&&p=366bec5179a7d75dJmltdHM9MTY2MTk4MzMwOSZpZ3VpZD1kYTBhZDBjMC05Yjg0LTQzNDktODY1ZS1hMWZmYTNmYmYzYTAmaW5zaWQ9NTQxMw&ptn=3&hsh=3&fclid=82ded81f-2978-11ed-aef8-bfc0883a2966&u=a1aHR0cHM6Ly93d3cucHJhdmFsZXIuY29tLmJyL2Nyb25vZ3JhbWEtZGUtZXN0dWRvcy1jb21vLW1vbnRhci11bS1lLXF1YWwtc3VhLWltcG9ydGFuY2lhLyM6fjp0ZXh0PUNyb25vZ3JhbWElMjBkZSUyMGVzdHVkb3MlMjAlQzMlQTklMjB1bWElMjBmZXJyYW1lbnRhJTIwZGUlMjBwbGFuZWphbWVudG8sb3MlMjBjb250ZSVDMyVCQWRvcyUyMHByb2dyYW1hZG9zJTIwcGFyYSUyMGFsY2FuJUMzJUE3YXIlMjBzZXUlMjBvYmpldGl2byUyMGZpbmFsLg&ntb=1');
+    final Uri _url = Uri.parse(
+        'https://www.bing.com/ck/a?!&&p=366bec5179a7d75dJmltdHM9MTY2MTk4MzMwOSZpZ3VpZD1kYTBhZDBjMC05Yjg0LTQzNDktODY1ZS1hMWZmYTNmYmYzYTAmaW5zaWQ9NTQxMw&ptn=3&hsh=3&fclid=82ded81f-2978-11ed-aef8-bfc0883a2966&u=a1aHR0cHM6Ly93d3cucHJhdmFsZXIuY29tLmJyL2Nyb25vZ3JhbWEtZGUtZXN0dWRvcy1jb21vLW1vbnRhci11bS1lLXF1YWwtc3VhLWltcG9ydGFuY2lhLyM6fjp0ZXh0PUNyb25vZ3JhbWElMjBkZSUyMGVzdHVkb3MlMjAlQzMlQTklMjB1bWElMjBmZXJyYW1lbnRhJTIwZGUlMjBwbGFuZWphbWVudG8sb3MlMjBjb250ZSVDMyVCQWRvcyUyMHByb2dyYW1hZG9zJTIwcGFyYSUyMGFsY2FuJUMzJUE3YXIlMjBzZXUlMjBvYmpldGl2byUyMGZpbmFsLg&ntb=1');
 
     if (!await launchUrl(
       _url,
@@ -409,7 +408,8 @@ class _Dica2PageState extends State<Dica2Page> {
   }
 
   Future<void> onPressedFonteImagem() async {
-    final Uri _url = Uri.parse('https://i.pinimg.com/originals/04/1e/ab/041eabbf8244e438f72dbe110e2029ea.jpg');
+    final Uri _url = Uri.parse(
+        'https://i.pinimg.com/originals/04/1e/ab/041eabbf8244e438f72dbe110e2029ea.jpg');
 
     if (!await launchUrl(
       _url,
@@ -420,7 +420,8 @@ class _Dica2PageState extends State<Dica2Page> {
   }
 
   Future<void> modeloUm() async {
-    final Uri _url = Uri.parse('https://www.pravaler.com.br/wp-content/uploads/2020/11/cronograma-estudos-humanas.pdf');
+    final Uri _url = Uri.parse(
+        'https://www.pravaler.com.br/wp-content/uploads/2020/11/cronograma-estudos-humanas.pdf');
 
     if (!await launchUrl(
       _url,
@@ -431,7 +432,8 @@ class _Dica2PageState extends State<Dica2Page> {
   }
 
   Future<void> modeloDois() async {
-    final Uri _url = Uri.parse('https://www.pravaler.com.br/wp-content/uploads/2020/11/cronograma-estudos-exatas.pdf');
+    final Uri _url = Uri.parse(
+        'https://www.pravaler.com.br/wp-content/uploads/2020/11/cronograma-estudos-exatas.pdf');
 
     if (!await launchUrl(
       _url,
@@ -442,7 +444,8 @@ class _Dica2PageState extends State<Dica2Page> {
   }
 
   Future<void> modeloTres() async {
-    final Uri _url = Uri.parse('https://www.pravaler.com.br/wp-content/uploads/2020/11/cronograma-estudos-economicas.pdf');
+    final Uri _url = Uri.parse(
+        'https://www.pravaler.com.br/wp-content/uploads/2020/11/cronograma-estudos-economicas.pdf');
 
     if (!await launchUrl(
       _url,
@@ -453,7 +456,8 @@ class _Dica2PageState extends State<Dica2Page> {
   }
 
   Future<void> modeloQuatro() async {
-    final Uri _url = Uri.parse('https://www.pravaler.com.br/wp-content/uploads/2020/11/cronograma-estudos-medicina.pdf');
+    final Uri _url = Uri.parse(
+        'https://www.pravaler.com.br/wp-content/uploads/2020/11/cronograma-estudos-medicina.pdf');
 
     if (!await launchUrl(
       _url,
@@ -462,5 +466,4 @@ class _Dica2PageState extends State<Dica2Page> {
       throw 'Could not launch $_url';
     }
   }
-
 }

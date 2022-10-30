@@ -49,7 +49,8 @@ class _CardPacoteLivrosState extends State<CardPacoteLivros> {
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.value1 = value!),
+                        onChanged: (value) =>
+                            setState(() => this.value1 = value!),
                       ),
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
@@ -63,7 +64,8 @@ class _CardPacoteLivrosState extends State<CardPacoteLivros> {
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.value2 = value!),
+                        onChanged: (value) =>
+                            setState(() => this.value2 = value!),
                       ),
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
@@ -77,9 +79,9 @@ class _CardPacoteLivrosState extends State<CardPacoteLivros> {
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.value3 = value!),
+                        onChanged: (value) =>
+                            setState(() => this.value3 = value!),
                       ),
-
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
                         activeColor: Color(0xFFF25E7A),
@@ -92,7 +94,8 @@ class _CardPacoteLivrosState extends State<CardPacoteLivros> {
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.value4 = value!),
+                        onChanged: (value) =>
+                            setState(() => this.value4 = value!),
                       ),
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
@@ -106,7 +109,8 @@ class _CardPacoteLivrosState extends State<CardPacoteLivros> {
                             fontSize: 20,
                           ),
                         ),
-                        onChanged: (value) => setState(() => this.value5 = value!),
+                        onChanged: (value) =>
+                            setState(() => this.value5 = value!),
                       ),
                     ],
                   ),
@@ -118,14 +122,13 @@ class _CardPacoteLivrosState extends State<CardPacoteLivros> {
       ),
     );
   }
-  void onPressedButtonAdd() {
+
+  /*void onPressedButtonAdd() {
     Navigator.push(
       context,
-      MaterialPageRoute(
-          builder: (context) {
-            return const PacoteAdicionarLista();
-          }
-      ),
+      MaterialPageRoute(builder: (context) {
+        return PacoteAdicionarLista();
+      }),
     );
-  }
+  }*/
 }

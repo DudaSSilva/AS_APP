@@ -5,11 +5,11 @@ import '../../widget/pacote_livros_card.dart';
 import '../pacote_telaPrincipal.dart';
 
 class PacoteLivros extends StatefulWidget {
-  //final PacoteLivro pacoteLivros;
+  //final String nomeUsuario;
 
   const PacoteLivros({
     Key? key,
-    //required this.pacoteLivros,
+    //required this.nomeUsuario,
   }) : super(key: key);
 
   @override
@@ -30,7 +30,7 @@ class _PacoteLivrosState extends State<PacoteLivros> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              Container(
+              /*Container(
                 child: IconButton(
                   icon: const Icon(
                     Icons.house,
@@ -41,13 +41,14 @@ class _PacoteLivrosState extends State<PacoteLivros> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return const TelaPrincipalPage();
+                          return TelaPrincipalPage(
+                              nomeUsuario: widget.nomeUsuario);
                         },
                       ),
                     );
                   },
                 ),
-              ),
+              ),*/
               const SizedBox(height: 16),
               const Text(
                 'Eu vivi mil vidas e amei mil amores. Andei por mundos distantes e vi o fim dos tempos. Porque eu li.',
@@ -73,8 +74,7 @@ class _PacoteLivrosState extends State<PacoteLivros> {
                     width: 150,
                     height: 250,
                     fit: BoxFit.cover,
-                  )
-              ),
+                  )),
               const SizedBox(height: 16),
               BuildLivroCard(
                   tittle: 'Trono de vidro',
@@ -83,8 +83,7 @@ class _PacoteLivrosState extends State<PacoteLivros> {
                     width: 150,
                     height: 250,
                     fit: BoxFit.cover,
-                  )
-              ),
+                  )),
               const SizedBox(height: 16),
               BuildListView(),
               const SizedBox(height: 16),
@@ -121,7 +120,7 @@ class _PacoteLivrosState extends State<PacoteLivros> {
     required Image image,
   }) {
     return InkWell(
-      onTap: moreInformations,
+      onTap: () {},
       child: Card(
         color: const Color(0xFFF25E7A),
         shape: RoundedRectangleBorder(
@@ -188,14 +187,14 @@ class _PacoteLivrosState extends State<PacoteLivros> {
     );
   }
 
-  void moreInformations() {
+  /*void moreInformations() {
     Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) {
-          return TelaPrincipalPage();
+          return TelaPrincipalPage(nomeUsuario: widget.nomeUsuario);
         },
       ),
     );
-  }
+  }*/
 }

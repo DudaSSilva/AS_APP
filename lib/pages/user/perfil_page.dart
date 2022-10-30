@@ -3,11 +3,17 @@ import 'package:flutter/material.dart';
 import '../pacote_telaPrincipal.dart';
 import '../app/settings_page.dart';
 import 'package:image_picker/image_picker.dart';
+import '../../domain/usuario.dart';
 
 import '../victorys/pacote_conquista.dart';
 
 class PerfilPage extends StatefulWidget {
-  const PerfilPage({Key? key}) : super(key: key);
+  final String nomeusuario;
+
+  PerfilPage({
+    Key? key,
+    required this.nomeusuario,
+  }) : super(key: key);
 
   @override
   _PerfilPageState createState() => _PerfilPageState();
@@ -44,7 +50,7 @@ class _PerfilPageState extends State<PerfilPage> {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return const TelaPrincipalPage();
+                    return TelaPrincipalPage(nomeUsuario: widget.nomeusuario);
                   },
                 ),
               );
@@ -97,12 +103,12 @@ class _PerfilPageState extends State<PerfilPage> {
                           child: _image != null
                               ? Image.file(_image!, fit: BoxFit.cover)
                               : const Center(
-                            child: Icon(
-                              Icons.face_retouching_natural,
-                              size: 100,
-                              color: Color(0xFFDD2E44),
-                            ),
-                          ),
+                                  child: Icon(
+                                    Icons.face_retouching_natural,
+                                    size: 100,
+                                    color: Color(0xFFDD2E44),
+                                  ),
+                                ),
                           //child: Text('Adicionar imagem'),
                         ),
                         borderRadius: BorderRadius.circular(150),
@@ -112,8 +118,8 @@ class _PerfilPageState extends State<PerfilPage> {
                   //margin: const EdgeInsets.only(bottom: 10),
                 ),
               ),
-              const Text(
-                'NOME DO USUÁRIO',
+              Text(
+                widget.nomeusuario.toUpperCase(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25,
@@ -131,9 +137,10 @@ class _PerfilPageState extends State<PerfilPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text('Nome do usuário'),
+              Text(widget.nomeusuario.toUpperCase()),
               const SizedBox(height: 16),
-              Text('Senha oculta'),
+              Text('Email'),
+              //Text(widget.email..toUpperCase()),
               const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: onPressedAchiviements,

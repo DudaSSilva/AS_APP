@@ -9,10 +9,12 @@ import '../pacote_telaPrincipal.dart';
 
 class PacoteHabitos extends StatefulWidget {
   final PacotePlanejamento pacotePlanejamento;
+  final String nomeUsuario;
 
   const PacoteHabitos({
     Key? key,
     required this.pacotePlanejamento,
+    required this.nomeUsuario,
   }) : super(key: key);
 
   @override
@@ -23,7 +25,7 @@ class _PacoteHabitosState extends State<PacoteHabitos> {
   PacotePlanejamento get pacote => widget.pacotePlanejamento;
   Future<List<PacoteImages>> lista = ImagesDao().listarHabitos();
 
-  int _selectedIndex=0;
+  int _selectedIndex = 0;
   late List<Widget> pages;
 
   @override
@@ -37,10 +39,10 @@ class _PacoteHabitosState extends State<PacoteHabitos> {
     ];
   }
 
-  void _onItemTapped(int index){
-    _selectedIndex=index;
+  void _onItemTapped(int index) {
+    _selectedIndex = index;
     setState(() {
-      _selectedIndex=index;
+      _selectedIndex = index;
     });
   }
 
@@ -61,7 +63,7 @@ class _PacoteHabitosState extends State<PacoteHabitos> {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return const TelaPrincipalPage();
+                    return TelaPrincipalPage(nomeUsuario: widget.nomeUsuario);
                   },
                 ),
               );
@@ -81,11 +83,14 @@ class _PacoteHabitosState extends State<PacoteHabitos> {
         unselectedItemColor: const Color(0xFF526480),
         type: BottomNavigationBarType.fixed,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.watch_later_outlined), label: "Timer"),
-          BottomNavigationBarItem(icon: Icon(Icons.timeline_sharp), label: "Graphics"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined), label: "Home"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.watch_later_outlined), label: "Timer"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.timeline_sharp), label: "Graphics"),
         ],
-      ) ,
+      ),
     );
   }
 
@@ -160,7 +165,7 @@ class _PacoteHabitosState extends State<PacoteHabitos> {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) {
-        return const PacoteAdicionarHabito();
+        return PacoteAdicionarHabito(nomeUsuario: widget.nomeUsuario);
       }),
     );
   }
@@ -177,15 +182,13 @@ class _PacoteHabitosState extends State<PacoteHabitos> {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: lista.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return WidgetFlashCardHabit(pacoteImages: lista[index]);
-                }
-            );
+                  return WidgetFlashCardHabit(
+                      pacoteImages: lista[index],
+                      nomeUsuario: widget.nomeUsuario);
+                });
           }
 
           return const Center(child: CircularProgressIndicator());
-        }
-
-    );
+        });
   }
 }
-
