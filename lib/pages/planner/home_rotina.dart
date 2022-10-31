@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../models/auxiliar_styles.dart';
 import '../pacote_telaPrincipal.dart';
 import 'conquistas.dart';
+import 'livros.dart';
 import 'semanas.dart';
 
 class HomeRotina extends StatefulWidget {
@@ -147,6 +148,7 @@ class _HomeRotinaState extends State<HomeRotina> {
               child: Row(
                 children: [
                   Conquistas(),
+                  //Livros(),
                   //Conquistas(),
                   //Conquistas(),
                   //Conquistas(),

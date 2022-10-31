@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
     await notificationsPlugin.show(
         0,
         "Notificação teste",
-        "Belle Belinha fodar",
+        "Seja bem vindo, queridinha!",
         notiDetails
     );
   }
