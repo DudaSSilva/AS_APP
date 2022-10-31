@@ -32,8 +32,6 @@ class _HomeRotinaState extends State<HomeRotina> {
         shadowColor: Colors.transparent,
         //centerTitle: true,
         //title: const Text('LISTA DE TAREFAS'),
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
       ),
       body: ListView(
         children: [
