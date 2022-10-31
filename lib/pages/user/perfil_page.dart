@@ -118,14 +118,15 @@ class _PerfilPageState extends State<PerfilPage> {
                   //margin: const EdgeInsets.only(bottom: 10),
                 ),
               ),
+              const SizedBox(height: 24),
               Text(
-                widget.nomeusuario.toUpperCase(),
+                  '----- '+widget.nomeusuario.toUpperCase()+' -----',
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  //color: Colors.black,
+                  color: Color(0xFFDD2E44),
+                  backgroundColor: Colors.white,
                 ),
               ),
             ],
