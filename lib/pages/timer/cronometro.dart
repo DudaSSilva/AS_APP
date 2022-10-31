@@ -11,19 +11,23 @@ class Cronometro extends StatefulWidget {
 
 class _CronometroState extends State<Cronometro> {
 
-  static const maxSeconds = 60;
+  static const maxSeconds = 50;
   int seconds = maxSeconds;
   Timer? timer;
 
   void resetTimer() => setState(() => seconds = maxSeconds);
 
-  void startTimer( {bool reset = true}){
+  void startTimer( {bool reset = false}){
     if(reset){
       resetTimer();
     }
     timer = Timer.periodic(Duration(seconds: 1), (_) {
       if (seconds > 0){
-        setState(() => seconds--);
+        seconds--;
+        setState(() {
+          seconds--;
+        });
+        print('alo! ${seconds} ');
       } else {
         stopTimer(reset: false);
       }
@@ -117,7 +121,7 @@ class _CronometroState extends State<Cronometro> {
       return Icon(Icons.done, color: Colors.greenAccent, size: 112);
     } else {
       return Text(
-        '$seconds',
+        '${seconds}',
         style: TextStyle(
           fontWeight: FontWeight.bold,
           color: Colors.white,

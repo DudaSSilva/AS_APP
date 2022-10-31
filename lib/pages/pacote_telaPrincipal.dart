@@ -1,7 +1,5 @@
-import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
 import '../data/shared_prefs_helper.dart';
 import 'login/login_page.dart';
 import 'victorys/pacote_conquista.dart';
@@ -17,7 +15,6 @@ import 'app/settings_page.dart';
 import '../widget/pacote_planejamento_card.dart';
 import '../domain/pacote_planejamento.dart';
 import '../screens/calendar_screen.dart';
-import '../../domain/usuario.dart';
 
 class TelaPrincipalPage extends StatefulWidget {
   final String nomeUsuario;

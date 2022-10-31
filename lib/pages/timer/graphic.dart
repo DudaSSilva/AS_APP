@@ -13,10 +13,6 @@ class _GraphicState extends State<Graphic> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Gráficos de monitoramento'),
-          backgroundColor: const Color(0xFFF25E7A),
-        ),
         body: SfCartesianChart(
             primaryXAxis: CategoryAxis(),
             // Chart title

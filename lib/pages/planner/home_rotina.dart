@@ -26,9 +26,10 @@ class _HomeRotinaState extends State<HomeRotina> {
     return Scaffold(
       backgroundColor: Styles.bgColor,
       appBar: AppBar(
-        centerTitle: true,
-        title: const Text('LISTA DE TAREFAS'),
-        backgroundColor: const Color(0xFFF25E7A),
+        //centerTitle: true,
+        //title: const Text('LISTA DE TAREFAS'),
+        backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent,
       ),
       body: ListView(
         children: [

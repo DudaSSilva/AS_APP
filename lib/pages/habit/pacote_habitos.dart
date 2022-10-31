@@ -2,6 +2,7 @@ import 'package:asapp/pages/timer/cronometro.dart';
 import 'package:asapp/pages/timer/graphic.dart';
 import 'package:asapp/widget/widget_flashcard_habit.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../data/dao/images_dao.dart';
 import '../../domain/habitos.dart';
 import '../../pages/add/pacote_adicionarHabito.dart';
@@ -23,19 +24,20 @@ class PacoteHabitos extends StatefulWidget {
 }
 
 class _PacoteHabitosState extends State<PacoteHabitos> {
+
   PacotePlanejamento get pacote => widget.pacotePlanejamento;
   Future<List<PacoteImages>> lista = ImagesDao().listarHabitos();
 
   int _selectedIndex = 0;
   late List<Widget> pages;
-
+  
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     pages = [
       buildHomePageHabit(),
       Cronometro(),
+      Graphic(key: ObjectKey(_selectedIndex)),
     ];
   }
 
