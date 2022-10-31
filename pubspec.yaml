@@ -43,9 +43,17 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   fluentui_icons: ^1.0.0
+  get_storage:
   get: ^4.6.5
   url_launcher: ^6.1.5
   syncfusion_flutter_charts:
+  #google_fonts:
+  date_picker_timeline:
+  #flutter_local_notifications:
+  flutter_native_timezone:
+  rxdart:
+  timezone:
+  provider:
 
 
 

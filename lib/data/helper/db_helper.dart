@@ -6,7 +6,7 @@ class DBHelper {
 
   initDB() async {
     String databasePath = await getDatabasesPath();
-    String path = join(databasePath, "asApp19.db");
+    String path = join(databasePath, "asApp24.db");
     Database database = await openDatabase(
       path,
       version: 1,
@@ -191,6 +191,27 @@ class DBHelper {
 
     sql5 = "INSERT INTO FLASHCARDS (id, URL, text, title) VALUES (8, 'images/comida.png', 'Mousse de abacaxi e pizza', 'comida');";
     await db.execute(sql5);
+
+    //LIVROS
+
+    String sql6 = 'create table LIVROS (id INTEGER PRIMARY KEY, livro1 varchar(100), livro2 varchar(100), livro3 varchar(100), livro4 varchar(100), livro5 varchar(100), cor varchar(100));';
+    await db.execute(sql6);
+
+    sql6 =
+    "INSERT INTO LIVROS (id, livro1, livro2, livro3, livro4, livro5, cor) VALUES (1, 'ACOTAR', 'ACOMAF', 'ACOFAS', 'ACOWAR', 'ACOSF', '0xFFF4D9A9');";
+    await db.execute(sql6);
+
+    sql6 =
+    "INSERT INTO LIVROS (id, livro1, livro2, livro3, livro4, livro5, cor) VALUES (2, 'Tarsis', 'Matei um amigo ', ' Lula livre', 'Eu imploro', 'ACOSF', '0xFFF4D9A9');";
+    await db.execute(sql6);
+
+    sql6 =
+    "INSERT INTO LIVROS (id, livro1, livro2, livro3, livro4, livro5, cor) VALUES (3, '3 formas e e forma de bolo', 'de morrer rapidamente', 'Tarsis: Viagens por Arapiraca', 'Tarsis: Coluna mal tratada', 'ACOSF', '0xFFF4D9A9');";
+    await db.execute(sql6);
+
+    sql6 =
+    "INSERT INTO LIVROS (id, livro1, livro2, livro3, livro4, livro5, cor) VALUES (4, 'Como dar titulos a livros', 'Tarsis: Flutter e ameaças', 'Como ser feliz, sendo um feira-grandense', 'Smilingüido –  Drogas e armas', 'O lar da senhorita Peregrine', '0xFFF37B67');";
+    await db.execute(sql6);
   }
 
 }

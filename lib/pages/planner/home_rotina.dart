@@ -26,6 +26,10 @@ class _HomeRotinaState extends State<HomeRotina> {
     return Scaffold(
       backgroundColor: Styles.bgColor,
       appBar: AppBar(
+        centerTitle: true,
+        //title: const Text('LISTA DE TAREFAS'),
+        backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent,
         //centerTitle: true,
         //title: const Text('LISTA DE TAREFAS'),
         backgroundColor: Colors.transparent,
@@ -35,25 +39,6 @@ class _HomeRotinaState extends State<HomeRotina> {
         children: [
           Column(
             children: [
-              /*Container(
-                child: IconButton(
-                  icon: const Icon(
-                    Icons.house,
-                    color: Color(0xFFDD2E44),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return TelaPrincipalPage(
-                              nomeUsuario: widget.nomeUsuario);
-                        },
-                      ),
-                    );
-                  },
-                ),
-              ),*/
               const SizedBox(height: 8),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20),

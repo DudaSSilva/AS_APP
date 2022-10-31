@@ -1,96 +1,132 @@
+import 'package:asapp/data/dao/livros_dao.dart';
+import 'package:asapp/domain/pacote_livros.dart';
+import 'package:asapp/models/auxiliar_styles.dart';
+import 'package:date_picker_timeline/date_picker_widget.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
-import '../../data/dataSimulatory/bdLivros.dart';
-import '../../domain/pacote_livros.dart';
+
+import '../../services/themes_services.dart';
 import '../../widget/pacote_livros_card.dart';
-import '../pacote_telaPrincipal.dart';
 
-class PacoteLivros extends StatefulWidget {
-  //final String nomeUsuario;
 
-  const PacoteLivros({
-    Key? key,
-    //required this.nomeUsuario,
-  }) : super(key: key);
+class Livros extends StatefulWidget {
+  const Livros({Key? key}) : super(key: key);
 
   @override
-  _PacoteLivrosState createState() => _PacoteLivrosState();
+  State<Livros> createState() => _LivrosState();
 }
 
-class _PacoteLivrosState extends State<PacoteLivros> {
-  //PacoteLivro get pacote => widget.pacoteLivros;
-  bool value = false;
-  Future<List<PacoteLivro>> lista = BD.getLivros();
+class _LivrosState extends State<Livros> {
+  Future<List<PacoteLivro>> lista = LivrosDao().listarLivrose();
+  DateTime _selectedDate = DateTime.now();
+  //showNotification(){
+  //setState(() {
+  //valor = !valor;
+  // });
+  //}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFE8E8),
+      appBar: _appBar(),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              /*Container(
-                child: IconButton(
-                  icon: const Icon(
-                    Icons.house,
-                    color: Color(0xFFDD2E44),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return TelaPrincipalPage(
-                              nomeUsuario: widget.nomeUsuario);
-                        },
-                      ),
-                    );
-                  },
-                ),
-              ),*/
-              const SizedBox(height: 16),
-              const Text(
-                'Eu vivi mil vidas e amei mil amores. Andei por mundos distantes e vi o fim dos tempos. Porque eu li.',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 4),
-              const Text(
-                'George R. R. Martin',
-                textAlign: TextAlign.end,
-                style: TextStyle(
-                  fontSize: 12,
-                ),
-              ),
-              const SizedBox(height: 16),
-              BuildLivroCard(
-                  tittle: 'O mundo de Sofia',
-                  image: Image.asset(
-                    'images/book1.jpg',
-                    width: 150,
-                    height: 250,
-                    fit: BoxFit.cover,
-                  )),
-              const SizedBox(height: 16),
-              BuildLivroCard(
-                  tittle: 'Trono de vidro',
-                  image: Image.asset(
-                    'images/book2.jpg',
-                    width: 150,
-                    height: 250,
-                    fit: BoxFit.cover,
-                  )),
-              const SizedBox(height: 16),
-              BuildListView(),
-              const SizedBox(height: 16),
-            ],
-          ),
+        child: Column(
+          children: [
+            _addBookBar(),
+            _addDateBar(),
+            const SizedBox(height: 24),
+            BuildListView(),
+          ],
         ),
       ),
+      //routes: Routes.list,
+      //initialRoute: Routes.initial,
+      //navigadorKey: Routes.navigatorKey,
+    );
+  }
+  _addDateBar(){
+    return Container(
+      margin: const EdgeInsets.only(top:20, left: 20),
+      child: Container(
+        child: DatePicker(
+          DateTime.now(),
+          height: 100,
+          width: 80,
+          initialSelectedDate: DateTime.now(),
+          selectionColor: Styles.primaryColor,
+          selectedTextColor: Colors.white,
+          dateTextStyle: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+              color: Colors.grey,
+            ),
+          dayTextStyle: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: Colors.grey,
+          ),
+          monthTextStyle: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+              color: Colors.grey,
+            ),
+          onDateChange: (date){
+            _selectedDate=date;
+          },
+        ),
+      ),
+    );
+  }
+  _addBookBar(){
+    return Container(
+      margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(DateFormat.yMMMMd().format(DateTime.now()),
+                  //style: subHeadingStyle,
+                ),
+                Text(
+                  "Today",
+                  //style: HeadingStyle
+                )
+
+              ],
+            ),
+          ),
+          //Button(label: "+ ADD Book", onTap: ()=>Get.to(AddBookPage()))
+        ],
+      ),
+    );
+  }
+  _appBar(){
+    return AppBar(
+      elevation:  0,
+      backgroundColor: context.theme.backgroundColor,
+      leading: GestureDetector(
+        onTap: (){
+          ThemesService().switchTheme();
+        },
+        child: Icon(Get.isDarkMode ? Icons.wb_sunny_outlined:Icons.nightlight_round,
+            size: 20,
+            color: Get.isDarkMode ? Colors.white: Colors.black
+        ),
+      ),
+      actions: [
+        CircleAvatar(
+          backgroundImage: AssetImage(
+              "images/perfil.png"
+          ),
+        ),
+        SizedBox(width: 20,),
+      ],
     );
   }
 
@@ -107,94 +143,12 @@ class _PacoteLivrosState extends State<PacoteLivros> {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: lista.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return CardPacoteLivros(pacoteLivros: lista[index]);
+                  return CardPacoteLivros(
+                      pacoteLivros: lista[index]);
                 });
           }
 
           return const Center(child: CircularProgressIndicator());
         });
   }
-
-  BuildLivroCard({
-    required String tittle,
-    required Image image,
-  }) {
-    return InkWell(
-      onTap: () {},
-      child: Card(
-        color: const Color(0xFFF25E7A),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Column(
-          children: [
-            const ClipRRect(
-              borderRadius: BorderRadius.vertical(
-                top: Radius.circular(16),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    tittle,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  Row(
-                    children: [
-                      image,
-                      const SizedBox(width: 8),
-                      const Expanded(
-                        child: Text(
-                          'Às vésperas de seu aniversário de quinze anos, Sofia Amundsen começa a receber bilhetes e cartões-postais bastante estranhos. Os bilhetes são anônimos e perguntam a Sofia quem é ela e de onde vem o mundo. Os postais são enviados do Líbano, por um major desconhecido, para uma certa Hilde Møller Knag, garota a quem Sofia também não conhece. O mistério dos bilhetes e dos postais é o ponto de partida deste romance fascinante, que vem conquistando milhões de leitores em todos os países e já vendeu mais de 1 milhão de exemplares só no Brasil. De capítulo em capítulo, de “lição” em “lição”, o leitor é convidado a percorrer toda a história da filosofia ocidental, ao mesmo tempo que se vê envolvido por um thriller que toma um rumo surpreendente.',
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            CheckboxListTile(
-              controlAffinity: ListTileControlAffinity.leading,
-              activeColor: Colors.grey,
-              checkColor: Colors.white,
-              value: value,
-              title: Text(
-                'Leitura concluída',
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 12,
-                ),
-              ),
-              onChanged: (value) => setState(() => this.value = value!),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  /*void moreInformations() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) {
-          return TelaPrincipalPage(nomeUsuario: widget.nomeUsuario);
-        },
-      ),
-    );
-  }*/
 }

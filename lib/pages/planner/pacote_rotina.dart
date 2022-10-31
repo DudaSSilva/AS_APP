@@ -1,12 +1,10 @@
-import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../domain/pacote_rotina_arg.dart';
+import '../../widget/add_book_bar.dart';
 import 'home_rotina.dart';
 import 'livros.dart';
 
 class PacoteRotina extends StatefulWidget {
-  //final String nomeUsuario;
   const PacoteRotina({Key? key}) : super(key: key);
 
   @override
@@ -18,9 +16,9 @@ class _PacoteRotinaState extends State<PacoteRotina> {
 
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeRotina(conquistas: {}),
-    const PacoteLivros(),
+    const Livros(),
     const Text("linha do tempo"),
-    const Text("Conquistas"),
+    const AddBookPage(),
   ];
 
   void _onItemTapped(int index) {
