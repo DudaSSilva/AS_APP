@@ -1,5 +1,6 @@
 import 'package:asapp/pages/planner/home_rotina.dart';
 import 'package:asapp/pages/planner/livros.dart';
+import 'package:asapp/widget/add_book_bar.dart';
 import 'package:flutter/material.dart';
 import '../screens/splash_screen.dart';
 import 'package:asapp/services/notification_services.dart';
@@ -34,7 +35,7 @@ void main() async {
   runApp(
     const MaterialApp(
       debugShowCheckedModeBanner: false,
-        home: Livros()
+        home: Splash()
       // Splash()
     ),
   );

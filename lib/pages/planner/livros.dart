@@ -8,12 +8,15 @@ import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import '../../data/dataSimulatory/bdLivros.dart';
 import '../../domain/pacote_livros.dart';
+import '../../widget/add_book_bar.dart';
 import '../../widget/pacote_livros_card.dart';
 import '../pacote_telaPrincipal.dart';
 import 'package:flutter/material.dart';
+
 
 class Livros extends StatefulWidget {
   const Livros({Key? key}) : super(key: key);
@@ -23,6 +26,7 @@ class Livros extends StatefulWidget {
 }
 
 class _LivrosState extends State<Livros> {
+  DateTime _selectedDate = DateTime.now();
   //showNotification(){
     //setState(() {
       //valor = !valor;
@@ -36,22 +40,51 @@ class _LivrosState extends State<Livros> {
       body: Column(
         children: [
           _addBookBar(),
-          Container(
-            child: Container(
-              child: DatePicker(
-                DateTime.now(),
-                height: 100,
-                width: 80,
-                initialSelectedDate: DateTime.now(),
-                selectionColor: Styles.primaryColor,
-              ),
-            ),
-          )
+          _addDateBar(),
         ],
       ),
       //routes: Routes.list,
       //initialRoute: Routes.initial,
       //navigadorKey: Routes.navigatorKey,
+    );
+  }
+  _addDateBar(){
+    return Container(
+      margin: const EdgeInsets.only(top:20, left: 20),
+      child: Container(
+        child: DatePicker(
+          DateTime.now(),
+          height: 100,
+          width: 80,
+          initialSelectedDate: DateTime.now(),
+          selectionColor: Styles.primaryColor,
+          selectedTextColor: Colors.white,
+          dateTextStyle: GoogleFonts.lato(
+            textStyle: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+              color: Colors.grey,
+            ),
+          ),
+          dayTextStyle: GoogleFonts.lato(
+            textStyle: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: Colors.grey,
+            ),
+          ),
+          monthTextStyle: GoogleFonts.lato(
+            textStyle: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+              color: Colors.grey,
+            ),
+          ),
+          onDateChange: (date){
+            _selectedDate=date;
+          },
+        ),
+      ),
     );
   }
   _addBookBar(){
@@ -74,7 +107,7 @@ class _LivrosState extends State<Livros> {
               ],
             ),
           ),
-          MyButton(label: "+ ADD Book", onTap: ()=>null)
+          MyButton(label: "+ ADD Book", onTap: ()=>Get.to(AddBookPage()))
         ],
       ),
     );

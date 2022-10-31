@@ -1,3 +1,4 @@
+import 'package:asapp/widget/add_book_bar.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class _PacoteRotinaState extends State<PacoteRotina> {
     const HomeRotina(conquistas: {}),
     //const PacoteLivros(),
     const Livros(),
-    const Text("Conquistas"),
+    const AddBookPage(),
   ];
 
   void _onItemTapped(int index){
