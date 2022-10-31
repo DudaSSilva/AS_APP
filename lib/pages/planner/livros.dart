@@ -1,4 +1,5 @@
 import 'package:asapp/main.dart';
+import 'package:asapp/models/auxiliar_styles.dart';
 import 'package:asapp/models/theme.dart';
 import 'package:asapp/services/notification_services.dart';
 import 'package:asapp/services/themes_services.dart';
@@ -42,7 +43,7 @@ class _LivrosState extends State<Livros> {
                 height: 100,
                 width: 80,
                 initialSelectedDate: DateTime.now(),
-                selectionColor: Colors.pink[200],
+                selectionColor: Styles.primaryColor,
               ),
             ),
           )
