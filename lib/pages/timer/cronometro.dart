@@ -11,7 +11,7 @@ class Cronometro extends StatefulWidget {
 
 class _CronometroState extends State<Cronometro> {
 
-  static const maxSeconds = 50;
+  static const maxSeconds = 60;
   int seconds = maxSeconds;
   Timer? timer;
 
