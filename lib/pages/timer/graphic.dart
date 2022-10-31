@@ -24,12 +24,12 @@ class _GraphicState extends State<Graphic> {
             series: <ChartSeries<_Study, String>>[
               LineSeries<_Study, String>(
                   dataSource: <_Study>[
-                    _Study('Jan', 2),
-                    _Study('Feb', 3),
-                    _Study('Mar', 1),
-                    _Study('Apr', 4),
-                    _Study('May', 3),
-                    _Study('Jun', 2)
+                    _Study('Sem1', 2),
+                    _Study('Sem2', 3),
+                    _Study('Sem3', 1),
+                    _Study('Sem4', 4),
+                    _Study('Sem5', 3),
+                    _Study('Sem6', 2)
                   ],
                   xValueMapper: (_Study time, _) => time.mouth,
                   yValueMapper: (_Study time, _) => time.time,
