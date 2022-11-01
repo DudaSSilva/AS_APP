@@ -21,16 +21,19 @@ class _CronometroState extends State<Cronometro> {
     if(reset){
       resetTimer();
     }
+
     timer = Timer.periodic(Duration(seconds: 1), (_) {
       if (seconds > 0){
         seconds--;
-        setState(() {
-          seconds--;
-        });
         print('alo! ${seconds} ');
       } else {
         stopTimer(reset: false);
       }
+
+      setState(() {
+        seconds;
+      });
+
     });
   }
 
@@ -46,7 +49,8 @@ class _CronometroState extends State<Cronometro> {
 
   @override
 
-  Widget build(BuildContext context) => Scaffold(
+  Widget build(BuildContext context) {
+  return Scaffold(
       body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -58,6 +62,7 @@ class _CronometroState extends State<Cronometro> {
           ),
         ),
   );
+  }
 
   Widget buildButtons() {
     final isRunning = timer == null? false: timer!.isActive;
@@ -124,7 +129,7 @@ class _CronometroState extends State<Cronometro> {
         '${seconds}',
         style: TextStyle(
           fontWeight: FontWeight.bold,
-          color: Colors.white,
+          color: Colors.black,
           fontSize: 80,
         ),
       );
