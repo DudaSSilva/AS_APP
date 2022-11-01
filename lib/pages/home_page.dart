@@ -1,7 +1,7 @@
+import 'package:asapp/screens/animation.dart';
+import 'package:asapp/screens/splash_screen2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'login/login_page.dart';
-import '../pages/pacote_telaPrincipal.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -71,7 +71,8 @@ class _HomePageState extends State<HomePage> {
       context,
       MaterialPageRoute(
         builder: (context) {
-          return const LoginPage();
+          // return const LoginPage();
+          return AnimationPage(page: Splash2());
         },
       ),
     );
