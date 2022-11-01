@@ -1,6 +1,8 @@
+import 'package:asapp/screens/splash_screen2.dart';
 import 'package:flutter/material.dart';
 import '../../data/dao/usuario_dao.dart';
 import '../../data/shared_prefs_helper.dart';
+import '../../screens/splash_screen3.dart';
 import 'cadastro_page.dart';
 import '../pacote_telaPrincipal.dart';
 import 'redefinirSenha_page.dart';
@@ -289,7 +291,7 @@ class _LoginPageState extends State<LoginPage> {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return TelaPrincipalPage(nomeUsuario: user);
+              return Splash3(nomeUsuario: user);
             },
           ),
           (Route<dynamic> route) => false,
