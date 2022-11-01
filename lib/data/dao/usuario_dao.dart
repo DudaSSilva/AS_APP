@@ -55,4 +55,17 @@ class UsuarioDao {
     return lista;
   }
 
+  Future<String> userName({required String usuario}) async {
+    DBHelper dbHelper = DBHelper();
+    Database db = await dbHelper.initDB();
+
+    String sql = 'SELECT * '
+        'FROM user '
+        'WHERE usuario = ?;';
+
+    final result = await db.rawQuery(sql, [usuario]);
+
+    return result.toString();
+  }
+
 }
