@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import '../main.dart';
 import 'victorys/pacote_conquista.dart';
 import 'tips/pacote_dicas.dart';
 import '../domain/pacote_materias.dart';
@@ -22,6 +24,33 @@ class TelaPrincipalPage extends StatefulWidget {
 }
 
 class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
+  void showNotification() async {
+    AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
+      "as-app",
+      "ASApp",
+      priority: Priority.max,
+      importance: Importance.max,
+    );
+
+    DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
+      presentAlert: true,
+      presentBadge: true,
+      presentSound: true,
+    );
+
+    NotificationDetails notiDetails = NotificationDetails(
+      android: androidDetails,
+      iOS: iosDetails,
+    );
+
+    await notificationsPlugin.show(
+        0,
+        "Notificação teste",
+        "Belle Belinha fodar",
+        notiDetails
+    );
+  }
+
   PacotePlanejamento pacote1 = PacotePlanejamento(
     icon: const Icon(Icons.calendar_month),
     titulo: 'PLANEJAMENTO SEMANAL',
@@ -56,6 +85,11 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: showNotification,
+        child: Icon(Icons.notification_add),
+        backgroundColor: const Color(0xFFDD2E44),
+      ),
       backgroundColor: const Color(0xFFFFE8E8),
       drawer: Drawer(
         backgroundColor: const Color(0xFFDD2E44),
