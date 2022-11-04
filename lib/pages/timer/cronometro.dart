@@ -44,9 +44,6 @@ class _CronometroState extends State<Cronometro> {
     setState(() => timer?.cancel());
   }
 
-  void setState(void Function() param0) {
-  }
-
   @override
 
   Widget build(BuildContext context) {
