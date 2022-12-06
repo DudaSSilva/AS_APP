@@ -5,10 +5,10 @@ import 'package:http/http.dart';
 import '../../domain/flashcard.dart';
 
 class FlashcardsListaApi {
-  String baseUrl = "tourist-packages.herokuapp.com";
+  String baseUrl = "api.eduardasoares1.repl.co";
 
   Future<List<FlashCardClass>> listarFlashcards() async {
-    Uri url = Uri.http(baseUrl, "/api/findAll");
+    Uri url = Uri.http(baseUrl, "/flashcards");
     Response response = await http.get(url);
 
     List<FlashCardClass> lista = <FlashCardClass>[];
