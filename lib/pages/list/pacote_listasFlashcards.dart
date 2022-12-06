@@ -1,8 +1,7 @@
-//ALTERAR PARA TELA DE ANOTAÇÕES
-import 'package:asapp/data/dao/flashcard_listas_dao.dart';
-import 'package:asapp/domain/flashcard.dart';
+import 'package:asapp/data/api/flashcard_listas_api.dart';
+//import 'package:asapp/domain/flashcard.dart';
 import 'package:flutter/material.dart';
-
+import '../../domain/flashcard.dart';
 import '../../widget/widget_flashcard.dart';
 
 class PacoteAnotacoes extends StatefulWidget {
@@ -13,7 +12,7 @@ class PacoteAnotacoes extends StatefulWidget {
 }
 
 class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
-  Future<List<FlashCardClass>> lista = FlashcardslistaDao().listarFlashcards();
+  Future<List<FlashCardClass>> lista = FlashcardsListaApi().listarFlashcards();
 
   @override
   Widget build(BuildContext context) {

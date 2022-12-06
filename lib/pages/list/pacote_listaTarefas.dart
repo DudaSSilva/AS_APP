@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../data/dao/tarefas_dao.dart';
 import '../add/pacote_adicionarLista.dart';
-import 'pacote_anotacoes.dart';
+import 'pacote_listasFlashcards.dart';
 import '../pacote_telaPrincipal.dart';
 import '../../domain/pacote_planejamento.dart';
 import '../../domain/pacote_tarefas.dart';

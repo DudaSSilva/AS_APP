@@ -22,4 +22,10 @@ class FlashCardClass {
     data['title'] = this.title;
     return data;
   }
+
+  FlashCardClass.fromApiJson(Map<String, dynamic> json) {
+    URL = json['URL'];
+    text = json['text'];
+    title = json['title'];
+  }
 }
