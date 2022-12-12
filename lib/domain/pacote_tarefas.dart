@@ -5,7 +5,7 @@ class PacoteTarefas {
   late String tarefa3;
   late String tarefa4;
   late String tarefa5;
-  late int cor;
+  //late int cor;
   late bool value;
 
   PacoteTarefas({
@@ -15,7 +15,7 @@ class PacoteTarefas {
     required this.tarefa3,
     required this.tarefa4,
     required this.tarefa5,
-    required this.cor,
+    //required this.cor,
     required this.value,
   });
 
@@ -28,8 +28,8 @@ class PacoteTarefas {
     data['tarefa3'] = tarefa3;
     data['tarefa4'] = tarefa4;
     data['tarefa5'] = tarefa5;
-    data['cor'] = cor.toString();
-    data['valor'] = value;
+    //data['cor'] = cor.toString();
+    data['value'] = value;
 
     return data;
   }
@@ -41,7 +41,17 @@ class PacoteTarefas {
     tarefa3 = json['tarefa3'];
     tarefa4 = json['tarefa4'];
     tarefa5 = json['tarefa5'];
-    cor = int.parse(json['cor']);
+    //cor = int.parse(json['cor']);
     value = json['valor'] == 0 ? false : true;
+  }
+
+  PacoteTarefas.fromApiJson(Map<String, dynamic> json) {
+    nomeLista = json['nomeLista'];
+    tarefa1 = json['tarefa1'];
+    tarefa2 = json['tarefa2'];
+    tarefa3 = json['tarefa3'];
+    tarefa4 = json['tarefa4'];
+    tarefa5 = json['tarefa5'];
+    value = json['value'] == 0 ? false : true;
   }
 }

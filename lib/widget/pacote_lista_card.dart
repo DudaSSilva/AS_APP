@@ -23,7 +23,8 @@ class _CardPacoteListaState extends State<CardPacoteLista> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color(pacote.cor),
+      //color: Color(pacote.cor),
+      color: Color(0xFFFFCC99),
       child: Column(
         children: [
           Padding(

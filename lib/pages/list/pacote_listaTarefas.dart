@@ -1,3 +1,4 @@
+import 'package:asapp/data/api/tarefas_api.dart';
 import 'package:flutter/material.dart';
 import '../../data/dao/tarefas_dao.dart';
 import '../add/pacote_adicionarLista.dart';
@@ -23,7 +24,7 @@ class PacoteLista extends StatefulWidget {
 
 class _PacoteListaState extends State<PacoteLista> {
   PacotePlanejamento get pacote => widget.pacotePlanejamento;
-  Future<List<PacoteTarefas>> lista = TarefasDao().listarTarefas();
+  Future<List<PacoteTarefas>> lista = TarefasApi().listarTarefas();
 
   @override
   Widget build(BuildContext context) {
