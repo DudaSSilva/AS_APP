@@ -1,3 +1,4 @@
+import 'package:asapp/data/api/conquistas_api.dart';
 import 'package:asapp/data/dao/consquistas_dao.dart';
 import 'package:flutter/material.dart';
 import '../../domain/pacote_conquistas.dart';
@@ -14,7 +15,7 @@ class PacoteConquista extends StatefulWidget {
 }
 
 class _PacoteConquistaState extends State<PacoteConquista> {
-  Future<List<PacoteConquistas>> lista = ConquistasDao().listarConquistas();
+  Future<List<PacoteConquistas>> lista = ConquistasApi().listarConquistas();
 
   @override
   Widget build(BuildContext context) {

@@ -2,21 +2,22 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
-import '../../domain/flashcard.dart';
 
-class FlashcardsListaApi {
+import '../../domain/habitos.dart';
+
+class HabitosApi {
   String baseUrl = "asapi.eduardasoares1.repl.co";
 
-  Future<List<FlashCardClass>> listarFlashcards() async {
-    Uri url = Uri.http(baseUrl, "/flashcards");
+  Future<List<PacoteImages>> listarHabitos() async {
+    Uri url = Uri.http(baseUrl, "/habitos");
     Response response = await http.get(url);
 
-    List<FlashCardClass> lista = <FlashCardClass>[];
+    List<PacoteImages> lista = <PacoteImages>[];
     if (response.statusCode == 200) {
       var result = jsonDecode(response.body);
 
       for (var json in result) {
-        FlashCardClass pacote = FlashCardClass.fromApiJson(json);
+        PacoteImages pacote = PacoteImages.fromApiJson(json);
         lista.add(pacote);
       }
     }

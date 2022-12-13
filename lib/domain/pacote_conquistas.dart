@@ -21,6 +21,10 @@ class PacoteConquistas {
   PacoteConquistas.fromJson(Map<String, dynamic> json) {
     title = json['title'];
     text = json['text'];
+  }
 
+  PacoteConquistas.fromApiJson(Map<String, dynamic> json) {
+    title = json['title'];
+    text = json['text'];
   }
 }

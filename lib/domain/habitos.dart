@@ -18,4 +18,8 @@ class PacoteImages {
   PacoteImages.fromJson(Map<String, dynamic> json) {
     URL = json['URL'];
   }
+
+  PacoteImages.fromApiJson(Map<String, dynamic> json) {
+    URL = json['URL'];
+  }
 }
