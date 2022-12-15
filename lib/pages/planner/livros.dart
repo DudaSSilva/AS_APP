@@ -1,3 +1,4 @@
+import 'package:asapp/data/api/livros_api.dart';
 import 'package:asapp/data/dao/livros_dao.dart';
 import 'package:asapp/domain/pacote_livros.dart';
 import 'package:asapp/models/auxiliar_styles.dart';
@@ -19,7 +20,7 @@ class Livros extends StatefulWidget {
 }
 
 class _LivrosState extends State<Livros> {
-  Future<List<PacoteLivro>> lista = LivrosDao().listarLivrose();
+  Future<List<PacoteLivro>> lista = LivrosApi().listarLivros();
   DateTime _selectedDate = DateTime.now();
   //showNotification(){
   //setState(() {
