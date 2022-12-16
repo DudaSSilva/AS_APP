@@ -44,4 +44,13 @@ class PacoteConteudos {
     value = json['valor'] == 0 ? false : true;  // além de converter o json para uma clase, também faz a condição para que se o valor for 0,
     // o card do objeto receber o valor falso (aí o checkbox está desmarcado), e se for diferente é verdadeiro (aí o checkbox é marcado como concluído)
   }
+
+  PacoteConteudos.fromApiJson(Map<String, dynamic> json) {
+    nomedisciplina = json['nomedisciplina'];
+    conteudo1 = json['conteudo1'];
+    conteudo2 = json['conteudo2'];
+    conteudo3 = json['conteudo3'];
+    conteudo4 = json['conteudo4'];
+    value = json['value'] == 0 ? false : true;
+  }
 }

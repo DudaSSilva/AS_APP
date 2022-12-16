@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+//import '../../data/dataSimulatory/bdListaConteudos.dart';
 import '../../data/dataSimulatory/bdListaConteudos.dart';
 import '../../domain/pacote_conteudos.dart';
 import '../../widget/pacote_conteudos_card.dart';
@@ -15,6 +16,7 @@ class PacoteConteudo extends StatefulWidget {
 
 class _PacoteConteudoState extends State<PacoteConteudo> {
   Future<List<PacoteConteudos>> lista = BD.getPacoteConteudos(); //declara a lista ó que recebendo como parâmetro o banco de dados
+  //Future<List<PacoteConteudos>> lista = ConteudosApi().listarConteudos();
 
   @override
   Widget build(BuildContext context) {
