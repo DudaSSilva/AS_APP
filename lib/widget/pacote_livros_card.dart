@@ -17,10 +17,6 @@ class CardPacoteLivros extends StatefulWidget {
 class _CardPacoteLivrosState extends State<CardPacoteLivros> {
   PacoteLivro get pacote => widget.pacoteLivros;
   bool value = false;
-  //bool value2 = false;
-  //bool value3 = false;
-  //bool value4 = false;
-  //bool value5 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -52,66 +48,6 @@ class _CardPacoteLivrosState extends State<CardPacoteLivros> {
                         onChanged: (value) =>
                             setState(() => this.value = value!),
                       ),
-                      // CheckboxListTile(
-                      //   controlAffinity: ListTileControlAffinity.leading,
-                      //   activeColor: Color(0xFFF25E7A),
-                      //   checkColor: Colors.white,
-                      //   value: value2,
-                      //   title: Text(
-                      //     pacote.livro2,
-                      //     style: const TextStyle(
-                      //       fontWeight: FontWeight.bold,
-                      //       fontSize: 20,
-                      //     ),
-                      //   ),
-                      //   onChanged: (value) =>
-                      //       setState(() => this.value2 = value!),
-                      // ),
-                      // CheckboxListTile(
-                      //   controlAffinity: ListTileControlAffinity.leading,
-                      //   activeColor: Color(0xFFF25E7A),
-                      //   checkColor: Colors.white,
-                      //   value: value3,
-                      //   title: Text(
-                      //     pacote.livro3,
-                      //     style: const TextStyle(
-                      //       fontWeight: FontWeight.bold,
-                      //       fontSize: 20,
-                      //     ),
-                      //   ),
-                      //   onChanged: (value) =>
-                      //       setState(() => this.value3 = value!),
-                      // ),
-                      // CheckboxListTile(
-                      //   controlAffinity: ListTileControlAffinity.leading,
-                      //   activeColor: Color(0xFFF25E7A),
-                      //   checkColor: Colors.white,
-                      //   value: value4,
-                      //   title: Text(
-                      //     pacote.livro4,
-                      //     style: const TextStyle(
-                      //       fontWeight: FontWeight.bold,
-                      //       fontSize: 20,
-                      //     ),
-                      //   ),
-                      //   onChanged: (value) =>
-                      //       setState(() => this.value4 = value!),
-                      // ),
-                      // CheckboxListTile(
-                      //   controlAffinity: ListTileControlAffinity.leading,
-                      //   activeColor: Color(0xFFF25E7A),
-                      //   checkColor: Colors.white,
-                      //   value: value5,
-                      //   title: Text(
-                      //     pacote.livro5,
-                      //     style: const TextStyle(
-                      //       fontWeight: FontWeight.bold,
-                      //       fontSize: 20,
-                      //     ),
-                      //   ),
-                      //   onChanged: (value) =>
-                      //       setState(() => this.value5 = value!),
-                      // ),
                     ],
                   ),
                 ),
