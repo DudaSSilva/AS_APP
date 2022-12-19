@@ -38,7 +38,7 @@ class _WidgetFlashCardState extends State<WidgetFlashCard> {
                 ),
               ),
               const SizedBox(height: 16),
-              Image.asset(
+              Image.network(
                 pacote.URL,
                 width: 50,
                 height: 50,

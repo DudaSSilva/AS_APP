@@ -54,4 +54,5 @@ class PacoteTarefas {
     tarefa5 = json['tarefa5'];
     value = json['value'] == 0 ? false : true;
   }
+
 }
