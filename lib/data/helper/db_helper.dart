@@ -212,6 +212,44 @@ class DBHelper {
     sql6 =
     "INSERT INTO LIVROS (id, livro1, livro2, livro3, livro4, livro5, cor) VALUES (4, 'Como dar titulos a livros', 'Tarsis: Flutter e ameaças', 'Como ser feliz, sendo um feira-grandense', 'Smilingüido –  Drogas e armas', 'O lar da senhorita Peregrine', '0xFFF37B67');";
     await db.execute(sql6);
+
+    //LOJA
+
+    String sql7 =
+        'create table STORE (id INTEGER PRIMARY KEY, image varchar(500), title varchar(100), price varchar(100), page varchar(100));';
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO STORE (id, image, title, price, page) VALUES (1, 'https://imgs.casasbahia.com.br/14023375/1xg.jpg?imwidth=500', 'Camisa de Biologia', '50,00', 'QuestPage()');";
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO STORE (id, image, title, price, page) VALUES (2, 'https://imgs.casasbahia.com.br/14023375/1xg.jpg?imwidth=500', 'Camisa de Biologia', '50,00', 'QuestPage()');";
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO STORE (id, image, title, price, page) VALUES (3, 'https://imgs.casasbahia.com.br/14023375/1xg.jpg?imwidth=500', 'Camisa de Biologia', '50,00', 'QuestPage()');";
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO STORE (id, image, title, price, page) VALUES (4, 'https://imgs.casasbahia.com.br/14023375/1xg.jpg?imwidth=500', 'Camisa de Biologia', '50,00', 'QuestPage()');";
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO STORE (id, image, title, price, page) VALUES (5, 'https://imgs.casasbahia.com.br/14023375/1xg.jpg?imwidth=500', 'Camisa de Biologia', '50,00', 'QuestPage()');";
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO STORE (id, image, title, price, page) VALUES (6, 'https://imgs.casasbahia.com.br/14023375/1xg.jpg?imwidth=500', 'Camisa de Biologia', '50,00', 'QuestPage()');";
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO STORE (id, image, title, price, page) VALUES (7, 'https://imgs.casasbahia.com.br/14023375/1xg.jpg?imwidth=500', 'Camisa de Biologia', '50,00', 'QuestPage()');";
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO STORE (id, image, title, price, page) VALUES (8, 'https://imgs.casasbahia.com.br/14023375/1xg.jpg?imwidth=500', 'Camisa de Biologia', '50,00', 'QuestPage()');";
+    await db.execute(sql7);
   }
 
 }

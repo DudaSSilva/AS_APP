@@ -1,3 +1,4 @@
+import 'package:asapp/pages/store/pacote_loja.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../data/shared_prefs_helper.dart';
@@ -77,6 +78,8 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
             BuildAchiviements(),
             const SizedBox(height: 10),
             BuildAboutUs(),
+            const SizedBox(height: 10),
+            BuildStore(),
             const SizedBox(height: 10),
             BuildLogout(),
           ],
@@ -344,6 +347,40 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
     );
   }
 
+  BuildStore() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        IconButton(
+          onPressed: onPressedStore,
+          icon: const Icon(
+            Icons.store,
+            color: Color(0xFFFFE8E8),
+            size: 50,
+          ),
+        ),
+        const SizedBox(height: 8),
+        ElevatedButton(
+          onPressed: onPressedStore,
+          child: const Text(
+            'NOSSA LOJA',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Color(0xFFF25E7A),
+              fontSize: 20,
+            ),
+          ),
+          style: ElevatedButton.styleFrom(
+            primary: const Color(0xFFFFE8E8),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+
   BuildLogout() {
     return Column(
       //crossAxisAlignment: CrossAxisAlignment.center,
@@ -431,6 +468,15 @@ class _TelaPrincipalPageState extends State<TelaPrincipalPage> {
       context,
       MaterialPageRoute(builder: (context) {
         return const AboutUsPage();
+      }),
+    );
+  }
+
+  void onPressedStore() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) {
+        return const StorePage();
       }),
     );
   }
