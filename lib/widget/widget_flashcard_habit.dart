@@ -1,10 +1,8 @@
-import 'package:asapp/pages/pacote_telaPrincipal.dart';
 import 'package:asapp/screens/calendario.dart';
 import 'package:flash_card/flash_card.dart';
 import 'package:flutter/material.dart';
 
 import '../domain/habitos.dart';
-import '../screens/calendar_screen.dart';
 
 class WidgetFlashCardHabit extends StatefulWidget {
   final PacoteImages pacoteImages;
@@ -54,7 +52,7 @@ class _WidgetFlashCardHabitState extends State<WidgetFlashCardHabit> {
       backWidget: Container(
         height: 100,
         width: 100,
-        child: Center(child: Image.asset(pacote.URL)),
+        child: Center(child: Image.network(pacote.URL)),
       ),
       width: 400,
       height: 400,

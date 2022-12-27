@@ -27,7 +27,8 @@ class PacoteHabitos extends StatefulWidget {
 class _PacoteHabitosState extends State<PacoteHabitos> {
 
   PacotePlanejamento get pacote => widget.pacotePlanejamento;
-  Future<List<PacoteImages>> lista = ImagesDao().listarHabitos();
+ //Future<List<PacoteImages>> lista = ImagesDao().listarHabitos();
+  Future<List<PacoteImages>> lista = HabitosApi().listarHabitos();
 
   int _selectedIndex = 0;
   late List<Widget> pages;

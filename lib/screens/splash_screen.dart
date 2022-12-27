@@ -13,10 +13,7 @@ class _SplashState extends State<Splash> {
   @override
   void initState(){
     super.initState();
-    SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
-    Future.delayed(Duration(seconds: 3)).then((_){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomePage()));
-    });
+    loadData();
   }
 
   @override
@@ -31,5 +28,12 @@ class _SplashState extends State<Splash> {
         ),
       ),
     );
+  }
+
+  void loadData() {
+    SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+    Future.delayed(Duration(seconds: 3)).then((_){
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomePage()));
+    });
   }
 }

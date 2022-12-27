@@ -1,5 +1,4 @@
 import 'package:asapp/data/api/flashcard_listas_api.dart';
-//import 'package:asapp/domain/flashcard.dart';
 import 'package:flutter/material.dart';
 import '../../domain/flashcard.dart';
 import '../../widget/widget_flashcard.dart';
@@ -19,7 +18,7 @@ class _PacoteAnotacoesState extends State<PacoteAnotacoes> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('LISTAS'),
+        title: const Text('FLASHCARDS'),
         backgroundColor: const Color(0xFFDD2E44),
       ),
       body: BuildBody(),

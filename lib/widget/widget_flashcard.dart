@@ -37,11 +37,11 @@ class _WidgetFlashCardState extends State<WidgetFlashCard> {
                   ),
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 4),
               Image.network(
                 pacote.URL,
-                width: 50,
-                height: 50,
+                width: 250,
+                height: 250,
               ),
             ],
           )),
@@ -51,6 +51,7 @@ class _WidgetFlashCardState extends State<WidgetFlashCard> {
         child: Center(
           child: Text(
             pacote.title.toUpperCase(),
+            textAlign: TextAlign.center,
             style: const TextStyle(
                 color: Color(0xFFDD2E44),
                 fontSize: 30,
